@@ -1,0 +1,9 @@
+E:\CSharp_HK6\02032024\BLL\bin\Debug\BLL.dll
+E:\CSharp_HK6\02032024\BLL\bin\Debug\BLL.pdb
+E:\CSharp_HK6\02032024\BLL\obj\Debug\BLL.dll
+E:\CSharp_HK6\02032024\BLL\obj\Debug\BLL.pdb
+E:\CSharp_HK6\02032024\BLL\bin\Debug\DAL.dll
+E:\CSharp_HK6\02032024\BLL\bin\Debug\DAL.pdb
+E:\CSharp_HK6\02032024\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+E:\CSharp_HK6\02032024\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+E:\CSharp_HK6\02032024\BLL\obj\Debug\BLL.csproj.CopyComplete
