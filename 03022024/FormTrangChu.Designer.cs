@@ -225,7 +225,7 @@
             // ptbTrangChu
             // 
             this.ptbTrangChu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbTrangChu.Image = ((System.Drawing.Image)(resources.GetObject("ptbTrangChu.Image")));
+            this.ptbTrangChu.Image = global::_03022024.Properties.Resources.logo_removebg_preview;
             this.ptbTrangChu.Location = new System.Drawing.Point(35, 13);
             this.ptbTrangChu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ptbTrangChu.Name = "ptbTrangChu";

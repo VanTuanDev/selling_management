@@ -108,8 +108,7 @@ namespace _03022024.QLBanHang
                 MessageBox.Show("Giá trị không hợp lệ!");
             }
         }
-
-        private void btnThem_Click(object sender, EventArgs e)
+        private void Them()
         {
             string tenSanPham = lblTenSPNoiDung.Text;
             int soLuong = int.Parse(txtSoLuong.Text);
@@ -126,8 +125,15 @@ namespace _03022024.QLBanHang
 
             dgDSSanPhamDuocChon.Rows.Add(row);
         }
-
-        private void btnXoa_Click(object sender, EventArgs e)
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            Them();
+        }
+        private void ptbThem_Click(object sender, EventArgs e)
+        {
+            Them();
+        }
+        private void Xoa()
         {
             if (dgDSSanPhamDuocChon.SelectedRows.Count > 0)
             {
@@ -138,6 +144,14 @@ namespace _03022024.QLBanHang
             {
                 MessageBox.Show("Vui lòng chọn dòng cần xóa!");
             }
+        }
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            Xoa();
+        }
+        private void ptbXoa_Click(object sender, EventArgs e)
+        {
+            Xoa();
         }
         private void CapNhatTongTien()
         {
@@ -183,8 +197,7 @@ namespace _03022024.QLBanHang
                 e.FormattingApplied = true;
             }
         }
-
-        private void btnThanhToan_Click(object sender, EventArgs e)
+        private void ThanhToan()
         {
             string tinhTrang = "N";
             string tenKhachHang = cbbTenKhachHang.SelectedItem.ToString();
@@ -216,13 +229,20 @@ namespace _03022024.QLBanHang
                 MessageBox.Show("Lỗi khi thực hiện giao dịch: " + ex.Message);
             }
         }
-
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            ThanhToan();
+        }
+        private void ptbThanhToan_Click(object sender, EventArgs e)
+        {
+            ThanhToan();
+        }
         private void txtSoLuong_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
-        }
+        }           
     }
 }

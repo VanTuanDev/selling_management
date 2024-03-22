@@ -43,6 +43,9 @@
             this.txtTenKhachHang = new System.Windows.Forms.TextBox();
             this.lblHeader = new System.Windows.Forms.Label();
             this.txtMaKhachHang = new System.Windows.Forms.TextBox();
+            this.ptbXoa = new System.Windows.Forms.PictureBox();
+            this.ptbSua = new System.Windows.Forms.PictureBox();
+            this.ptbThem = new System.Windows.Forms.PictureBox();
             lblTenKhachHang = new System.Windows.Forms.Label();
             lblMaKhachHang = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
@@ -50,6 +53,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgKhachHang)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbXoa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbSua)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbThem)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTenKhachHang
@@ -129,13 +135,13 @@
             // 
             // cl1
             // 
-            this.cl1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.cl1.DataPropertyName = "MaKhachHang";
             this.cl1.HeaderText = "Mã khách hàng";
             this.cl1.MinimumWidth = 6;
             this.cl1.Name = "cl1";
             this.cl1.ReadOnly = true;
             this.cl1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cl1.Width = 250;
             // 
             // cl2
             // 
@@ -150,6 +156,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LimeGreen;
+            this.panel2.Controls.Add(this.ptbXoa);
+            this.panel2.Controls.Add(this.ptbSua);
+            this.panel2.Controls.Add(this.ptbThem);
             this.panel2.Controls.Add(this.btnXoa);
             this.panel2.Controls.Add(this.btnSua);
             this.panel2.Controls.Add(this.btnThem);
@@ -168,12 +177,12 @@
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnXoa.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnXoa.Location = new System.Drawing.Point(241, 7);
+            this.btnXoa.Location = new System.Drawing.Point(405, 7);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(97, 37);
+            this.btnXoa.Size = new System.Drawing.Size(184, 37);
             this.btnXoa.TabIndex = 5;
-            this.btnXoa.Text = "Xóa";
+            this.btnXoa.Text = "   Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -184,12 +193,12 @@
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSua.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSua.Location = new System.Drawing.Point(123, 7);
+            this.btnSua.Location = new System.Drawing.Point(205, 7);
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(97, 37);
+            this.btnSua.Size = new System.Drawing.Size(184, 37);
             this.btnSua.TabIndex = 4;
-            this.btnSua.Text = "Sửa";
+            this.btnSua.Text = "   Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
@@ -203,9 +212,9 @@
             this.btnThem.Location = new System.Drawing.Point(5, 7);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(97, 37);
+            this.btnThem.Size = new System.Drawing.Size(184, 37);
             this.btnThem.TabIndex = 3;
-            this.btnThem.Text = "Thêm";
+            this.btnThem.Text = "   Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -257,6 +266,42 @@
             this.txtMaKhachHang.TabIndex = 1;
             this.txtMaKhachHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaKhachHang_KeyPress);
             // 
+            // ptbXoa
+            // 
+            this.ptbXoa.BackColor = System.Drawing.Color.DarkGreen;
+            this.ptbXoa.Image = global::_03022024.Properties.Resources.delete;
+            this.ptbXoa.Location = new System.Drawing.Point(418, 12);
+            this.ptbXoa.Name = "ptbXoa";
+            this.ptbXoa.Size = new System.Drawing.Size(27, 27);
+            this.ptbXoa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbXoa.TabIndex = 12;
+            this.ptbXoa.TabStop = false;
+            this.ptbXoa.Click += new System.EventHandler(this.ptbXoa_Click);
+            // 
+            // ptbSua
+            // 
+            this.ptbSua.BackColor = System.Drawing.Color.DarkGreen;
+            this.ptbSua.Image = global::_03022024.Properties.Resources.edit;
+            this.ptbSua.Location = new System.Drawing.Point(221, 12);
+            this.ptbSua.Name = "ptbSua";
+            this.ptbSua.Size = new System.Drawing.Size(27, 27);
+            this.ptbSua.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbSua.TabIndex = 11;
+            this.ptbSua.TabStop = false;
+            this.ptbSua.Click += new System.EventHandler(this.ptbSua_Click);
+            // 
+            // ptbThem
+            // 
+            this.ptbThem.BackColor = System.Drawing.Color.DarkGreen;
+            this.ptbThem.Image = global::_03022024.Properties.Resources.add;
+            this.ptbThem.Location = new System.Drawing.Point(19, 12);
+            this.ptbThem.Name = "ptbThem";
+            this.ptbThem.Size = new System.Drawing.Size(27, 27);
+            this.ptbThem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbThem.TabIndex = 10;
+            this.ptbThem.TabStop = false;
+            this.ptbThem.Click += new System.EventHandler(this.ptbThem_Click);
+            // 
             // ucKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -272,6 +317,9 @@
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbXoa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbSua)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbThem)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -286,9 +334,12 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl2;
         private System.Windows.Forms.TextBox txtTenKhachHang;
         private System.Windows.Forms.TextBox txtMaKhachHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cl1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cl2;
+        private System.Windows.Forms.PictureBox ptbXoa;
+        private System.Windows.Forms.PictureBox ptbSua;
+        private System.Windows.Forms.PictureBox ptbThem;
     }
 }

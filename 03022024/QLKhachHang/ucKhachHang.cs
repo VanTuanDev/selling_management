@@ -15,12 +15,12 @@ namespace _03022024.QLKhachHang
             InitializeComponent();
             manager = new KhachHangManager();
             dataDSKhachHang = new DataTable();
-            dgKhachHang.DefaultCellStyle.Font = new Font("Tahoma", 12);
+            dgKhachHang.DefaultCellStyle.Font = new Font("Tahoma", 10);
             dgKhachHang.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
             dgKhachHang.DefaultCellStyle.SelectionBackColor = Color.Blue;
             dgKhachHang.DefaultCellStyle.SelectionForeColor = Color.White;
 
-            dgKhachHang.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 14, FontStyle.Bold);
+            dgKhachHang.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12, FontStyle.Bold);
             dgKhachHang.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgKhachHang.ColumnHeadersDefaultCellStyle.BackColor = Color.Gray;
 
@@ -75,14 +75,21 @@ namespace _03022024.QLKhachHang
                 e.Handled = true;
             }
         }
-
-        private void btnThem_Click(object sender, EventArgs e)
+        private void Them()
         {
             FormThemKhachHang formThemKhachHang = new FormThemKhachHang();
             formThemKhachHang.ShowDialog();
             HienThiDanhSachKhachHang();
         }
-        private void btnSua_Click(object sender, EventArgs e)
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            Them();
+        }
+        private void ptbThem_Click(object sender, EventArgs e)
+        {
+            Them();
+        }
+        private void Sua()
         {
             string makhachhang = txtMaKhachHang.Text;
             string tenkhachhang = txtTenKhachHang.Text;
@@ -98,8 +105,16 @@ namespace _03022024.QLKhachHang
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
             }
         }
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            Sua();
+        }
 
-        private void btnXoa_Click(object sender, EventArgs e)
+        private void ptbSua_Click(object sender, EventArgs e)
+        {
+            Sua();
+        }
+        private void Xoa()
         {
             if (dgKhachHang.SelectedRows.Count > 0)
             {
@@ -124,6 +139,14 @@ namespace _03022024.QLKhachHang
             {
                 MessageBox.Show("Vui lòng chọn một hàng để xóa.");
             }
-        }       
+        }
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            Xoa();
+        }
+        private void ptbXoa_Click(object sender, EventArgs e)
+        {
+            Xoa();
+        }
     }
 }

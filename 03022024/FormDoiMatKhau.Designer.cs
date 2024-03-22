@@ -177,7 +177,7 @@
             // 
             this.ptbMKC.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ptbMKC.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbMKC.Image = ((System.Drawing.Image)(resources.GetObject("ptbMKC.Image")));
+            this.ptbMKC.Image = global::_03022024.Properties.Resources.on;
             this.ptbMKC.Location = new System.Drawing.Point(599, 156);
             this.ptbMKC.Name = "ptbMKC";
             this.ptbMKC.Size = new System.Drawing.Size(25, 25);
@@ -190,7 +190,7 @@
             // 
             this.ptbMKM.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ptbMKM.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbMKM.Image = ((System.Drawing.Image)(resources.GetObject("ptbMKM.Image")));
+            this.ptbMKM.Image = global::_03022024.Properties.Resources.on;
             this.ptbMKM.Location = new System.Drawing.Point(599, 211);
             this.ptbMKM.Name = "ptbMKM";
             this.ptbMKM.Size = new System.Drawing.Size(25, 25);
@@ -203,7 +203,7 @@
             // 
             this.ptbMKXN.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ptbMKXN.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbMKXN.Image = ((System.Drawing.Image)(resources.GetObject("ptbMKXN.Image")));
+            this.ptbMKXN.Image = global::_03022024.Properties.Resources.on;
             this.ptbMKXN.Location = new System.Drawing.Point(599, 266);
             this.ptbMKXN.Name = "ptbMKXN";
             this.ptbMKXN.Size = new System.Drawing.Size(25, 25);
@@ -229,7 +229,7 @@
             // 
             this.ptbThoat.BackColor = System.Drawing.Color.DarkOrange;
             this.ptbThoat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbThoat.Image = global::_03022024.Properties.Resources.logout1;
+            this.ptbThoat.Image = global::_03022024.Properties.Resources.logout;
             this.ptbThoat.Location = new System.Drawing.Point(441, 340);
             this.ptbThoat.Name = "ptbThoat";
             this.ptbThoat.Size = new System.Drawing.Size(40, 40);

@@ -15,12 +15,12 @@ namespace _03022024.QLHoaDon
             dataDSHoaDon = new DataTable();
             HDmanager = new HoaDonManager();
             InitializeComponent();
-            dgDSHoaDon.DefaultCellStyle.Font = new Font("Tahoma", 12);
+            dgDSHoaDon.DefaultCellStyle.Font = new Font("Tahoma", 10);
             dgDSHoaDon.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
             dgDSHoaDon.DefaultCellStyle.SelectionBackColor = Color.Blue;
             dgDSHoaDon.DefaultCellStyle.SelectionForeColor = Color.White;
 
-            dgDSHoaDon.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 14, FontStyle.Bold);
+            dgDSHoaDon.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12, FontStyle.Bold);
             dgDSHoaDon.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgDSHoaDon.ColumnHeadersDefaultCellStyle.BackColor = Color.Gray;
 
@@ -58,7 +58,7 @@ namespace _03022024.QLHoaDon
                 maHoaDonDuocChon = maHoaDon;
             }
         }
-        private void btnCapNhatTrangThaiHoaDon_Click(object sender, EventArgs e)
+        private void XacNhan()
         {
             if (maHoaDonDuocChon != -1)
             {
@@ -78,8 +78,15 @@ namespace _03022024.QLHoaDon
                 MessageBox.Show("Vui lòng chọn một hóa đơn để cập nhật trạng thái");
             }
         }
-
-        private void btnXemChiTiet_Click(object sender, EventArgs e)
+        private void btnCapNhatTrangThaiHoaDon_Click(object sender, EventArgs e)
+        {
+            XacNhan();
+        }
+        private void ptbXacNhan_Click(object sender, EventArgs e)
+        {
+            XacNhan();
+        }
+        private void XemChiTiet ()
         {
             if (maHoaDonDuocChon != -1)
             {
@@ -96,6 +103,14 @@ namespace _03022024.QLHoaDon
                 MessageBox.Show("Vui lòng chọn một hóa đơn để xem chi tiết");
             }
         }
+        private void btnXemChiTiet_Click(object sender, EventArgs e)
+        {
+            XemChiTiet();
+        }  
 
+        private void ptbXemChiTiet_Click(object sender, EventArgs e)
+        {
+            XemChiTiet();
+        }
     }
 }

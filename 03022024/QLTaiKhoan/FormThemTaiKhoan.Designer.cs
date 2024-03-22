@@ -173,7 +173,7 @@
             // 
             this.ptbThoat.BackColor = System.Drawing.Color.DarkOrange;
             this.ptbThoat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbThoat.Image = global::_03022024.Properties.Resources.logout1;
+            this.ptbThoat.Image = global::_03022024.Properties.Resources.logout;
             this.ptbThoat.Location = new System.Drawing.Point(396, 343);
             this.ptbThoat.Name = "ptbThoat";
             this.ptbThoat.Size = new System.Drawing.Size(32, 32);

@@ -16,12 +16,12 @@ namespace _03022024.QLTaiKhoan
             manager = new TaiKhoanManager();
             dataDSTaiKhoan = new DataTable();
 
-            dgTaiKhoan.DefaultCellStyle.Font = new Font("Tahoma", 12);
+            dgTaiKhoan.DefaultCellStyle.Font = new Font("Tahoma", 10);
             dgTaiKhoan.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
             dgTaiKhoan.DefaultCellStyle.SelectionBackColor = Color.Blue;
             dgTaiKhoan.DefaultCellStyle.SelectionForeColor = Color.White;
 
-            dgTaiKhoan.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 14, FontStyle.Bold);
+            dgTaiKhoan.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12, FontStyle.Bold);
             dgTaiKhoan.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgTaiKhoan.ColumnHeadersDefaultCellStyle.BackColor = Color.Gray;
 
@@ -79,13 +79,21 @@ namespace _03022024.QLTaiKhoan
                 e.Handled = true;
             }
         }
-        private void btnThem_Click(object sender, EventArgs e)
+        private void Them()
         {
             FormThemTaiKhoan formThemTaiKhoan = new FormThemTaiKhoan();
             formThemTaiKhoan.ShowDialog();
             HienThiDanhSachTaiKhoan();
         }
-        private void btnSua_Click(object sender, EventArgs e)
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            Them();
+        }
+        private void ptbThem_Click(object sender, EventArgs e)
+        {
+            Them();
+        }
+        private void Sua()
         {
             string tenDangNhap = txtTenDangNhap.Text;
             string tenDayDu = txtTenDayDu.Text;
@@ -102,13 +110,21 @@ namespace _03022024.QLTaiKhoan
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
             }
         }
-        private void btnXoa_Click(object sender, EventArgs e)
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            Sua();
+        }
+        private void ptbSua_Click(object sender, EventArgs e)
+        {
+            Sua();
+        }
+        private void Xoa ()
         {
             if (dgTaiKhoan.SelectedRows.Count > 0)
             {
                 DataGridViewRow row = dgTaiKhoan.SelectedRows[0];
 
-                string taikhoan = row.Cells["cl2"].Value.ToString(); 
+                string taikhoan = row.Cells["cl2"].Value.ToString();
 
                 string error = string.Empty;
                 if (manager.XoaTaiKhoan(taikhoan))
@@ -128,6 +144,14 @@ namespace _03022024.QLTaiKhoan
             {
                 MessageBox.Show("Vui lòng chọn một hàng để xóa.");
             }
+        }
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            Xoa();
+        }
+        private void ptbXoa_Click(object sender, EventArgs e)
+        {
+            Xoa();
         }
     }
 }

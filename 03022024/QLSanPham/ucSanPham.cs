@@ -16,12 +16,12 @@ namespace _03022024.QLSanPham
             dataDSSanPham = new DataTable();
 
             InitializeComponent();
-            dgSanPham.DefaultCellStyle.Font = new Font("Tahoma", 12);
+            dgSanPham.DefaultCellStyle.Font = new Font("Tahoma", 10);
             dgSanPham.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
             dgSanPham.DefaultCellStyle.SelectionBackColor = Color.Blue;
             dgSanPham.DefaultCellStyle.SelectionForeColor = Color.White;
 
-            dgSanPham.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 14, FontStyle.Bold);
+            dgSanPham.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12, FontStyle.Bold);
             dgSanPham.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgSanPham.ColumnHeadersDefaultCellStyle.BackColor = Color.Gray;
 
@@ -96,15 +96,30 @@ namespace _03022024.QLSanPham
                 e.Handled = true;
             }
         }
+        private void dgSanPham_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 4 && e.Value != null && e.Value is decimal)
+            {
+                e.Value = ((decimal)e.Value).ToString("#,##0.##");
+                e.FormattingApplied = true;
+            }
+        }
 
-        private void btnThem_Click(object sender, EventArgs e)
+        private void Them()
         {
             FormThemSanPham formThemSanPham = new FormThemSanPham();
             formThemSanPham.ShowDialog();
             HienThiDanhSachSanPham();
         }
-
-        private void btnSua_Click(object sender, EventArgs e)
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            Them();
+        }
+        private void ptbThem_Click(object sender, EventArgs e)
+        {
+            Them();
+        }
+        private void Sua()
         {
             string maSanPham = txtMaSanPham.Text;
             string tenSanPham = txtTenSanPham.Text;
@@ -121,10 +136,17 @@ namespace _03022024.QLSanPham
             catch (Exception ex)
             {
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
-            }   
+            }
         }
-
-        private void btnXoa_Click(object sender, EventArgs e)
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            Sua();
+        }
+        private void ptbSua_Click(object sender, EventArgs e)
+        {
+            Sua();
+        }
+        private void Xoa()
         {
             string maSanPham = txtMaSanPham.Text;
 
@@ -143,16 +165,14 @@ namespace _03022024.QLSanPham
             {
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
             }
-
         }
-
-        private void dgSanPham_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (e.ColumnIndex == 4 && e.Value != null && e.Value is decimal)
-            {
-                e.Value = ((decimal)e.Value).ToString("#,##0.##");
-                e.FormattingApplied = true;
-            }
+            Xoa();
+        }
+        private void ptbXoa_Click(object sender, EventArgs e)
+        {
+            Xoa();
         }
     }
 }

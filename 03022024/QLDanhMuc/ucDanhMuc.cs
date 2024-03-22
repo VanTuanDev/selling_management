@@ -16,12 +16,12 @@ namespace _03022024.QLDanhMuc
             InitializeComponent();
             manager = new DanhMucManager();
             dataDSDanhMuc = new DataTable();
-            dgDanhMuc.DefaultCellStyle.Font = new Font("Tahoma", 12);
+            dgDanhMuc.DefaultCellStyle.Font = new Font("Tahoma", 10);
             dgDanhMuc.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
             dgDanhMuc.DefaultCellStyle.SelectionBackColor = Color.Blue;
             dgDanhMuc.DefaultCellStyle.SelectionForeColor = Color.White;
 
-            dgDanhMuc.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 14, FontStyle.Bold);
+            dgDanhMuc.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12, FontStyle.Bold);
             dgDanhMuc.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgDanhMuc.ColumnHeadersDefaultCellStyle.BackColor = Color.Gray;
 
@@ -76,15 +76,21 @@ namespace _03022024.QLDanhMuc
                 e.Handled = true;
             }
         }
-
-        private void btnThem_Click(object sender, System.EventArgs e)
+        private void Them()
         {
             FormThemDanhMuc formThemDanhMuc = new FormThemDanhMuc();
             formThemDanhMuc.ShowDialog();
             HienThiDanhSachDanhMuc();
         }
-
-        private void btnSua_Click(object sender, System.EventArgs e)
+        private void btnThem_Click(object sender, System.EventArgs e)
+        {
+            Them();
+        }
+        private void ptbThem_Click(object sender, EventArgs e)
+        {
+            Them();
+        }
+        private void Sua()
         {
             string maDanhMuc = txtMaDanhMuc.Text;
             string tenDanhMuc = txtTenDanhMuc.Text;
@@ -100,8 +106,15 @@ namespace _03022024.QLDanhMuc
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
             }
         }
-
-        private void btnXoa_Click(object sender, System.EventArgs e)
+        private void btnSua_Click(object sender, System.EventArgs e)
+        {
+            Sua();
+        }
+        private void ptbSua_Click(object sender, EventArgs e)
+        {
+            Sua();
+        }
+        private void Xoa()
         {
             if (dgDanhMuc.SelectedRows.Count > 0)
             {
@@ -126,6 +139,14 @@ namespace _03022024.QLDanhMuc
             {
                 MessageBox.Show("Vui lòng chọn một hàng để xóa.");
             }
+        }
+        private void btnXoa_Click(object sender, System.EventArgs e)
+        {
+            Xoa();
+        }
+        private void ptbXoa_Click(object sender, EventArgs e)
+        {
+            Xoa();
         }
     }
 }

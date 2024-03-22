@@ -60,6 +60,9 @@
             this.column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ptbThanhToan = new System.Windows.Forms.PictureBox();
+            this.ptbXoa = new System.Windows.Forms.PictureBox();
+            this.ptbThem = new System.Windows.Forms.PictureBox();
             this.pnlLeft.SuspendLayout();
             this.pnlTopLeft.SuspendLayout();
             this.pnlBottomLeft.SuspendLayout();
@@ -68,6 +71,9 @@
             this.pnlBottomRight.SuspendLayout();
             this.pnlTopRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDSSanPhamDuocChon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbThanhToan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbXoa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbThem)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlLeft
@@ -82,6 +88,8 @@
             // 
             // pnlTopLeft
             // 
+            this.pnlTopLeft.Controls.Add(this.ptbXoa);
+            this.pnlTopLeft.Controls.Add(this.ptbThem);
             this.pnlTopLeft.Controls.Add(this.cbbTenKhachHang);
             this.pnlTopLeft.Controls.Add(this.lblTenKhachHang);
             this.pnlTopLeft.Controls.Add(this.lblDonGiaNoiDung);
@@ -172,13 +180,13 @@
             // 
             this.btnXoa.BackColor = System.Drawing.Color.DarkGreen;
             this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnXoa.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnXoa.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnXoa.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnXoa.Location = new System.Drawing.Point(407, 189);
+            this.btnXoa.Location = new System.Drawing.Point(398, 189);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(100, 52);
+            this.btnXoa.Size = new System.Drawing.Size(117, 52);
             this.btnXoa.TabIndex = 3;
-            this.btnXoa.Text = "Xóa";
+            this.btnXoa.Text = "      Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -195,13 +203,13 @@
             // 
             this.btnThem.BackColor = System.Drawing.Color.DarkGreen;
             this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThem.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThem.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThem.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnThem.Location = new System.Drawing.Point(286, 189);
+            this.btnThem.Location = new System.Drawing.Point(266, 189);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(100, 52);
+            this.btnThem.Size = new System.Drawing.Size(126, 52);
             this.btnThem.TabIndex = 2;
-            this.btnThem.Text = "Thêm";
+            this.btnThem.Text = "      Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -327,6 +335,7 @@
             // 
             // pnlBottomRight
             // 
+            this.pnlBottomRight.Controls.Add(this.ptbThanhToan);
             this.pnlBottomRight.Controls.Add(this.btnThanhToan);
             this.pnlBottomRight.Controls.Add(this.lblThanhTienNoiDung);
             this.pnlBottomRight.Controls.Add(this.label2);
@@ -339,13 +348,13 @@
             // 
             this.btnThanhToan.BackColor = System.Drawing.Color.DarkGreen;
             this.btnThanhToan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThanhToan.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThanhToan.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThanhToan.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnThanhToan.Location = new System.Drawing.Point(287, 21);
+            this.btnThanhToan.Location = new System.Drawing.Point(287, 48);
             this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(221, 102);
+            this.btnThanhToan.Size = new System.Drawing.Size(221, 75);
             this.btnThanhToan.TabIndex = 8;
-            this.btnThanhToan.Text = "Thanh toán";
+            this.btnThanhToan.Text = "      Thanh toán";
             this.btnThanhToan.UseVisualStyleBackColor = false;
             this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
@@ -447,6 +456,45 @@
             this.column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // ptbThanhToan
+            // 
+            this.ptbThanhToan.BackColor = System.Drawing.Color.DarkGreen;
+            this.ptbThanhToan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbThanhToan.Image = global::_03022024.Properties.Resources.pay;
+            this.ptbThanhToan.Location = new System.Drawing.Point(301, 66);
+            this.ptbThanhToan.Name = "ptbThanhToan";
+            this.ptbThanhToan.Size = new System.Drawing.Size(40, 40);
+            this.ptbThanhToan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbThanhToan.TabIndex = 9;
+            this.ptbThanhToan.TabStop = false;
+            this.ptbThanhToan.Click += new System.EventHandler(this.ptbThanhToan_Click);
+            // 
+            // ptbXoa
+            // 
+            this.ptbXoa.BackColor = System.Drawing.Color.DarkGreen;
+            this.ptbXoa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbXoa.Image = global::_03022024.Properties.Resources.delete;
+            this.ptbXoa.Location = new System.Drawing.Point(409, 200);
+            this.ptbXoa.Name = "ptbXoa";
+            this.ptbXoa.Size = new System.Drawing.Size(30, 30);
+            this.ptbXoa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbXoa.TabIndex = 9;
+            this.ptbXoa.TabStop = false;
+            this.ptbXoa.Click += new System.EventHandler(this.ptbXoa_Click);
+            // 
+            // ptbThem
+            // 
+            this.ptbThem.BackColor = System.Drawing.Color.DarkGreen;
+            this.ptbThem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbThem.Image = global::_03022024.Properties.Resources.add;
+            this.ptbThem.Location = new System.Drawing.Point(280, 200);
+            this.ptbThem.Name = "ptbThem";
+            this.ptbThem.Size = new System.Drawing.Size(30, 30);
+            this.ptbThem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbThem.TabIndex = 8;
+            this.ptbThem.TabStop = false;
+            this.ptbThem.Click += new System.EventHandler(this.ptbThem_Click);
+            // 
             // ucBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -468,6 +516,9 @@
             this.pnlBottomRight.PerformLayout();
             this.pnlTopRight.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgDSSanPhamDuocChon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbThanhToan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbXoa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbThem)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -506,5 +557,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn column4;
+        private System.Windows.Forms.PictureBox ptbThem;
+        private System.Windows.Forms.PictureBox ptbXoa;
+        private System.Windows.Forms.PictureBox ptbThanhToan;
     }
 }

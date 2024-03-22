@@ -202,58 +202,73 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="logo-removebg-preview.png" />
+    <None Include="Images\logo-removebg-preview.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="off.png" />
+    <None Include="Images\off.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="on.png" />
+    <None Include="Images\on.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="account.png" />
+    <None Include="Images\account.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="customer.png" />
+    <None Include="Images\customer.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="product.png" />
+    <None Include="Images\product.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="category.png" />
+    <None Include="Images\category.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="selling.png" />
+    <None Include="Images\selling.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="bill.png" />
+    <None Include="Images\bill.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="username_login.png" />
+    <None Include="Images\username_login.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="password_login.png" />
+    <None Include="Images\password_login.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="login.png" />
+    <None Include="Images\login.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="logout.png" />
+    <None Include="Images\logout.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="change_pwd.png" />
+    <None Include="Images\change_pwd.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="submit.png" />
+    <None Include="Images\submit.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="logo_bachhoaxanh.png" />
+    <None Include="Images\logo_bachhoaxanh.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="bhx.png" />
+    <None Include="Images\bhx.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="reset-password.png" />
+    <None Include="Images\reset-password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\pay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\billdetail.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
