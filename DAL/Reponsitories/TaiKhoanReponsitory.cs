@@ -128,6 +128,7 @@ namespace DAL.Reponsitories
                             role = reader["TenQuyen"].ToString();
                         }
                     }
+                    connection.Close();
                 }
             }
             catch (Exception ex)

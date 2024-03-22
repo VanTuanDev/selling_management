@@ -44,6 +44,7 @@ namespace _03022024
             string result = manager.ThayDoiMatKhau(tenDangNhap, matKhauCu, matKhauMoi, matKhauXacNhan);
 
             MessageBox.Show(result);
+            this.Close();
         }
 
         private void btnXacNhan_Click(object sender, EventArgs e)

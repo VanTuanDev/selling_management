@@ -16,12 +16,12 @@ namespace _03022024.QLHoaDon
             dataCTHoaDon = new DataTable();
             InitializeComponent();
             HDmanager = new HoaDonManager();
-            dgChiTietHoaDon.DefaultCellStyle.Font = new Font("Tahoma", 12);
+            dgChiTietHoaDon.DefaultCellStyle.Font = new Font("Tahoma", 10);
             dgChiTietHoaDon.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
             dgChiTietHoaDon.DefaultCellStyle.SelectionBackColor = Color.Blue;
             dgChiTietHoaDon.DefaultCellStyle.SelectionForeColor = Color.White;
 
-            dgChiTietHoaDon.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 14, FontStyle.Bold);
+            dgChiTietHoaDon.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12, FontStyle.Bold);
             dgChiTietHoaDon.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgChiTietHoaDon.ColumnHeadersDefaultCellStyle.BackColor = Color.Gray;
 
@@ -63,7 +63,12 @@ namespace _03022024.QLHoaDon
 
         private void dgChiTietHoaDon_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.ColumnIndex == 3 && e.Value != null && e.Value is decimal)
+            if (e.ColumnIndex == 2 && e.Value != null && e.Value is decimal)
+            {
+                e.Value = ((decimal)e.Value).ToString("#,##0.##");
+                e.FormattingApplied = true;
+            }
+            if (e.ColumnIndex == 4 && e.Value != null && e.Value is decimal)
             {
                 e.Value = ((decimal)e.Value).ToString("#,##0.##");
                 e.FormattingApplied = true;
@@ -79,7 +84,7 @@ namespace _03022024.QLHoaDon
                 {
                     if (row.Cells[3].Value != null)
                     {
-                        total += Convert.ToDecimal(row.Cells[3].Value);
+                        total += Convert.ToDecimal(row.Cells[4].Value);
                     }
                 }
             }

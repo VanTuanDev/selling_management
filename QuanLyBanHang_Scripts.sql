@@ -403,10 +403,10 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    SELECT CTHD.MaHoaDon, SP.TenSanPham, CTHD.SoLuongDat, CTHD.ThanhTien
-    FROM ChiTietHoaDon CTHD
-    INNER JOIN SanPham SP ON CTHD.MaSanPham = SP.MaSanPham
-    WHERE CTHD.MaHoaDon = @MaHoaDon;
+    SELECT CTHD.MaHoaDon, SP.TenSanPham, SP.DonGia, CTHD.SoLuongDat, CTHD.ThanhTien
+	FROM ChiTietHoaDon CTHD
+	INNER JOIN SanPham SP ON CTHD.MaSanPham = SP.MaSanPham
+	WHERE CTHD.MaHoaDon = @MaHoaDon;
 END
 GO
 

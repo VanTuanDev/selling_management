@@ -212,7 +212,7 @@ namespace _03022024.QLBanHang
                     {
                         string tenSanPham = row.Cells["column1"].Value.ToString();
                         int soLuongDat = Convert.ToInt32(row.Cells["column2"].Value);
-                        decimal thanhTien = Convert.ToDecimal(row.Cells["column3"].Value);
+                        decimal thanhTien = Convert.ToDecimal(row.Cells["column4"].Value);
 
                         string maSanPham = HDmanager.LayMaSanPhamTuTen(tenSanPham);
                         HDmanager.TaoChiTietHoaDon(maHoaDon, maSanPham, soLuongDat, thanhTien);
@@ -228,6 +228,8 @@ namespace _03022024.QLBanHang
             {
                 MessageBox.Show("Lỗi khi thực hiện giao dịch: " + ex.Message);
             }
+            cbbTenKhachHang.Text = string.Empty;
+            dgDSSanPhamDuocChon.Rows.Clear();
         }
         private void btnThanhToan_Click(object sender, EventArgs e)
         {

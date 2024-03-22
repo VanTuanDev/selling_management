@@ -126,12 +126,12 @@
             // lblHeader
             // 
             this.lblHeader.AutoSize = true;
-            this.lblHeader.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblHeader.Font = new System.Drawing.Font("Tahoma", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblHeader.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblHeader.Location = new System.Drawing.Point(145, 60);
+            this.lblHeader.Location = new System.Drawing.Point(50, 43);
             this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(398, 72);
+            this.lblHeader.Size = new System.Drawing.Size(535, 97);
             this.lblHeader.TabIndex = 0;
             this.lblHeader.Text = "ĐĂNG NHẬP";
             // 

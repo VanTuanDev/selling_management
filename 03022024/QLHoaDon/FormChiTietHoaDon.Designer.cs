@@ -43,6 +43,7 @@
             this.cl2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlHeader.SuspendLayout();
             this.pnlDataGridView.SuspendLayout();
             this.pnlFooter.SuspendLayout();
@@ -155,7 +156,8 @@
             this.cl1,
             this.cl2,
             this.cl3,
-            this.cl4});
+            this.cl4,
+            this.cl5});
             this.dgChiTietHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgChiTietHoaDon.Location = new System.Drawing.Point(0, 0);
             this.dgChiTietHoaDon.Name = "dgChiTietHoaDon";
@@ -170,6 +172,7 @@
             // 
             // cl1
             // 
+            this.cl1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.cl1.DataPropertyName = "MaHoaDon";
             this.cl1.HeaderText = "Mã hóa đơn";
             this.cl1.MinimumWidth = 6;
@@ -177,7 +180,6 @@
             this.cl1.ReadOnly = true;
             this.cl1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.cl1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cl1.Width = 140;
             // 
             // cl2
             // 
@@ -189,31 +191,42 @@
             this.cl2.ReadOnly = true;
             this.cl2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.cl2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cl2.Width = 240;
+            this.cl2.Width = 180;
             // 
             // cl3
             // 
-            this.cl3.DataPropertyName = "SoLuongDat";
-            this.cl3.FillWeight = 27.98191F;
-            this.cl3.HeaderText = "Số lượng";
+            this.cl3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cl3.DataPropertyName = "DonGia";
+            this.cl3.HeaderText = "Đơn giá";
             this.cl3.MinimumWidth = 6;
             this.cl3.Name = "cl3";
             this.cl3.ReadOnly = true;
             this.cl3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.cl3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cl3.Width = 130;
             // 
             // cl4
             // 
-            this.cl4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cl4.DataPropertyName = "ThanhTien";
-            this.cl4.FillWeight = 268.9655F;
-            this.cl4.HeaderText = "Thành tiền";
+            this.cl4.DataPropertyName = "SoLuongDat";
+            this.cl4.FillWeight = 27.98191F;
+            this.cl4.HeaderText = "Số lượng";
             this.cl4.MinimumWidth = 6;
             this.cl4.Name = "cl4";
             this.cl4.ReadOnly = true;
             this.cl4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.cl4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cl4.Width = 80;
+            // 
+            // cl5
+            // 
+            this.cl5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cl5.DataPropertyName = "ThanhTien";
+            this.cl5.FillWeight = 268.9655F;
+            this.cl5.HeaderText = "Thành tiền";
+            this.cl5.MinimumWidth = 6;
+            this.cl5.Name = "cl5";
+            this.cl5.ReadOnly = true;
+            this.cl5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cl5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // FormChiTietHoaDon
             // 
@@ -259,5 +272,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cl2;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl3;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cl5;
     }
 }

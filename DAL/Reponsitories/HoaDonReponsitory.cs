@@ -183,7 +183,6 @@ namespace DAL.Reponsitories
             }
             catch (Exception ex)
             {
-                // Xử lý ngoại lệ nếu cần
                 Console.WriteLine("Error: " + ex.Message);
             }
             return dt;
