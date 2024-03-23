@@ -1,4 +1,5 @@
 ﻿using DAL.Reponsitories;
+using System.Data;
 using System;
 
 namespace BLL
@@ -76,6 +77,10 @@ namespace BLL
             {
                 return "Bạn đã nhập sai tài khoản hoặc mật khẩu. Vui lòng kiểm tra lại!";
             }
+        }
+        public DataTable LayDuLieuNguoiDung()
+        {
+            return Process.LayDuLieuNguoiDung();
         }
     }
 }

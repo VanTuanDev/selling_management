@@ -128,7 +128,7 @@
             this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("Tahoma", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblHeader.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblHeader.Location = new System.Drawing.Point(50, 43);
+            this.lblHeader.Location = new System.Drawing.Point(79, 46);
             this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(535, 97);

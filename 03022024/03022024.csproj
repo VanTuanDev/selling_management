@@ -61,6 +61,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="QLBanHang\FormChonKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLBanHang\FormChonKhachHang.Designer.cs">
+      <DependentUpon>FormChonKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLBanHang\KhachHang.cs" />
     <Compile Include="QLDanhMuc\FormThemDanhMuc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +150,9 @@
     </Compile>
     <EmbeddedResource Include="FormDoiMatKhau.resx">
       <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLBanHang\FormChonKhachHang.resx">
+      <DependentUpon>FormChonKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLDanhMuc\FormThemDanhMuc.resx">
       <DependentUpon>FormThemDanhMuc.cs</DependentUpon>

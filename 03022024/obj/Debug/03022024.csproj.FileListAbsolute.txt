@@ -39,9 +39,6 @@ E:\CSharp_HK6\02032024\03022024\bin\Debug\BLL.dll
 E:\CSharp_HK6\02032024\03022024\bin\Debug\DAL.dll
 E:\CSharp_HK6\02032024\03022024\bin\Debug\BLL.pdb
 E:\CSharp_HK6\02032024\03022024\bin\Debug\DAL.pdb
-E:\CSharp_HK6\02032024\03022024\obj\Debug\03022024.csproj.AssemblyReference.cache
-E:\CSharp_HK6\02032024\03022024\obj\Debug\03022024.csproj.CoreCompileInputs.cache
-E:\CSharp_HK6\02032024\03022024\obj\Debug\03022024.csproj.CopyComplete
 E:\CSharp_HK6\02032024\03022024\obj\Debug\_03022024.FormThemTaiKhoan.resources
 E:\CSharp_HK6\02032024\03022024\obj\Debug\_03022024.QLKhachHang.ucKhachHang.resources
 E:\CSharp_HK6\02032024\03022024\obj\Debug\_03022024.FormThemKhachHang.resources
@@ -49,3 +46,7 @@ E:\CSharp_HK6\02032024\03022024\obj\Debug\_03022024.FormDoiMatKhau.resources
 E:\CSharp_HK6\02032024\03022024\obj\Debug\_03022024.FormThemSanPham.resources
 E:\CSharp_HK6\02032024\03022024\obj\Debug\_03022024.FormThemDanhMuc.resources
 E:\CSharp_HK6\02032024\03022024\obj\Debug\_03022024.QLHoaDon.FormChiTietHoaDon.resources
+E:\CSharp_HK6\02032024\03022024\obj\Debug\_03022024.QLBanHang.FormChonKhachHang.resources
+E:\CSharp_HK6\02032024\03022024\obj\Debug\03022024.csproj.AssemblyReference.cache
+E:\CSharp_HK6\02032024\03022024\obj\Debug\03022024.csproj.CoreCompileInputs.cache
+E:\CSharp_HK6\02032024\03022024\obj\Debug\03022024.csproj.CopyComplete

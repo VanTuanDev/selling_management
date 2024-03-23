@@ -64,7 +64,7 @@ namespace _03022024.QLBanHang
         private void ucBanHang_Load(object sender, EventArgs e)
         {
             HienThiDanhSachSanPham();
-            cbbTenKhachHang.Items.AddRange(KHmanager.LayTenKhachHang());
+            //cbbTenKhachHang.Items.AddRange(KHmanager.LayTenKhachHang());
         }
 
         private void dgDanhSachSP_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -74,11 +74,9 @@ namespace _03022024.QLBanHang
                 DataGridViewRow selectedRow = dgDanhSachSP.Rows[e.RowIndex];
 
                 string column1Value = selectedRow.Cells["cl1"].Value.ToString();
-                string column2Value = selectedRow.Cells["cl2"].Value.ToString();
                 decimal column4Value = Convert.ToDecimal(selectedRow.Cells["cl4"].Value);
 
                 lblTenSPNoiDung.Text = column1Value;
-                lblTenDanhMucNoiDung.Text = column2Value;
                 lblDonGiaNoiDung.Text = column4Value.ToString("#,##0.##"); 
             }
         }
@@ -200,7 +198,7 @@ namespace _03022024.QLBanHang
         private void ThanhToan()
         {
             string tinhTrang = "N";
-            string tenKhachHang = cbbTenKhachHang.SelectedItem.ToString();
+            string tenKhachHang = lblTenKHNoiDung.Text; 
             try
             {
                 string maKhachHang = HDmanager.LayMaKhachHangTuTen(tenKhachHang);
@@ -228,7 +226,12 @@ namespace _03022024.QLBanHang
             {
                 MessageBox.Show("Lỗi khi thực hiện giao dịch: " + ex.Message);
             }
-            cbbTenKhachHang.Text = string.Empty;
+            lblMaKHNoiDung.Text = string.Empty;
+            lblTenKHNoiDung.Text = string.Empty;
+            lblTenSPNoiDung.Text = string.Empty;
+            lblDonGiaNoiDung.Text = string.Empty;
+            txtSoLuong.Text = string.Empty;
+
             dgDSSanPhamDuocChon.Rows.Clear();
         }
         private void btnThanhToan_Click(object sender, EventArgs e)
@@ -245,6 +248,21 @@ namespace _03022024.QLBanHang
             {
                 e.Handled = true;
             }
-        }           
+        }
+
+        private void btnLuaChonKhachHang_Click(object sender, EventArgs e)
+        {
+            FormChonKhachHang chonKhachHangForm = new FormChonKhachHang();
+            chonKhachHangForm.ShowDialog();
+
+            if (chonKhachHangForm.SelectedKhachHang != null)
+            {
+                string maKhachHang = chonKhachHangForm.SelectedKhachHang.MaKhachHang;
+                string tenKhachHang = chonKhachHangForm.SelectedKhachHang.TenKhachHang;
+
+                lblMaKHNoiDung.Text = maKhachHang;
+                lblTenKHNoiDung.Text = tenKhachHang;
+            }
+        }
     }
 }

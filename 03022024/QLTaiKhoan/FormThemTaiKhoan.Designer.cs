@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormThemTaiKhoan));
             this.lblHeader = new System.Windows.Forms.Label();
-            this.txtMaQuyen = new System.Windows.Forms.TextBox();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.txtTenDangNhap = new System.Windows.Forms.TextBox();
             this.txtTenDayDu = new System.Windows.Forms.TextBox();
@@ -43,6 +42,7 @@
             this.ptbThoat = new System.Windows.Forms.PictureBox();
             this.ptbXacNhan = new System.Windows.Forms.PictureBox();
             this.ptbMatKhau = new System.Windows.Forms.PictureBox();
+            this.cbbMaQuyen = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThoat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbXacNhan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMatKhau)).BeginInit();
@@ -56,19 +56,10 @@
             this.lblHeader.Location = new System.Drawing.Point(123, 24);
             this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(446, 57);
+            this.lblHeader.Size = new System.Drawing.Size(357, 46);
             this.lblHeader.TabIndex = 10;
             this.lblHeader.Text = "THÊM TÀI KHOẢN";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtMaQuyen
-            // 
-            this.txtMaQuyen.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMaQuyen.Location = new System.Drawing.Point(280, 265);
-            this.txtMaQuyen.Name = "txtMaQuyen";
-            this.txtMaQuyen.Size = new System.Drawing.Size(354, 35);
-            this.txtMaQuyen.TabIndex = 17;
-            this.txtMaQuyen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuyen_KeyPress);
             // 
             // txtMatKhau
             // 
@@ -76,7 +67,7 @@
             this.txtMatKhau.Location = new System.Drawing.Point(280, 210);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.PasswordChar = '*';
-            this.txtMatKhau.Size = new System.Drawing.Size(354, 35);
+            this.txtMatKhau.Size = new System.Drawing.Size(354, 30);
             this.txtMatKhau.TabIndex = 16;
             this.txtMatKhau.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMatKhau_KeyPress);
             // 
@@ -85,7 +76,7 @@
             this.txtTenDangNhap.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTenDangNhap.Location = new System.Drawing.Point(280, 155);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
-            this.txtTenDangNhap.Size = new System.Drawing.Size(354, 35);
+            this.txtTenDangNhap.Size = new System.Drawing.Size(354, 30);
             this.txtTenDangNhap.TabIndex = 15;
             this.txtTenDangNhap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenDangNhap_KeyPress);
             // 
@@ -94,7 +85,7 @@
             this.txtTenDayDu.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTenDayDu.Location = new System.Drawing.Point(280, 100);
             this.txtTenDayDu.Name = "txtTenDayDu";
-            this.txtTenDayDu.Size = new System.Drawing.Size(354, 35);
+            this.txtTenDayDu.Size = new System.Drawing.Size(354, 30);
             this.txtTenDayDu.TabIndex = 14;
             this.txtTenDayDu.Tag = "";
             this.txtTenDayDu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenDayDu_KeyPress);
@@ -105,9 +96,9 @@
             this.lblMaQuyen.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblMaQuyen.Location = new System.Drawing.Point(25, 265);
             this.lblMaQuyen.Name = "lblMaQuyen";
-            this.lblMaQuyen.Size = new System.Drawing.Size(125, 28);
+            this.lblMaQuyen.Size = new System.Drawing.Size(71, 23);
             this.lblMaQuyen.TabIndex = 21;
-            this.lblMaQuyen.Text = "Mã quyền";
+            this.lblMaQuyen.Text = "Quyền";
             // 
             // lblMatKhau
             // 
@@ -115,7 +106,7 @@
             this.lblMatKhau.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblMatKhau.Location = new System.Drawing.Point(25, 210);
             this.lblMatKhau.Name = "lblMatKhau";
-            this.lblMatKhau.Size = new System.Drawing.Size(122, 28);
+            this.lblMatKhau.Size = new System.Drawing.Size(98, 23);
             this.lblMatKhau.TabIndex = 20;
             this.lblMatKhau.Text = "Mật khẩu";
             // 
@@ -125,7 +116,7 @@
             this.lblTenDangNhap.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblTenDangNhap.Location = new System.Drawing.Point(25, 155);
             this.lblTenDangNhap.Name = "lblTenDangNhap";
-            this.lblTenDangNhap.Size = new System.Drawing.Size(184, 28);
+            this.lblTenDangNhap.Size = new System.Drawing.Size(151, 23);
             this.lblTenDangNhap.TabIndex = 19;
             this.lblTenDangNhap.Text = "Tên đăng nhập";
             // 
@@ -135,7 +126,7 @@
             this.lblTenDayDu.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblTenDayDu.Location = new System.Drawing.Point(25, 100);
             this.lblTenDayDu.Name = "lblTenDayDu";
-            this.lblTenDayDu.Size = new System.Drawing.Size(139, 28);
+            this.lblTenDayDu.Size = new System.Drawing.Size(115, 23);
             this.lblTenDayDu.TabIndex = 18;
             this.lblTenDayDu.Text = "Tên đầy đủ";
             // 
@@ -208,18 +199,27 @@
             this.ptbMatKhau.TabStop = false;
             this.ptbMatKhau.Click += new System.EventHandler(this.ptbMatKhau_Click);
             // 
+            // cbbMaQuyen
+            // 
+            this.cbbMaQuyen.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbbMaQuyen.FormattingEnabled = true;
+            this.cbbMaQuyen.Location = new System.Drawing.Point(280, 265);
+            this.cbbMaQuyen.Name = "cbbMaQuyen";
+            this.cbbMaQuyen.Size = new System.Drawing.Size(354, 27);
+            this.cbbMaQuyen.TabIndex = 27;
+            // 
             // FormThemTaiKhoan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LimeGreen;
-            this.ClientSize = new System.Drawing.Size(682, 412);
+            this.ClientSize = new System.Drawing.Size(692, 428);
+            this.Controls.Add(this.cbbMaQuyen);
             this.Controls.Add(this.ptbThoat);
             this.Controls.Add(this.ptbXacNhan);
             this.Controls.Add(this.ptbMatKhau);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnXacNhan);
-            this.Controls.Add(this.txtMaQuyen);
             this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.txtTenDangNhap);
             this.Controls.Add(this.txtTenDayDu);
@@ -237,6 +237,7 @@
             this.Name = "FormThemTaiKhoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm tài khoản";
+            this.Load += new System.EventHandler(this.FormThemTaiKhoan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptbThoat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbXacNhan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMatKhau)).EndInit();
@@ -248,7 +249,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.TextBox txtMaQuyen;
         private System.Windows.Forms.TextBox txtMatKhau;
         private System.Windows.Forms.TextBox txtTenDangNhap;
         private System.Windows.Forms.TextBox txtTenDayDu;
@@ -261,5 +261,6 @@
         private System.Windows.Forms.PictureBox ptbMatKhau;
         private System.Windows.Forms.PictureBox ptbXacNhan;
         private System.Windows.Forms.PictureBox ptbThoat;
+        private System.Windows.Forms.ComboBox cbbMaQuyen;
     }
 }

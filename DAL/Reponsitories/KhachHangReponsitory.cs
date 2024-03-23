@@ -114,7 +114,7 @@ namespace DAL.Reponsitories
             try
             {
                 connection.Open();
-                string query = $"SELECT {columnName} FROM {tableName}";
+                string query = $"SELECT {columnName} FROM {tableName}"; 
                 SqlCommand command = new SqlCommand(query, connection);
                 SqlDataReader reader = command.ExecuteReader();
 

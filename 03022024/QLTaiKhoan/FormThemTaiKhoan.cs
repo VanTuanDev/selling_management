@@ -1,17 +1,27 @@
 ﻿using BLL;
 using System;
 using System.Windows.Forms;
+using System.Data;
 
 namespace _03022024
 {
     public partial class FormThemTaiKhoan : Form
     {
         private TaiKhoanManager manager = null;
+        private DataTable data = null;
         public FormThemTaiKhoan()
         {
             InitializeComponent();
             manager = new TaiKhoanManager();
-
+            data = new DataTable();
+       
+        }
+        private void FormThemTaiKhoan_Load(object sender, EventArgs e)
+        {
+            DataTable dtQuyen = manager.LayDuLieuNguoiDung();
+            cbbMaQuyen.DataSource = dtQuyen;
+            cbbMaQuyen.DisplayMember = "TenQuyen";
+            cbbMaQuyen.ValueMember = "MaQuyen";
         }
         private void ptbMatKhau_Click(object sender, EventArgs e)
         {
@@ -61,7 +71,8 @@ namespace _03022024
             string tenDangNhap = txtTenDangNhap.Text;
             string tenDayDu = txtTenDayDu.Text;
             string matKhau = txtMatKhau.Text;
-            string maQuyen = txtMaQuyen.Text;
+
+            string maQuyen = cbbMaQuyen.SelectedValue.ToString();
 
             if (string.IsNullOrEmpty(tenDangNhap) || string.IsNullOrEmpty(tenDayDu) || string.IsNullOrEmpty(matKhau) || string.IsNullOrEmpty(maQuyen))
             {
@@ -108,5 +119,7 @@ namespace _03022024
         {
             Thoat();
         }
+
+        
     }
 }

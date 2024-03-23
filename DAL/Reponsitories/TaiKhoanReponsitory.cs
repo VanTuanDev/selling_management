@@ -159,5 +159,24 @@ namespace DAL.Reponsitories
                 return Convert.ToInt32(data);
             }
         }
+
+        public DataTable LayDuLieuNguoiDung()
+        {
+            string query = "SELECT MaQuyen, TenQuyen FROM QuyenDangNhap";
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
+                return dataTable;
+            }
+        }
     }
 }

@@ -7,6 +7,7 @@ namespace DAL.Reponsitories
     public class DanhMucReponsitory
     {
         private string connectionString = "Data Source=.;Initial Catalog=QuanLyBanHang;Integrated Security=True";
+
         public DataTable HienThiDanhSachDanhMuc()
         {
             try
