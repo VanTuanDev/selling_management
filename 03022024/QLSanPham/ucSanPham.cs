@@ -3,6 +3,8 @@ using System.Data;
 using System.Windows.Forms;
 using System.Drawing;
 using BLL;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Collections.Generic;
 
 namespace _03022024.QLSanPham
 {
@@ -45,6 +47,9 @@ namespace _03022024.QLSanPham
         private void ucSanPham_Load(object sender, EventArgs e)
         {
             HienThiDanhSachSanPham();
+            List<string> categoryNames = manager.LayTenDanhMuc();
+
+            cbbTenDanhMuc.Items.AddRange(categoryNames.ToArray());
         }
 
         private void dgSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -62,7 +67,7 @@ namespace _03022024.QLSanPham
                 txtMaSanPham.Text = column1Value;
                 txtTenSanPham.Text = column2Value;
                 txtDonViTinh.Text = column3Value;
-                txtTenDanhMuc.Text = column4Value;
+                cbbTenDanhMuc.Text = column4Value;
                 txtDonGia.Text = column5Value.ToString("#,##0.##");
             }
         }
@@ -124,7 +129,7 @@ namespace _03022024.QLSanPham
             string maSanPham = txtMaSanPham.Text;
             string tenSanPham = txtTenSanPham.Text;
             string tenDVT = txtDonViTinh.Text;
-            string tenDanhMuc = txtTenDanhMuc.Text;
+            string tenDanhMuc = cbbTenDanhMuc.Text;
             decimal donGia = decimal.Parse(txtDonGia.Text);
 
             try
@@ -156,7 +161,7 @@ namespace _03022024.QLSanPham
                 txtMaSanPham.Text = "";
                 txtTenSanPham.Text = "";
                 txtDonViTinh.Text = "";
-                txtTenDanhMuc.Text = "";
+                cbbTenDanhMuc.Text = "";
                 txtDonGia.Text = "";
                 MessageBox.Show("Sản phẩm đã được xóa thành công.");
                 HienThiDanhSachSanPham();

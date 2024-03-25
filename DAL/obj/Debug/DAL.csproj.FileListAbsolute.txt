@@ -3,3 +3,9 @@ E:\CSharp_HK6\02032024\DAL\bin\Debug\DAL.pdb
 E:\CSharp_HK6\02032024\DAL\obj\Debug\DAL.dll
 E:\CSharp_HK6\02032024\DAL\obj\Debug\DAL.pdb
 E:\CSharp_HK6\02032024\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\02032024\DAL\bin\Debug\DAL.dll
+E:\02032024\DAL\bin\Debug\DAL.pdb
+E:\02032024\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+E:\02032024\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+E:\02032024\DAL\obj\Debug\DAL.dll
+E:\02032024\DAL\obj\Debug\DAL.pdb

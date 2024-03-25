@@ -1,6 +1,9 @@
 ﻿using BLL;
 using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace _03022024
 {
@@ -11,6 +14,18 @@ namespace _03022024
         {
             InitializeComponent();
             manager = new SanPhamManager();
+        }
+        private void FormThemSanPham_Load(object sender, EventArgs e)
+        {
+            //List<string> categoryNames = manager.LayTenDanhMuc();
+
+            //cbbDanhMuc.Items.AddRange(categoryNames.ToArray());
+
+            DataTable categories = manager.LayDanhMuc();
+
+            cbbDanhMuc.DisplayMember = "TenDanhMuc";
+            cbbDanhMuc.ValueMember = "MaDanhMuc";
+            cbbDanhMuc.DataSource = categories;
         }
 
         private void txtTenSanPham_KeyPress(object sender, KeyPressEventArgs e)
@@ -55,7 +70,7 @@ namespace _03022024
             string maSanPham = txtMaSanPham.Text;
             string tenSanPham = txtTenSanPham.Text;
             string maDonViTinh = txtMaDonViTinh.Text;
-            string maDanhMuc = txtMaDanhMuc.Text;
+            string maDanhMuc = cbbDanhMuc.SelectedValue.ToString();
             string donGia = txtDonGia.Text;
 
             if (string.IsNullOrEmpty(maSanPham) || string.IsNullOrEmpty(tenSanPham) || string.IsNullOrEmpty(maDonViTinh) || string.IsNullOrEmpty(maDanhMuc) || string.IsNullOrEmpty(donGia))

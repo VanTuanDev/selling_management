@@ -37,11 +37,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.txtDonViTinh = new System.Windows.Forms.TextBox();
-            this.txtTenDanhMuc = new System.Windows.Forms.TextBox();
             this.txtTenSanPham = new System.Windows.Forms.TextBox();
             this.txtMaSanPham = new System.Windows.Forms.TextBox();
             this.lblHeader = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ptbXoa = new System.Windows.Forms.PictureBox();
+            this.ptbSua = new System.Windows.Forms.PictureBox();
+            this.ptbThem = new System.Windows.Forms.PictureBox();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -52,9 +54,7 @@
             this.cl3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ptbXoa = new System.Windows.Forms.PictureBox();
-            this.ptbSua = new System.Windows.Forms.PictureBox();
-            this.ptbThem = new System.Windows.Forms.PictureBox();
+            this.cbbTenDanhMuc = new System.Windows.Forms.ComboBox();
             lblTenDanhMuc = new System.Windows.Forms.Label();
             lblTenSanPham = new System.Windows.Forms.Label();
             lblMaSanPham = new System.Windows.Forms.Label();
@@ -63,11 +63,11 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbSua)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThem)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgSanPham)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTenDanhMuc
@@ -153,11 +153,11 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.LimeGreen;
+            this.panel1.Controls.Add(this.cbbTenDanhMuc);
             this.panel1.Controls.Add(this.txtDonGia);
             this.panel1.Controls.Add(this.txtDonViTinh);
             this.panel1.Controls.Add(lblDonGia);
             this.panel1.Controls.Add(lblDonViTinh);
-            this.panel1.Controls.Add(this.txtTenDanhMuc);
             this.panel1.Controls.Add(this.txtTenSanPham);
             this.panel1.Controls.Add(this.txtMaSanPham);
             this.panel1.Controls.Add(lblTenDanhMuc);
@@ -191,15 +191,6 @@
             this.txtDonViTinh.Size = new System.Drawing.Size(245, 32);
             this.txtDonViTinh.TabIndex = 17;
             this.txtDonViTinh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDonViTinh_KeyPress);
-            // 
-            // txtTenDanhMuc
-            // 
-            this.txtTenDanhMuc.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTenDanhMuc.Location = new System.Drawing.Point(198, 196);
-            this.txtTenDanhMuc.Name = "txtTenDanhMuc";
-            this.txtTenDanhMuc.Size = new System.Drawing.Size(324, 32);
-            this.txtTenDanhMuc.TabIndex = 13;
-            this.txtTenDanhMuc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenDanhMuc_KeyPress);
             // 
             // txtTenSanPham
             // 
@@ -248,6 +239,42 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(991, 54);
             this.panel2.TabIndex = 1;
+            // 
+            // ptbXoa
+            // 
+            this.ptbXoa.BackColor = System.Drawing.Color.DarkGreen;
+            this.ptbXoa.Image = global::_03022024.Properties.Resources.delete;
+            this.ptbXoa.Location = new System.Drawing.Point(418, 12);
+            this.ptbXoa.Name = "ptbXoa";
+            this.ptbXoa.Size = new System.Drawing.Size(27, 27);
+            this.ptbXoa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbXoa.TabIndex = 15;
+            this.ptbXoa.TabStop = false;
+            this.ptbXoa.Click += new System.EventHandler(this.ptbXoa_Click);
+            // 
+            // ptbSua
+            // 
+            this.ptbSua.BackColor = System.Drawing.Color.DarkGreen;
+            this.ptbSua.Image = global::_03022024.Properties.Resources.edit;
+            this.ptbSua.Location = new System.Drawing.Point(221, 12);
+            this.ptbSua.Name = "ptbSua";
+            this.ptbSua.Size = new System.Drawing.Size(27, 27);
+            this.ptbSua.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbSua.TabIndex = 14;
+            this.ptbSua.TabStop = false;
+            this.ptbSua.Click += new System.EventHandler(this.ptbSua_Click);
+            // 
+            // ptbThem
+            // 
+            this.ptbThem.BackColor = System.Drawing.Color.DarkGreen;
+            this.ptbThem.Image = global::_03022024.Properties.Resources.add;
+            this.ptbThem.Location = new System.Drawing.Point(19, 12);
+            this.ptbThem.Name = "ptbThem";
+            this.ptbThem.Size = new System.Drawing.Size(27, 27);
+            this.ptbThem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbThem.TabIndex = 13;
+            this.ptbThem.TabStop = false;
+            this.ptbThem.Click += new System.EventHandler(this.ptbThem_Click);
             // 
             // btnXoa
             // 
@@ -384,41 +411,14 @@
             this.cl5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.cl5.Width = 130;
             // 
-            // ptbXoa
+            // cbbTenDanhMuc
             // 
-            this.ptbXoa.BackColor = System.Drawing.Color.DarkGreen;
-            this.ptbXoa.Image = global::_03022024.Properties.Resources.delete;
-            this.ptbXoa.Location = new System.Drawing.Point(418, 12);
-            this.ptbXoa.Name = "ptbXoa";
-            this.ptbXoa.Size = new System.Drawing.Size(27, 27);
-            this.ptbXoa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbXoa.TabIndex = 15;
-            this.ptbXoa.TabStop = false;
-            this.ptbXoa.Click += new System.EventHandler(this.ptbXoa_Click);
-            // 
-            // ptbSua
-            // 
-            this.ptbSua.BackColor = System.Drawing.Color.DarkGreen;
-            this.ptbSua.Image = global::_03022024.Properties.Resources.edit;
-            this.ptbSua.Location = new System.Drawing.Point(221, 12);
-            this.ptbSua.Name = "ptbSua";
-            this.ptbSua.Size = new System.Drawing.Size(27, 27);
-            this.ptbSua.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbSua.TabIndex = 14;
-            this.ptbSua.TabStop = false;
-            this.ptbSua.Click += new System.EventHandler(this.ptbSua_Click);
-            // 
-            // ptbThem
-            // 
-            this.ptbThem.BackColor = System.Drawing.Color.DarkGreen;
-            this.ptbThem.Image = global::_03022024.Properties.Resources.add;
-            this.ptbThem.Location = new System.Drawing.Point(19, 12);
-            this.ptbThem.Name = "ptbThem";
-            this.ptbThem.Size = new System.Drawing.Size(27, 27);
-            this.ptbThem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbThem.TabIndex = 13;
-            this.ptbThem.TabStop = false;
-            this.ptbThem.Click += new System.EventHandler(this.ptbThem_Click);
+            this.cbbTenDanhMuc.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbbTenDanhMuc.FormattingEnabled = true;
+            this.cbbTenDanhMuc.Location = new System.Drawing.Point(198, 196);
+            this.cbbTenDanhMuc.Name = "cbbTenDanhMuc";
+            this.cbbTenDanhMuc.Size = new System.Drawing.Size(324, 32);
+            this.cbbTenDanhMuc.TabIndex = 20;
             // 
             // ucSanPham
             // 
@@ -433,11 +433,11 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgSanPham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbXoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbSua)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThem)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgSanPham)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -453,7 +453,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.DataGridView dgSanPham;
-        private System.Windows.Forms.TextBox txtTenDanhMuc;
         private System.Windows.Forms.TextBox txtTenSanPham;
         private System.Windows.Forms.TextBox txtMaSanPham;
         private System.Windows.Forms.TextBox txtDonGia;
@@ -466,5 +465,6 @@
         private System.Windows.Forms.PictureBox ptbXoa;
         private System.Windows.Forms.PictureBox ptbSua;
         private System.Windows.Forms.PictureBox ptbThem;
+        private System.Windows.Forms.ComboBox cbbTenDanhMuc;
     }
 }

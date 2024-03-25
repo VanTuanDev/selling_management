@@ -1,4 +1,6 @@
 ﻿using DAL.Reponsitories;
+using System.Collections.Generic;
+using System.Data;
 
 namespace BLL
 {
@@ -28,6 +30,14 @@ namespace BLL
         public void XoaSanPham(string maSanPham)
         {
             Process.XoaSanPham(maSanPham);
+        }
+        public DataTable LayDanhMuc()
+        {
+            return Process.LayDanhMuc();
+        }
+        public List<string> LayTenDanhMuc()
+        {
+            return Process.LayTenDanhMuc();
         }
     }
 }

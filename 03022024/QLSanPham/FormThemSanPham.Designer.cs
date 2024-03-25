@@ -30,11 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormThemSanPham));
             this.lblHeader = new System.Windows.Forms.Label();
-            this.txtMaDanhMuc = new System.Windows.Forms.TextBox();
             this.txtMaDonViTinh = new System.Windows.Forms.TextBox();
             this.txtTenSanPham = new System.Windows.Forms.TextBox();
             this.txtMaSanPham = new System.Windows.Forms.TextBox();
-            this.lblMaDanhMuc = new System.Windows.Forms.Label();
+            this.lblDanhMuc = new System.Windows.Forms.Label();
             this.lblMaDonViTinh = new System.Windows.Forms.Label();
             this.lblTenSanPham = new System.Windows.Forms.Label();
             this.lblMaSanPham = new System.Windows.Forms.Label();
@@ -44,6 +43,7 @@
             this.btnXacNhan = new System.Windows.Forms.Button();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.lblDonGia = new System.Windows.Forms.Label();
+            this.cbbDanhMuc = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThoat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbXacNhan)).BeginInit();
             this.SuspendLayout();
@@ -60,15 +60,6 @@
             this.lblHeader.TabIndex = 11;
             this.lblHeader.Text = "THÊM SẢN PHẨM";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtMaDanhMuc
-            // 
-            this.txtMaDanhMuc.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMaDanhMuc.Location = new System.Drawing.Point(292, 272);
-            this.txtMaDanhMuc.Name = "txtMaDanhMuc";
-            this.txtMaDanhMuc.Size = new System.Drawing.Size(354, 35);
-            this.txtMaDanhMuc.TabIndex = 30;
-            this.txtMaDanhMuc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaDanhMuc_KeyPress);
             // 
             // txtMaDonViTinh
             // 
@@ -98,15 +89,15 @@
             this.txtMaSanPham.Tag = "";
             this.txtMaSanPham.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaSanPham_KeyPress);
             // 
-            // lblMaDanhMuc
+            // lblDanhMuc
             // 
-            this.lblMaDanhMuc.AutoSize = true;
-            this.lblMaDanhMuc.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblMaDanhMuc.Location = new System.Drawing.Point(25, 272);
-            this.lblMaDanhMuc.Name = "lblMaDanhMuc";
-            this.lblMaDanhMuc.Size = new System.Drawing.Size(168, 28);
-            this.lblMaDanhMuc.TabIndex = 34;
-            this.lblMaDanhMuc.Text = "Mã danh mục";
+            this.lblDanhMuc.AutoSize = true;
+            this.lblDanhMuc.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblDanhMuc.Location = new System.Drawing.Point(25, 272);
+            this.lblDanhMuc.Name = "lblDanhMuc";
+            this.lblDanhMuc.Size = new System.Drawing.Size(129, 28);
+            this.lblDanhMuc.TabIndex = 34;
+            this.lblDanhMuc.Text = "Danh mục";
             // 
             // lblMaDonViTinh
             // 
@@ -213,23 +204,32 @@
             this.lblDonGia.TabIndex = 44;
             this.lblDonGia.Text = "Đơn giá";
             // 
+            // cbbDanhMuc
+            // 
+            this.cbbDanhMuc.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbbDanhMuc.FormattingEnabled = true;
+            this.cbbDanhMuc.Location = new System.Drawing.Point(292, 272);
+            this.cbbDanhMuc.Name = "cbbDanhMuc";
+            this.cbbDanhMuc.Size = new System.Drawing.Size(354, 32);
+            this.cbbDanhMuc.TabIndex = 45;
+            // 
             // FormThemSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LimeGreen;
             this.ClientSize = new System.Drawing.Size(682, 453);
+            this.Controls.Add(this.cbbDanhMuc);
             this.Controls.Add(this.txtDonGia);
             this.Controls.Add(this.lblDonGia);
             this.Controls.Add(this.ptbThoat);
             this.Controls.Add(this.ptbXacNhan);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnXacNhan);
-            this.Controls.Add(this.txtMaDanhMuc);
             this.Controls.Add(this.txtMaDonViTinh);
             this.Controls.Add(this.txtTenSanPham);
             this.Controls.Add(this.txtMaSanPham);
-            this.Controls.Add(this.lblMaDanhMuc);
+            this.Controls.Add(this.lblDanhMuc);
             this.Controls.Add(this.lblMaDonViTinh);
             this.Controls.Add(this.lblTenSanPham);
             this.Controls.Add(this.lblMaSanPham);
@@ -242,6 +242,7 @@
             this.Name = "FormThemSanPham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm sản phẩm";
+            this.Load += new System.EventHandler(this.FormThemSanPham_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptbThoat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbXacNhan)).EndInit();
             this.ResumeLayout(false);
@@ -252,11 +253,10 @@
         #endregion
 
         private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.TextBox txtMaDanhMuc;
         private System.Windows.Forms.TextBox txtMaDonViTinh;
         private System.Windows.Forms.TextBox txtTenSanPham;
         private System.Windows.Forms.TextBox txtMaSanPham;
-        private System.Windows.Forms.Label lblMaDanhMuc;
+        private System.Windows.Forms.Label lblDanhMuc;
         private System.Windows.Forms.Label lblMaDonViTinh;
         private System.Windows.Forms.Label lblTenSanPham;
         private System.Windows.Forms.Label lblMaSanPham;
@@ -266,5 +266,6 @@
         private System.Windows.Forms.Button btnXacNhan;
         private System.Windows.Forms.TextBox txtDonGia;
         private System.Windows.Forms.Label lblDonGia;
+        private System.Windows.Forms.ComboBox cbbDanhMuc;
     }
 }

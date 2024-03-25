@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Data;
+using System.Collections.Generic;
 
 namespace DAL.Reponsitories
 {
@@ -104,6 +105,50 @@ namespace DAL.Reponsitories
 
                 command.ExecuteNonQuery();
             }
+        }
+        public DataTable LayDanhMuc()
+        {
+            DataTable categories = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT * FROM DanhMucSanPham";
+
+                SqlCommand command = new SqlCommand(query, connection);
+
+                connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+
+                adapter.Fill(categories);
+            }
+
+            return categories;
+        }
+        public List<string> LayTenDanhMuc()
+        {
+            List<string> categoryNames = new List<string>();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT TenDanhMuc FROM DanhMucSanPham";
+
+                SqlCommand command = new SqlCommand(query, connection);
+
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string categoryName = reader["TenDanhMuc"].ToString();
+                    categoryNames.Add(categoryName);
+                }
+
+                reader.Close();
+            }
+
+            return categoryNames;
         }
     }
 }
