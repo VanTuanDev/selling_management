@@ -3,6 +3,7 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using BLL;
+using _03022024.QLBanHang;
 
 namespace _03022024.QLHoaDon
 {
@@ -27,9 +28,9 @@ namespace _03022024.QLHoaDon
             dgDSHoaDon.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dgDSHoaDon.AllowUserToResizeRows = false;
             dgDSHoaDon.AllowUserToResizeColumns = false;
-
         }
-        private void HienThiDSHoaDon()
+
+        public void HienThiDSHoaDon()
         {
             string error = string.Empty;
             dataDSHoaDon = HDmanager.HienThiDSHoaDon();

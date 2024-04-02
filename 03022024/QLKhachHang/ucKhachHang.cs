@@ -28,6 +28,11 @@ namespace _03022024.QLKhachHang
             dgKhachHang.AllowUserToResizeColumns = false;
             dgKhachHang.AllowUserToResizeRows = false;
         }
+        private void Reset()
+        {
+            txtMaKhachHang.Text = "";
+            txtTenKhachHang.Text = "";
+        }
         private void HienThiDanhSachKhachHang()
         {
             string error = string.Empty;
@@ -99,6 +104,7 @@ namespace _03022024.QLKhachHang
                 manager.CapNhatKhachHang(makhachhang, tenkhachhang);
                 MessageBox.Show("Đã cập nhật thông tin khách hàng thành công.");
                 HienThiDanhSachKhachHang();
+                Reset();
             }
             catch (Exception ex)
             {
@@ -125,10 +131,10 @@ namespace _03022024.QLKhachHang
                 string error = string.Empty;
                 if (manager.XoaKhachHang(khachhang))
                 {
-                    txtMaKhachHang.Text = "";
-                    txtTenKhachHang.Text = "";
+                    
                     MessageBox.Show("Đã xóa khách hàng thành công.");
                     HienThiDanhSachKhachHang();
+                    Reset();
                 }
                 else
                 {

@@ -125,6 +125,25 @@ namespace DAL.Reponsitories
 
             return categories;
         }
+        public DataTable LayDVT()
+        {
+            DataTable units = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT * FROM DonViTinh";
+
+                SqlCommand command = new SqlCommand(query, connection);
+
+                connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+
+                adapter.Fill(units);
+            }
+
+            return units;
+        }
         public List<string> LayTenDanhMuc()
         {
             List<string> categoryNames = new List<string>();
@@ -149,6 +168,31 @@ namespace DAL.Reponsitories
             }
 
             return categoryNames;
+        }
+        public List<string> LayTenDVT()
+        {
+            List<string> unitNames = new List<string>();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT TenDVT FROM DonViTinh";
+
+                SqlCommand command = new SqlCommand(query, connection);
+
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string categoryName = reader["TenDVT"].ToString();
+                    unitNames.Add(categoryName);
+                }
+
+                reader.Close();
+            }
+
+            return unitNames;
         }
     }
 }

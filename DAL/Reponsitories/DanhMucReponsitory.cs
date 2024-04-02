@@ -79,33 +79,16 @@ namespace DAL.Reponsitories
                 throw ex;
             }
         }
-        public bool XoaDanhMuc(string maDanhMuc)
+        public void XoaDanhMuc(string maDanhMuc)
         {
-            try
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-                    SqlCommand command = new SqlCommand("sp_XoaDanhMuc", connection);
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@MaDanhMuc", maDanhMuc);
-                    int rowsAffected = int.Parse(command.ExecuteScalar().ToString());
-
-                    if (rowsAffected > 0)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                return false;
+                connection.Open();
+                SqlCommand command = new SqlCommand("sp_XoaDanhMuc", connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@MaDanhMuc", maDanhMuc);
+                command.ExecuteNonQuery();
             }
         }
     }
-
 }

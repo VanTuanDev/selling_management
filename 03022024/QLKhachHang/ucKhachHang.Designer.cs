@@ -33,9 +33,10 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgKhachHang = new System.Windows.Forms.DataGridView();
-            this.cl1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ptbXoa = new System.Windows.Forms.PictureBox();
+            this.ptbSua = new System.Windows.Forms.PictureBox();
+            this.ptbThem = new System.Windows.Forms.PictureBox();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -43,19 +44,19 @@
             this.txtTenKhachHang = new System.Windows.Forms.TextBox();
             this.lblHeader = new System.Windows.Forms.Label();
             this.txtMaKhachHang = new System.Windows.Forms.TextBox();
-            this.ptbXoa = new System.Windows.Forms.PictureBox();
-            this.ptbSua = new System.Windows.Forms.PictureBox();
-            this.ptbThem = new System.Windows.Forms.PictureBox();
+            this.cl1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             lblTenKhachHang = new System.Windows.Forms.Label();
             lblMaKhachHang = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgKhachHang)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbSua)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThem)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTenKhachHang
@@ -84,7 +85,7 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.LimeGreen;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 2);
@@ -98,7 +99,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 246F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(999, 1015);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1069, 649);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel3
@@ -110,7 +111,7 @@
             this.panel3.Location = new System.Drawing.Point(4, 312);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(991, 699);
+            this.panel3.Size = new System.Drawing.Size(1061, 333);
             this.panel3.TabIndex = 2;
             // 
             // dgKhachHang
@@ -120,7 +121,8 @@
             this.dgKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgKhachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cl1,
-            this.cl2});
+            this.cl2,
+            this.cl3});
             this.dgKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgKhachHang.Location = new System.Drawing.Point(0, 0);
             this.dgKhachHang.Margin = new System.Windows.Forms.Padding(4);
@@ -129,29 +131,9 @@
             this.dgKhachHang.RowHeadersVisible = false;
             this.dgKhachHang.RowHeadersWidth = 51;
             this.dgKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgKhachHang.Size = new System.Drawing.Size(991, 699);
+            this.dgKhachHang.Size = new System.Drawing.Size(1061, 333);
             this.dgKhachHang.TabIndex = 0;
             this.dgKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgKhachHang_CellClick);
-            // 
-            // cl1
-            // 
-            this.cl1.DataPropertyName = "MaKhachHang";
-            this.cl1.HeaderText = "Mã khách hàng";
-            this.cl1.MinimumWidth = 6;
-            this.cl1.Name = "cl1";
-            this.cl1.ReadOnly = true;
-            this.cl1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cl1.Width = 250;
-            // 
-            // cl2
-            // 
-            this.cl2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cl2.DataPropertyName = "TenKhachHang";
-            this.cl2.HeaderText = "Tên khách hàng";
-            this.cl2.MinimumWidth = 6;
-            this.cl2.Name = "cl2";
-            this.cl2.ReadOnly = true;
-            this.cl2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // panel2
             // 
@@ -167,8 +149,47 @@
             this.panel2.Location = new System.Drawing.Point(4, 250);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(991, 54);
+            this.panel2.Size = new System.Drawing.Size(1061, 54);
             this.panel2.TabIndex = 1;
+            // 
+            // ptbXoa
+            // 
+            this.ptbXoa.BackColor = System.Drawing.Color.DarkGreen;
+            this.ptbXoa.Image = global::_03022024.Properties.Resources.delete;
+            this.ptbXoa.Location = new System.Drawing.Point(419, 12);
+            this.ptbXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ptbXoa.Name = "ptbXoa";
+            this.ptbXoa.Size = new System.Drawing.Size(27, 27);
+            this.ptbXoa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbXoa.TabIndex = 12;
+            this.ptbXoa.TabStop = false;
+            this.ptbXoa.Click += new System.EventHandler(this.ptbXoa_Click);
+            // 
+            // ptbSua
+            // 
+            this.ptbSua.BackColor = System.Drawing.Color.DarkGreen;
+            this.ptbSua.Image = global::_03022024.Properties.Resources.edit;
+            this.ptbSua.Location = new System.Drawing.Point(221, 12);
+            this.ptbSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ptbSua.Name = "ptbSua";
+            this.ptbSua.Size = new System.Drawing.Size(27, 27);
+            this.ptbSua.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbSua.TabIndex = 11;
+            this.ptbSua.TabStop = false;
+            this.ptbSua.Click += new System.EventHandler(this.ptbSua_Click);
+            // 
+            // ptbThem
+            // 
+            this.ptbThem.BackColor = System.Drawing.Color.DarkGreen;
+            this.ptbThem.Image = global::_03022024.Properties.Resources.add;
+            this.ptbThem.Location = new System.Drawing.Point(19, 12);
+            this.ptbThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ptbThem.Name = "ptbThem";
+            this.ptbThem.Size = new System.Drawing.Size(27, 27);
+            this.ptbThem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbThem.TabIndex = 10;
+            this.ptbThem.TabStop = false;
+            this.ptbThem.Click += new System.EventHandler(this.ptbThem_Click);
             // 
             // btnXoa
             // 
@@ -220,7 +241,6 @@
             // 
             // panel1
             // 
-            this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.LimeGreen;
             this.panel1.Controls.Add(this.txtTenKhachHang);
             this.panel1.Controls.Add(this.lblHeader);
@@ -232,13 +252,14 @@
             this.panel1.Location = new System.Drawing.Point(4, 4);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(991, 238);
+            this.panel1.Size = new System.Drawing.Size(1061, 238);
             this.panel1.TabIndex = 0;
             // 
             // txtTenKhachHang
             // 
             this.txtTenKhachHang.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTenKhachHang.Location = new System.Drawing.Point(237, 150);
+            this.txtTenKhachHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTenKhachHang.Name = "txtTenKhachHang";
             this.txtTenKhachHang.Size = new System.Drawing.Size(489, 32);
             this.txtTenKhachHang.TabIndex = 2;
@@ -260,47 +281,45 @@
             // 
             this.txtMaKhachHang.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtMaKhachHang.Location = new System.Drawing.Point(237, 95);
+            this.txtMaKhachHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaKhachHang.Name = "txtMaKhachHang";
             this.txtMaKhachHang.ReadOnly = true;
             this.txtMaKhachHang.Size = new System.Drawing.Size(489, 32);
             this.txtMaKhachHang.TabIndex = 1;
             this.txtMaKhachHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaKhachHang_KeyPress);
             // 
-            // ptbXoa
+            // cl1
             // 
-            this.ptbXoa.BackColor = System.Drawing.Color.DarkGreen;
-            this.ptbXoa.Image = global::_03022024.Properties.Resources.delete;
-            this.ptbXoa.Location = new System.Drawing.Point(418, 12);
-            this.ptbXoa.Name = "ptbXoa";
-            this.ptbXoa.Size = new System.Drawing.Size(27, 27);
-            this.ptbXoa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbXoa.TabIndex = 12;
-            this.ptbXoa.TabStop = false;
-            this.ptbXoa.Click += new System.EventHandler(this.ptbXoa_Click);
+            this.cl1.DataPropertyName = "MaKhachHang";
+            this.cl1.HeaderText = "Mã khách hàng";
+            this.cl1.MinimumWidth = 6;
+            this.cl1.Name = "cl1";
+            this.cl1.ReadOnly = true;
+            this.cl1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cl1.Width = 280;
             // 
-            // ptbSua
+            // cl2
             // 
-            this.ptbSua.BackColor = System.Drawing.Color.DarkGreen;
-            this.ptbSua.Image = global::_03022024.Properties.Resources.edit;
-            this.ptbSua.Location = new System.Drawing.Point(221, 12);
-            this.ptbSua.Name = "ptbSua";
-            this.ptbSua.Size = new System.Drawing.Size(27, 27);
-            this.ptbSua.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbSua.TabIndex = 11;
-            this.ptbSua.TabStop = false;
-            this.ptbSua.Click += new System.EventHandler(this.ptbSua_Click);
+            this.cl2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cl2.DataPropertyName = "TenKhachHang";
+            this.cl2.HeaderText = "Tên khách hàng";
+            this.cl2.MinimumWidth = 6;
+            this.cl2.Name = "cl2";
+            this.cl2.ReadOnly = true;
+            this.cl2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cl2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // ptbThem
+            // cl3
             // 
-            this.ptbThem.BackColor = System.Drawing.Color.DarkGreen;
-            this.ptbThem.Image = global::_03022024.Properties.Resources.add;
-            this.ptbThem.Location = new System.Drawing.Point(19, 12);
-            this.ptbThem.Name = "ptbThem";
-            this.ptbThem.Size = new System.Drawing.Size(27, 27);
-            this.ptbThem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbThem.TabIndex = 10;
-            this.ptbThem.TabStop = false;
-            this.ptbThem.Click += new System.EventHandler(this.ptbThem_Click);
+            this.cl3.DataPropertyName = "TrangThai";
+            this.cl3.HeaderText = "Trạng thái";
+            this.cl3.MinimumWidth = 6;
+            this.cl3.Name = "cl3";
+            this.cl3.ReadOnly = true;
+            this.cl3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cl3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cl3.Visible = false;
+            this.cl3.Width = 280;
             // 
             // ucKhachHang
             // 
@@ -308,18 +327,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(1069, 649);
+            this.MinimumSize = new System.Drawing.Size(1069, 649);
             this.Name = "ucKhachHang";
-            this.Size = new System.Drawing.Size(999, 1015);
+            this.Size = new System.Drawing.Size(1069, 649);
             this.Load += new System.EventHandler(this.ucKhachHang_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgKhachHang)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbXoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbSua)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThem)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -336,10 +357,11 @@
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.TextBox txtTenKhachHang;
         private System.Windows.Forms.TextBox txtMaKhachHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl2;
         private System.Windows.Forms.PictureBox ptbXoa;
         private System.Windows.Forms.PictureBox ptbSua;
         private System.Windows.Forms.PictureBox ptbThem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cl1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cl2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cl3;
     }
 }

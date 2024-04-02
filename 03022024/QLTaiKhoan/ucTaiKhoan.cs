@@ -9,12 +9,14 @@ namespace _03022024.QLTaiKhoan
     public partial class ucTaiKhoan : UserControl
     {
         private DataTable dataDSTaiKhoan = null;
+        private DataTable data = null;
         private TaiKhoanManager manager = null;             
         public ucTaiKhoan()
         {
             InitializeComponent();
             manager = new TaiKhoanManager();
             dataDSTaiKhoan = new DataTable();
+            data = new DataTable();
 
             dgTaiKhoan.DefaultCellStyle.Font = new Font("Tahoma", 10);
             dgTaiKhoan.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
@@ -29,7 +31,12 @@ namespace _03022024.QLTaiKhoan
             dgTaiKhoan.AllowUserToResizeRows = false;
             dgTaiKhoan.AllowUserToResizeColumns = false;
         }
-      
+        private void Reset()
+        {
+            txtTenDayDu.Text = "";
+            txtTenDangNhap.Text = "";
+            cbbQuyen.Text = "";
+        }
         private void HienThiDanhSachTaiKhoan()
         {
             string error = string.Empty;
@@ -46,6 +53,11 @@ namespace _03022024.QLTaiKhoan
         private void ucTaiKhoan_Load(object sender, EventArgs e)
         {
             HienThiDanhSachTaiKhoan();
+            DataTable dtQuyen = manager.LayDuLieuNguoiDung();
+            cbbQuyen.DataSource = dtQuyen;
+            cbbQuyen.DisplayMember = "TenQuyen";
+            cbbQuyen.ValueMember = "MaQuyen";
+            cbbQuyen.Text = string.Empty;
         }
 
         private void dgTaiKhoan_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -60,7 +72,7 @@ namespace _03022024.QLTaiKhoan
 
                 txtTenDayDu.Text = column1Value;
                 txtTenDangNhap.Text = column2Value;
-                txtQuyen.Text = column3Value;
+                cbbQuyen.Text = column3Value;
             }
         }       
 
@@ -97,13 +109,14 @@ namespace _03022024.QLTaiKhoan
         {
             string tenDangNhap = txtTenDangNhap.Text;
             string tenDayDu = txtTenDayDu.Text;
-            string tenQuyen = txtQuyen.Text;
+            string tenQuyen = cbbQuyen.Text;
 
             try
             {
                 manager.CapNhatTaiKhoan(tenDangNhap, tenDayDu, tenQuyen);
                 MessageBox.Show("Đã cập nhật thông tin tài khoản thành công.");
                 HienThiDanhSachTaiKhoan();
+                Reset();
             }
             catch (Exception ex)
             {
@@ -128,12 +141,10 @@ namespace _03022024.QLTaiKhoan
 
                 string error = string.Empty;
                 if (manager.XoaTaiKhoan(taikhoan))
-                {
-                    txtTenDayDu.Text = "";
-                    txtTenDangNhap.Text = "";
-                    txtQuyen.Text = "";
+                {        
                     MessageBox.Show("Đã xóa tài khoản thành công.");
                     HienThiDanhSachTaiKhoan();
+                    Reset();
                 }
                 else
                 {

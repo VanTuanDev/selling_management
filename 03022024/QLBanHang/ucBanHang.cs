@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -64,7 +65,6 @@ namespace _03022024.QLBanHang
         private void ucBanHang_Load(object sender, EventArgs e)
         {
             HienThiDanhSachSanPham();
-            //cbbTenKhachHang.Items.AddRange(KHmanager.LayTenKhachHang());
         }
 
         private void dgDanhSachSP_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -78,32 +78,6 @@ namespace _03022024.QLBanHang
 
                 lblTenSPNoiDung.Text = column1Value;
                 lblDonGiaNoiDung.Text = column4Value.ToString("#,##0.##"); 
-            }
-        }
-
-        private void btnTru_Click(object sender, EventArgs e)
-        {
-            if (double.TryParse(txtSoLuong.Text, out double currentValue))
-            {
-                currentValue -= 1;
-                txtSoLuong.Text = currentValue.ToString();
-            }
-            else
-            {
-                MessageBox.Show("Giá trị không hợp lệ!");
-            }
-        }
-
-        private void btnCong_Click(object sender, EventArgs e)
-        {
-            if (double.TryParse(txtSoLuong.Text, out double currentValue))
-            {
-                currentValue += 1; 
-                txtSoLuong.Text = currentValue.ToString();
-            }
-            else
-            {
-                MessageBox.Show("Giá trị không hợp lệ!");
             }
         }
         private void Them()
@@ -234,6 +208,7 @@ namespace _03022024.QLBanHang
 
             dgDSSanPhamDuocChon.Rows.Clear();
         }
+
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
             ThanhToan();

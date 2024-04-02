@@ -57,8 +57,8 @@
       <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="QLBanHang\FormChonKhachHang.cs">
@@ -212,7 +212,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\logo-removebg-preview.png" />
+    <None Include="Images\logo.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\off.png" />
@@ -260,7 +260,7 @@
     <None Include="Images\logo_bachhoaxanh.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\bhx.png" />
+    <None Include="Images\bachhoaxanh.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\reset-password.png" />

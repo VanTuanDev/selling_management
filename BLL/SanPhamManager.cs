@@ -35,9 +35,17 @@ namespace BLL
         {
             return Process.LayDanhMuc();
         }
+        public DataTable LayDVT()
+        {
+            return Process.LayDVT();
+        }
         public List<string> LayTenDanhMuc()
         {
             return Process.LayTenDanhMuc();
+        }
+        public List<string> LayTenDVT()
+        {
+            return Process.LayTenDVT();
         }
     }
 }

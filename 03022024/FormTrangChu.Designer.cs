@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTrangChu));
-            this.panelLeft = new System.Windows.Forms.Panel();
+            this.pnlTrai = new System.Windows.Forms.Panel();
             this.ptbDoiMatKhau = new System.Windows.Forms.PictureBox();
             this.ptbDangXuat = new System.Windows.Forms.PictureBox();
             this.ptbHoaDon = new System.Windows.Forms.PictureBox();
@@ -47,10 +47,10 @@
             this.btnSanPham = new System.Windows.Forms.Button();
             this.btnKhachHang = new System.Windows.Forms.Button();
             this.btnTaiKhoan = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panelRight = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panelLeft.SuspendLayout();
+            this.tlpTrangChu = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlPhai = new System.Windows.Forms.Panel();
+            this.ptbPhai = new System.Windows.Forms.PictureBox();
+            this.pnlTrai.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbDoiMatKhau)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbDangXuat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbHoaDon)).BeginInit();
@@ -60,39 +60,39 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbKhachHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbTaiKhoan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbTrangChu)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.panelRight.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.tlpTrangChu.SuspendLayout();
+            this.pnlPhai.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPhai)).BeginInit();
             this.SuspendLayout();
             // 
-            // panelLeft
+            // pnlTrai
             // 
-            this.panelLeft.BackColor = System.Drawing.Color.LimeGreen;
-            this.panelLeft.Controls.Add(this.ptbDoiMatKhau);
-            this.panelLeft.Controls.Add(this.ptbDangXuat);
-            this.panelLeft.Controls.Add(this.ptbHoaDon);
-            this.panelLeft.Controls.Add(this.ptbBanHang);
-            this.panelLeft.Controls.Add(this.ptbDanhMuc);
-            this.panelLeft.Controls.Add(this.ptbSanPham);
-            this.panelLeft.Controls.Add(this.ptbKhachHang);
-            this.panelLeft.Controls.Add(this.ptbTaiKhoan);
-            this.panelLeft.Controls.Add(this.btnDoiMatKhau);
-            this.panelLeft.Controls.Add(this.ptbTrangChu);
-            this.panelLeft.Controls.Add(this.btnDangXuat);
-            this.panelLeft.Controls.Add(this.btnHoaDon);
-            this.panelLeft.Controls.Add(this.btnBanHang);
-            this.panelLeft.Controls.Add(this.btnDanhMuc);
-            this.panelLeft.Controls.Add(this.btnSanPham);
-            this.panelLeft.Controls.Add(this.btnKhachHang);
-            this.panelLeft.Controls.Add(this.btnTaiKhoan);
-            this.panelLeft.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelLeft.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.panelLeft.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panelLeft.Location = new System.Drawing.Point(5, 4);
-            this.panelLeft.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(257, 632);
-            this.panelLeft.TabIndex = 2;
+            this.pnlTrai.BackColor = System.Drawing.Color.LimeGreen;
+            this.pnlTrai.Controls.Add(this.ptbDoiMatKhau);
+            this.pnlTrai.Controls.Add(this.ptbDangXuat);
+            this.pnlTrai.Controls.Add(this.ptbHoaDon);
+            this.pnlTrai.Controls.Add(this.ptbBanHang);
+            this.pnlTrai.Controls.Add(this.ptbDanhMuc);
+            this.pnlTrai.Controls.Add(this.ptbSanPham);
+            this.pnlTrai.Controls.Add(this.ptbKhachHang);
+            this.pnlTrai.Controls.Add(this.ptbTaiKhoan);
+            this.pnlTrai.Controls.Add(this.btnDoiMatKhau);
+            this.pnlTrai.Controls.Add(this.ptbTrangChu);
+            this.pnlTrai.Controls.Add(this.btnDangXuat);
+            this.pnlTrai.Controls.Add(this.btnHoaDon);
+            this.pnlTrai.Controls.Add(this.btnBanHang);
+            this.pnlTrai.Controls.Add(this.btnDanhMuc);
+            this.pnlTrai.Controls.Add(this.btnSanPham);
+            this.pnlTrai.Controls.Add(this.btnKhachHang);
+            this.pnlTrai.Controls.Add(this.btnTaiKhoan);
+            this.pnlTrai.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTrai.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.pnlTrai.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pnlTrai.Location = new System.Drawing.Point(5, 4);
+            this.pnlTrai.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.pnlTrai.Name = "pnlTrai";
+            this.pnlTrai.Size = new System.Drawing.Size(257, 632);
+            this.pnlTrai.TabIndex = 2;
             // 
             // ptbDoiMatKhau
             // 
@@ -225,8 +225,8 @@
             // ptbTrangChu
             // 
             this.ptbTrangChu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbTrangChu.Image = global::_03022024.Properties.Resources.logo_removebg_preview;
-            this.ptbTrangChu.Location = new System.Drawing.Point(35, 13);
+            this.ptbTrangChu.Image = global::_03022024.Properties.Resources.logo;
+            this.ptbTrangChu.Location = new System.Drawing.Point(35, 8);
             this.ptbTrangChu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ptbTrangChu.Name = "ptbTrangChu";
             this.ptbTrangChu.Size = new System.Drawing.Size(189, 180);
@@ -355,45 +355,45 @@
             this.btnTaiKhoan.UseVisualStyleBackColor = false;
             this.btnTaiKhoan.Click += new System.EventHandler(this.btnTaiKhoan_Click);
             // 
-            // tableLayoutPanel1
+            // tlpTrangChu
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 267F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.panelLeft, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panelRight, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1337, 640);
-            this.tableLayoutPanel1.TabIndex = 14;
+            this.tlpTrangChu.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tlpTrangChu.ColumnCount = 2;
+            this.tlpTrangChu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 267F));
+            this.tlpTrangChu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpTrangChu.Controls.Add(this.pnlTrai, 0, 0);
+            this.tlpTrangChu.Controls.Add(this.pnlPhai, 1, 0);
+            this.tlpTrangChu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpTrangChu.Location = new System.Drawing.Point(0, 0);
+            this.tlpTrangChu.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.tlpTrangChu.Name = "tlpTrangChu";
+            this.tlpTrangChu.RowCount = 1;
+            this.tlpTrangChu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpTrangChu.Size = new System.Drawing.Size(1337, 640);
+            this.tlpTrangChu.TabIndex = 14;
             // 
-            // panelRight
+            // pnlPhai
             // 
-            this.panelRight.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panelRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelRight.Controls.Add(this.pictureBox2);
-            this.panelRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelRight.Location = new System.Drawing.Point(272, 4);
-            this.panelRight.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.panelRight.Name = "panelRight";
-            this.panelRight.Size = new System.Drawing.Size(1060, 632);
-            this.panelRight.TabIndex = 3;
+            this.pnlPhai.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.pnlPhai.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlPhai.Controls.Add(this.ptbPhai);
+            this.pnlPhai.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlPhai.Location = new System.Drawing.Point(272, 4);
+            this.pnlPhai.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.pnlPhai.Name = "pnlPhai";
+            this.pnlPhai.Size = new System.Drawing.Size(1060, 632);
+            this.pnlPhai.TabIndex = 3;
             // 
-            // pictureBox2
+            // ptbPhai
             // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Image = global::_03022024.Properties.Resources.bhx;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1060, 632);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.ptbPhai.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ptbPhai.Image = global::_03022024.Properties.Resources.bachhoaxanh;
+            this.ptbPhai.Location = new System.Drawing.Point(0, 0);
+            this.ptbPhai.Name = "ptbPhai";
+            this.ptbPhai.Size = new System.Drawing.Size(1060, 632);
+            this.ptbPhai.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbPhai.TabIndex = 0;
+            this.ptbPhai.TabStop = false;
             // 
             // FormTrangChu
             // 
@@ -401,7 +401,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(1337, 640);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tlpTrangChu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.MaximizeBox = false;
@@ -413,7 +413,7 @@
             this.Text = "Trang chủ";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormDashBoard_FormClosed);
             this.Load += new System.EventHandler(this.FormDashBoard_Load);
-            this.panelLeft.ResumeLayout(false);
+            this.pnlTrai.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbDoiMatKhau)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbDangXuat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbHoaDon)).EndInit();
@@ -423,23 +423,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbKhachHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbTaiKhoan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbTrangChu)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.panelRight.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.tlpTrangChu.ResumeLayout(false);
+            this.pnlPhai.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPhai)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panelLeft;
+        private System.Windows.Forms.Panel pnlTrai;
         private System.Windows.Forms.Button btnSanPham;
         private System.Windows.Forms.Button btnKhachHang;
         private System.Windows.Forms.Button btnTaiKhoan;
         private System.Windows.Forms.Button btnHoaDon;
         private System.Windows.Forms.Button btnBanHang;
         private System.Windows.Forms.Button btnDanhMuc;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panelRight;
+        private System.Windows.Forms.TableLayoutPanel tlpTrangChu;
+        private System.Windows.Forms.Panel pnlPhai;
         private System.Windows.Forms.Button btnDangXuat;
         private System.Windows.Forms.PictureBox ptbTrangChu;
         private System.Windows.Forms.Button btnDoiMatKhau;
@@ -449,7 +449,7 @@
         private System.Windows.Forms.PictureBox ptbDanhMuc;
         private System.Windows.Forms.PictureBox ptbSanPham;
         private System.Windows.Forms.PictureBox ptbKhachHang;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox ptbPhai;
         private System.Windows.Forms.PictureBox ptbDangXuat;
         private System.Windows.Forms.PictureBox ptbDoiMatKhau;
     }

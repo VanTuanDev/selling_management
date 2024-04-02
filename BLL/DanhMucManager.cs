@@ -40,13 +40,9 @@ namespace BLL
                 throw ex;
             }
         }
-        public bool XoaDanhMuc(string maDanhMuc)
+        public void XoaDanhMuc(string maDanhMuc)
         {
-            if (string.IsNullOrEmpty(maDanhMuc) == true)
-            {
-                return false;
-            }
-            return Process.XoaDanhMuc(maDanhMuc);
+            Process.XoaDanhMuc(maDanhMuc);
         }
     }
 }

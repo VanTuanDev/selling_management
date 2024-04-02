@@ -57,7 +57,6 @@ E:\02032024\03022024\bin\Debug\BLL.dll
 E:\02032024\03022024\bin\Debug\DAL.dll
 E:\02032024\03022024\bin\Debug\BLL.pdb
 E:\02032024\03022024\bin\Debug\DAL.pdb
-E:\02032024\03022024\obj\Debug\03022024.csproj.AssemblyReference.cache
 E:\02032024\03022024\obj\Debug\_03022024.FormDoiMatKhau.resources
 E:\02032024\03022024\obj\Debug\_03022024.QLBanHang.FormChonKhachHang.resources
 E:\02032024\03022024\obj\Debug\_03022024.FormThemDanhMuc.resources
@@ -75,7 +74,8 @@ E:\02032024\03022024\obj\Debug\_03022024.QLKhachHang.ucKhachHang.resources
 E:\02032024\03022024\obj\Debug\_03022024.QLSanPham.ucSanPham.resources
 E:\02032024\03022024\obj\Debug\_03022024.QLTaiKhoan.ucTaiKhoan.resources
 E:\02032024\03022024\obj\Debug\03022024.csproj.GenerateResource.cache
-E:\02032024\03022024\obj\Debug\03022024.csproj.CoreCompileInputs.cache
-E:\02032024\03022024\obj\Debug\03022024.csproj.CopyComplete
 E:\02032024\03022024\obj\Debug\03022024.exe
 E:\02032024\03022024\obj\Debug\03022024.pdb
+E:\02032024\03022024\obj\Debug\03022024.csproj.AssemblyReference.cache
+E:\02032024\03022024\obj\Debug\03022024.csproj.CoreCompileInputs.cache
+E:\02032024\03022024\obj\Debug\03022024.csproj.CopyComplete

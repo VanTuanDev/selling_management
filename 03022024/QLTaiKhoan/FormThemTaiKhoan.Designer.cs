@@ -56,7 +56,7 @@
             this.lblHeader.Location = new System.Drawing.Point(123, 24);
             this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(357, 46);
+            this.lblHeader.Size = new System.Drawing.Size(446, 57);
             this.lblHeader.TabIndex = 10;
             this.lblHeader.Text = "THÊM TÀI KHOẢN";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -67,7 +67,7 @@
             this.txtMatKhau.Location = new System.Drawing.Point(280, 210);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.PasswordChar = '*';
-            this.txtMatKhau.Size = new System.Drawing.Size(354, 30);
+            this.txtMatKhau.Size = new System.Drawing.Size(354, 35);
             this.txtMatKhau.TabIndex = 16;
             this.txtMatKhau.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMatKhau_KeyPress);
             // 
@@ -76,7 +76,7 @@
             this.txtTenDangNhap.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTenDangNhap.Location = new System.Drawing.Point(280, 155);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
-            this.txtTenDangNhap.Size = new System.Drawing.Size(354, 30);
+            this.txtTenDangNhap.Size = new System.Drawing.Size(354, 35);
             this.txtTenDangNhap.TabIndex = 15;
             this.txtTenDangNhap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenDangNhap_KeyPress);
             // 
@@ -85,7 +85,7 @@
             this.txtTenDayDu.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTenDayDu.Location = new System.Drawing.Point(280, 100);
             this.txtTenDayDu.Name = "txtTenDayDu";
-            this.txtTenDayDu.Size = new System.Drawing.Size(354, 30);
+            this.txtTenDayDu.Size = new System.Drawing.Size(354, 35);
             this.txtTenDayDu.TabIndex = 14;
             this.txtTenDayDu.Tag = "";
             this.txtTenDayDu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenDayDu_KeyPress);
@@ -96,7 +96,7 @@
             this.lblMaQuyen.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblMaQuyen.Location = new System.Drawing.Point(25, 265);
             this.lblMaQuyen.Name = "lblMaQuyen";
-            this.lblMaQuyen.Size = new System.Drawing.Size(71, 23);
+            this.lblMaQuyen.Size = new System.Drawing.Size(87, 28);
             this.lblMaQuyen.TabIndex = 21;
             this.lblMaQuyen.Text = "Quyền";
             // 
@@ -106,7 +106,7 @@
             this.lblMatKhau.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblMatKhau.Location = new System.Drawing.Point(25, 210);
             this.lblMatKhau.Name = "lblMatKhau";
-            this.lblMatKhau.Size = new System.Drawing.Size(98, 23);
+            this.lblMatKhau.Size = new System.Drawing.Size(122, 28);
             this.lblMatKhau.TabIndex = 20;
             this.lblMatKhau.Text = "Mật khẩu";
             // 
@@ -116,7 +116,7 @@
             this.lblTenDangNhap.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblTenDangNhap.Location = new System.Drawing.Point(25, 155);
             this.lblTenDangNhap.Name = "lblTenDangNhap";
-            this.lblTenDangNhap.Size = new System.Drawing.Size(151, 23);
+            this.lblTenDangNhap.Size = new System.Drawing.Size(184, 28);
             this.lblTenDangNhap.TabIndex = 19;
             this.lblTenDangNhap.Text = "Tên đăng nhập";
             // 
@@ -126,7 +126,7 @@
             this.lblTenDayDu.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblTenDayDu.Location = new System.Drawing.Point(25, 100);
             this.lblTenDayDu.Name = "lblTenDayDu";
-            this.lblTenDayDu.Size = new System.Drawing.Size(115, 23);
+            this.lblTenDayDu.Size = new System.Drawing.Size(139, 28);
             this.lblTenDayDu.TabIndex = 18;
             this.lblTenDayDu.Text = "Tên đầy đủ";
             // 
@@ -201,19 +201,19 @@
             // 
             // cbbMaQuyen
             // 
-            this.cbbMaQuyen.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbbMaQuyen.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cbbMaQuyen.FormattingEnabled = true;
             this.cbbMaQuyen.Location = new System.Drawing.Point(280, 265);
             this.cbbMaQuyen.Name = "cbbMaQuyen";
-            this.cbbMaQuyen.Size = new System.Drawing.Size(354, 27);
+            this.cbbMaQuyen.Size = new System.Drawing.Size(354, 32);
             this.cbbMaQuyen.TabIndex = 27;
             // 
             // FormThemTaiKhoan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LimeGreen;
-            this.ClientSize = new System.Drawing.Size(692, 428);
+            this.ClientSize = new System.Drawing.Size(682, 412);
             this.Controls.Add(this.cbbMaQuyen);
             this.Controls.Add(this.ptbThoat);
             this.Controls.Add(this.ptbXacNhan);

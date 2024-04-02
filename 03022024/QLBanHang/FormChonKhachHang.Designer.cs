@@ -32,6 +32,7 @@
             this.dgLuaChonKhachHang = new System.Windows.Forms.DataGridView();
             this.cl1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgLuaChonKhachHang)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,10 +43,11 @@
             this.dgLuaChonKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgLuaChonKhachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cl1,
-            this.cl2});
+            this.cl2,
+            this.cl3});
             this.dgLuaChonKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgLuaChonKhachHang.Location = new System.Drawing.Point(0, 0);
-            this.dgLuaChonKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgLuaChonKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.dgLuaChonKhachHang.Name = "dgLuaChonKhachHang";
             this.dgLuaChonKhachHang.RowHeadersVisible = false;
             this.dgLuaChonKhachHang.RowHeadersWidth = 51;
@@ -71,6 +73,17 @@
             this.cl2.MinimumWidth = 6;
             this.cl2.Name = "cl2";
             this.cl2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cl2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // cl3
+            // 
+            this.cl3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cl3.DataPropertyName = "TrangThai";
+            this.cl3.HeaderText = "Trạng thái";
+            this.cl3.MinimumWidth = 6;
+            this.cl3.Name = "cl3";
+            this.cl3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cl3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // FormChonKhachHang
             // 
@@ -79,7 +92,7 @@
             this.ClientSize = new System.Drawing.Size(760, 350);
             this.Controls.Add(this.dgLuaChonKhachHang);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormChonKhachHang";
@@ -96,5 +109,6 @@
         private System.Windows.Forms.DataGridView dgLuaChonKhachHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl1;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cl3;
     }
 }

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+//using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace _03022024
 {
@@ -17,15 +17,16 @@ namespace _03022024
         }
         private void FormThemSanPham_Load(object sender, EventArgs e)
         {
-            //List<string> categoryNames = manager.LayTenDanhMuc();
-
-            //cbbDanhMuc.Items.AddRange(categoryNames.ToArray());
-
             DataTable categories = manager.LayDanhMuc();
+            DataTable units = manager.LayDVT();
 
             cbbDanhMuc.DisplayMember = "TenDanhMuc";
             cbbDanhMuc.ValueMember = "MaDanhMuc";
             cbbDanhMuc.DataSource = categories;
+
+            cbbDonViTinh.DisplayMember = "TenDVT";
+            cbbDonViTinh.ValueMember = "MaDVT";
+            cbbDonViTinh.DataSource = units;
         }
 
         private void txtTenSanPham_KeyPress(object sender, KeyPressEventArgs e)
@@ -69,7 +70,7 @@ namespace _03022024
         {
             string maSanPham = txtMaSanPham.Text;
             string tenSanPham = txtTenSanPham.Text;
-            string maDonViTinh = txtMaDonViTinh.Text;
+            string maDonViTinh = cbbDonViTinh.SelectedValue.ToString();
             string maDanhMuc = cbbDanhMuc.SelectedValue.ToString();
             string donGia = txtDonGia.Text;
 

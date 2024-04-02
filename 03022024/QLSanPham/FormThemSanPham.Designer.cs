@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormThemSanPham));
             this.lblHeader = new System.Windows.Forms.Label();
-            this.txtMaDonViTinh = new System.Windows.Forms.TextBox();
             this.txtTenSanPham = new System.Windows.Forms.TextBox();
             this.txtMaSanPham = new System.Windows.Forms.TextBox();
             this.lblDanhMuc = new System.Windows.Forms.Label();
@@ -44,6 +43,7 @@
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.lblDonGia = new System.Windows.Forms.Label();
             this.cbbDanhMuc = new System.Windows.Forms.ComboBox();
+            this.cbbDonViTinh = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThoat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbXacNhan)).BeginInit();
             this.SuspendLayout();
@@ -60,15 +60,6 @@
             this.lblHeader.TabIndex = 11;
             this.lblHeader.Text = "THÊM SẢN PHẨM";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtMaDonViTinh
-            // 
-            this.txtMaDonViTinh.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMaDonViTinh.Location = new System.Drawing.Point(292, 217);
-            this.txtMaDonViTinh.Name = "txtMaDonViTinh";
-            this.txtMaDonViTinh.Size = new System.Drawing.Size(354, 35);
-            this.txtMaDonViTinh.TabIndex = 29;
-            this.txtMaDonViTinh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaDonViTinh_KeyPress);
             // 
             // txtTenSanPham
             // 
@@ -105,9 +96,9 @@
             this.lblMaDonViTinh.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblMaDonViTinh.Location = new System.Drawing.Point(25, 217);
             this.lblMaDonViTinh.Name = "lblMaDonViTinh";
-            this.lblMaDonViTinh.Size = new System.Drawing.Size(178, 28);
+            this.lblMaDonViTinh.Size = new System.Drawing.Size(140, 28);
             this.lblMaDonViTinh.TabIndex = 33;
-            this.lblMaDonViTinh.Text = "Mã đơn vị tính";
+            this.lblMaDonViTinh.Text = "Đơn vị tính";
             // 
             // lblTenSanPham
             // 
@@ -213,12 +204,22 @@
             this.cbbDanhMuc.Size = new System.Drawing.Size(354, 32);
             this.cbbDanhMuc.TabIndex = 45;
             // 
+            // cbbDonViTinh
+            // 
+            this.cbbDonViTinh.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbbDonViTinh.FormattingEnabled = true;
+            this.cbbDonViTinh.Location = new System.Drawing.Point(292, 217);
+            this.cbbDonViTinh.Name = "cbbDonViTinh";
+            this.cbbDonViTinh.Size = new System.Drawing.Size(354, 32);
+            this.cbbDonViTinh.TabIndex = 46;
+            // 
             // FormThemSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LimeGreen;
             this.ClientSize = new System.Drawing.Size(682, 453);
+            this.Controls.Add(this.cbbDonViTinh);
             this.Controls.Add(this.cbbDanhMuc);
             this.Controls.Add(this.txtDonGia);
             this.Controls.Add(this.lblDonGia);
@@ -226,7 +227,6 @@
             this.Controls.Add(this.ptbXacNhan);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnXacNhan);
-            this.Controls.Add(this.txtMaDonViTinh);
             this.Controls.Add(this.txtTenSanPham);
             this.Controls.Add(this.txtMaSanPham);
             this.Controls.Add(this.lblDanhMuc);
@@ -253,7 +253,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.TextBox txtMaDonViTinh;
         private System.Windows.Forms.TextBox txtTenSanPham;
         private System.Windows.Forms.TextBox txtMaSanPham;
         private System.Windows.Forms.Label lblDanhMuc;
@@ -267,5 +266,6 @@
         private System.Windows.Forms.TextBox txtDonGia;
         private System.Windows.Forms.Label lblDonGia;
         private System.Windows.Forms.ComboBox cbbDanhMuc;
+        private System.Windows.Forms.ComboBox cbbDonViTinh;
     }
 }

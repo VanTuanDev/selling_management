@@ -60,9 +60,10 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    SELECT tk.TenDayDu, tk.TenDangNhap, qdn.TenQuyen 
+    SELECT tk.TenDayDu, tk.TenDangNhap, qdn.TenQuyen, tk.TrangThai 
     FROM TaiKhoan tk 
-    INNER JOIN QuyenDangNhap qdn ON tk.MaQuyen = qdn.MaQuyen;
+    INNER JOIN QuyenDangNhap qdn ON tk.MaQuyen = qdn.MaQuyen
+	WHERE tk.TrangThai = N'Còn sử dụng' ;
 END;
 GO
 
@@ -81,8 +82,8 @@ BEGIN
         DECLARE @HashedPassword varbinary(256);
         SET @HashedPassword = HASHBYTES('SHA2_256', @MatKhau); 
 
-        INSERT INTO TaiKhoan (TenDangNhap, MatKhau, TenDayDu, MaQuyen)
-        VALUES (@TenDangNhap, @HashedPassword, @TenDayDu, @MaQuyen);
+        INSERT INTO TaiKhoan (TenDangNhap, MatKhau, TenDayDu, MaQuyen, TrangThai)
+        VALUES (@TenDangNhap, @HashedPassword, @TenDayDu, @MaQuyen, N'Còn sử dụng');
 
         PRINT N'Tài khoản đã được thêm thành công.';
     END
@@ -121,7 +122,7 @@ AS
 BEGIN
     SET NOCOUNT ON; 
 
-    DELETE FROM TaiKhoan WHERE TenDangNhap = @TenDangNhap;
+    UPDATE TaiKhoan SET TrangThai = N'Ngưng sử dụng' WHERE TenDangNhap = @TenDangNhap;
     DECLARE @RowsAffected INT;
     SET @RowsAffected = @@ROWCOUNT;
     SELECT @RowsAffected AS RowsAffected; 
@@ -132,7 +133,7 @@ GO
 CREATE PROCEDURE sp_LayDanhSachKhachHang
 AS
 BEGIN
-    SELECT * FROM KhachHang;
+    SELECT * FROM KhachHang WHERE TrangThai = N'Còn sử dụng';
 END
 GO
 
@@ -142,8 +143,8 @@ CREATE PROCEDURE sp_ThemKhachHang
     @TenKhachHang nvarchar(50)
 AS
 BEGIN
-    INSERT INTO KhachHang (MaKhachHang, TenKhachHang)
-    VALUES (@MaKhachHang, @TenKhachHang)
+    INSERT INTO KhachHang (MaKhachHang, TenKhachHang, TrangThai)
+    VALUES (@MaKhachHang, @TenKhachHang, N'Còn sử dụng')
 END
 GO
 
@@ -168,9 +169,11 @@ AS
 BEGIN
     SET NOCOUNT ON; 
 
-    DELETE FROM KhachHang WHERE MaKhachHang = @MaKhachHang
+    UPDATE KhachHang SET TrangThai = N'Ngưng sử dụng' WHERE MaKhachHang = @MaKhachHang;
+    
     DECLARE @RowsAffected INT;
     SET @RowsAffected = @@ROWCOUNT;
+ 
     SELECT @RowsAffected AS RowsAffected; 
 END
 GO
@@ -185,6 +188,7 @@ BEGIN
 	FROM SanPham sp 
 	INNER JOIN DonViTinh dvt ON sp.MaDVT = dvt.MaDVT 
 	INNER JOIN DanhMucSanPham dm ON sp.MaDanhMuc = dm.MaDanhMuc
+	WHERE sp.TrangThai = N'Còn sử dụng';
 END
 GO
 
@@ -201,8 +205,8 @@ BEGIN
 
     IF NOT EXISTS (SELECT 1 FROM SanPham WHERE MaSanPham = @MaSanPham)
     BEGIN
-        INSERT INTO SanPham (MaSanPham, TenSanPham, MaDVT, MaDanhMuc, DonGia)
-        VALUES (@MaSanPham, @TenSanPham, @MaDVT, @MaDanhMuc, @DonGia);
+        INSERT INTO SanPham (MaSanPham, TenSanPham, MaDVT, MaDanhMuc, DonGia, TrangThai)
+        VALUES (@MaSanPham, @TenSanPham, @MaDVT, @MaDanhMuc, @DonGia, N'Còn sử dụng');
 
         PRINT N'Sản phẩm đã được thêm thành công.';
     END
@@ -258,8 +262,8 @@ BEGIN
 
     IF EXISTS (SELECT 1 FROM SanPham WHERE MaSanPham = @MaSanPham)
     BEGIN
-        DELETE FROM SanPham WHERE MaSanPham = @MaSanPham;
-        PRINT N'Sản phẩm đã được xóa thành công.';
+        UPDATE SanPham SET TrangThai = N'Ngưng sử dụng' WHERE MaSanPham = @MaSanPham;
+        PRINT N'Xóa sản phẩm thành công.';
     END
     ELSE
     BEGIN
@@ -272,7 +276,7 @@ GO
 CREATE PROCEDURE sp_LayDanhSachDanhMuc
 AS
 BEGIN
-    SELECT * FROM DanhMucSanPham;
+    SELECT * FROM DanhMucSanPham WHERE TrangThai = N'Còn sử dụng';
 END
 GO
 
@@ -282,8 +286,8 @@ CREATE PROCEDURE sp_ThemDanhMuc
     @TenDanhMuc nvarchar(50)
 AS
 BEGIN
-    INSERT INTO DanhMucSanPham(MaDanhMuc, TenDanhMuc)
-    VALUES (@MaDanhMuc, @TenDanhMuc)
+    INSERT INTO DanhMucSanPham(MaDanhMuc, TenDanhMuc, TrangThai)
+    VALUES (@MaDanhMuc, @TenDanhMuc, N'Còn sử dụng')
 END
 GO
 
@@ -308,10 +312,15 @@ AS
 BEGIN
     SET NOCOUNT ON; 
 
-    DELETE FROM DanhMucSanPham WHERE @MaDanhMuc = MaDanhMuc
-    DECLARE @RowsAffected INT;
-    SET @RowsAffected = @@ROWCOUNT;
-    SELECT @RowsAffected AS RowsAffected; 
+    IF EXISTS (SELECT * FROM SanPham WHERE MaDanhMuc = @MaDanhMuc)
+    BEGIN
+        UPDATE DanhMucSanPham SET TrangThai = N'Ngưng sử dụng' WHERE MaDanhMuc = @MaDanhMuc;
+        PRINT N'Xóa danh mục thành công.';
+    END
+    ELSE
+    BEGIN
+        PRINT N'Không tìm thấy danh mục có mã ' + @MaDanhMuc;
+    END
 END
 GO
 
@@ -325,6 +334,7 @@ BEGIN
 	FROM SanPham sp 
 	INNER JOIN DonViTinh dvt ON sp.MaDVT = dvt.MaDVT 
 	INNER JOIN DanhMucSanPham dm ON sp.MaDanhMuc = dm.MaDanhMuc
+	WHERE sp.TrangThai = N'Còn sử dụng' ;
 END
 GO
 

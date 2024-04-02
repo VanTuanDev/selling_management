@@ -39,12 +39,17 @@ namespace _03022024
         {
             this.Text = "Tài khoản";
 
-            if (panelRight.Controls.Contains(ucQLTK) == false)
+            if (pnlPhai.Controls.Contains(ucQLTK) == false)
             {
                 ucQLTK = new ucTaiKhoan();
                 ucQLTK.Dock = DockStyle.Fill;
-                panelRight.Controls.Add(ucQLTK);
+                pnlPhai.Controls.Add(ucQLTK);
                 ucQLTK.BringToFront();
+                pnlPhai.Controls.Remove(ucQLBH);
+                pnlPhai.Controls.Remove(ucQLDM);
+                pnlPhai.Controls.Remove(ucQLSP);
+                pnlPhai.Controls.Remove(ucQLHD);
+                pnlPhai.Controls.Remove(ucQLKH);
             }
             else
             {
@@ -66,12 +71,17 @@ namespace _03022024
         {
             this.Text = "Khách hàng";
 
-            if (panelRight.Controls.Contains(ucQLKH) == false)
+            if (pnlPhai.Controls.Contains(ucQLKH) == false)
             {
                 ucQLKH = new ucKhachHang();
                 ucQLKH.Dock = DockStyle.Fill;
-                panelRight.Controls.Add(ucQLKH);
+                pnlPhai.Controls.Add(ucQLKH);
                 ucQLKH.BringToFront();
+                pnlPhai.Controls.Remove(ucQLBH);
+                pnlPhai.Controls.Remove(ucQLDM);
+                pnlPhai.Controls.Remove(ucQLSP);
+                pnlPhai.Controls.Remove(ucQLHD);
+                pnlPhai.Controls.Remove(ucQLTK);
             }
             else
             {
@@ -92,12 +102,17 @@ namespace _03022024
         {
             this.Text = "Sản phẩm";
 
-            if (panelRight.Controls.Contains(ucQLSP) == false)
+            if (pnlPhai.Controls.Contains(ucQLSP) == false)
             {
                 ucQLSP = new ucSanPham();
                 ucQLSP.Dock = DockStyle.Fill;
-                panelRight.Controls.Add(ucQLSP);
-                ucQLSP.BringToFront();
+                pnlPhai.Controls.Add(ucQLSP);
+                ucQLSP.BringToFront(); 
+                pnlPhai.Controls.Remove(ucQLBH);
+                pnlPhai.Controls.Remove(ucQLDM);
+                pnlPhai.Controls.Remove(ucQLTK);
+                pnlPhai.Controls.Remove(ucQLHD);
+                pnlPhai.Controls.Remove(ucQLKH);
             }
             else
             {
@@ -118,12 +133,17 @@ namespace _03022024
         {
             this.Text = "Danh mục";
 
-            if (panelRight.Controls.Contains(ucQLDM) == false)
+            if (pnlPhai.Controls.Contains(ucQLDM) == false)
             {
                 ucQLDM = new ucDanhMuc();
                 ucQLDM.Dock = DockStyle.Fill;
-                panelRight.Controls.Add(ucQLDM);
+                pnlPhai.Controls.Add(ucQLDM);
                 ucQLDM.BringToFront();
+                pnlPhai.Controls.Remove(ucQLBH);
+                pnlPhai.Controls.Remove(ucQLTK);
+                pnlPhai.Controls.Remove(ucQLSP);
+                pnlPhai.Controls.Remove(ucQLHD);
+                pnlPhai.Controls.Remove(ucQLKH);
             }
             else
             {
@@ -144,11 +164,16 @@ namespace _03022024
         {
             this.Text = "Bán hàng";
 
-            if (panelRight.Controls.Contains(ucQLBH) == false)
+            if (pnlPhai.Controls.Contains(ucQLBH) == false)
             {
                 ucQLBH = new ucBanHang();
                 ucQLBH.Dock = DockStyle.Fill;
-                panelRight.Controls.Add(ucQLBH);
+                pnlPhai.Controls.Add(ucQLBH);
+                pnlPhai.Controls.Remove(ucQLTK);
+                pnlPhai.Controls.Remove(ucQLDM);
+                pnlPhai.Controls.Remove(ucQLSP);
+                pnlPhai.Controls.Remove(ucQLHD);
+                pnlPhai.Controls.Remove(ucQLKH);
                 ucQLBH.BringToFront();
             }
             else
@@ -169,12 +194,17 @@ namespace _03022024
         {
             this.Text = "Hóa đơn";
 
-            if (panelRight.Controls.Contains(ucQLHD) == false)
+            if (pnlPhai.Controls.Contains(ucQLHD) == false)
             {
                 ucQLHD = new ucHoaDon();
                 ucQLHD.Dock = DockStyle.Fill;
-                panelRight.Controls.Add(ucQLHD);
+                pnlPhai.Controls.Add(ucQLHD);
                 ucQLHD.BringToFront();
+                pnlPhai.Controls.Remove(ucQLBH);
+                pnlPhai.Controls.Remove(ucQLDM);
+                pnlPhai.Controls.Remove(ucQLSP);
+                pnlPhai.Controls.Remove(ucQLTK);
+                pnlPhai.Controls.Remove(ucQLKH);
             }
             else
             {
@@ -225,31 +255,31 @@ namespace _03022024
         {
             this.Text = "Trang chủ";
 
-            if (panelRight.Controls.Contains(ucQLTK))
+            if (pnlPhai.Controls.Contains(ucQLTK))
             {
-                panelRight.Controls.Remove(ucQLTK);
+                pnlPhai.Controls.Remove(ucQLTK);
             }
 
-            if (panelRight.Controls.Contains(ucQLKH))
+            if (pnlPhai.Controls.Contains(ucQLKH))
             {
-                panelRight.Controls.Remove(ucQLKH);
+                pnlPhai.Controls.Remove(ucQLKH);
             }
 
-            if (panelRight.Controls.Contains(ucQLSP))
+            if (pnlPhai.Controls.Contains(ucQLSP))
             {
-                panelRight.Controls.Remove(ucQLSP);
+                pnlPhai.Controls.Remove(ucQLSP);
             }
-            if (panelRight.Controls.Contains(ucQLDM))
+            if (pnlPhai.Controls.Contains(ucQLDM))
             {
-                panelRight.Controls.Remove(ucQLDM);
+                pnlPhai.Controls.Remove(ucQLDM);
             }
-            if (panelRight.Controls.Contains(ucQLBH))
+            if (pnlPhai.Controls.Contains(ucQLBH))
             {
-                panelRight.Controls.Remove(ucQLBH);
+                pnlPhai.Controls.Remove(ucQLBH);
             }
-            if (panelRight.Controls.Contains(ucQLHD))
+            if (pnlPhai.Controls.Contains(ucQLHD))
             {
-                panelRight.Controls.Remove(ucQLHD);
+                pnlPhai.Controls.Remove(ucQLHD);
             }
         }             
     }

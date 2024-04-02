@@ -83,9 +83,9 @@ namespace _03022024.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bhx {
+        internal static System.Drawing.Bitmap bachhoaxanh {
             get {
-                object obj = ResourceManager.GetObject("bhx", resourceCulture);
+                object obj = ResourceManager.GetObject("bachhoaxanh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +173,9 @@ namespace _03022024.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logo_bachhoaxanh {
+        internal static System.Drawing.Bitmap logo {
             get {
-                object obj = ResourceManager.GetObject("logo_bachhoaxanh", resourceCulture);
+                object obj = ResourceManager.GetObject("logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +183,9 @@ namespace _03022024.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logo_removebg_preview {
+        internal static System.Drawing.Bitmap logo_bachhoaxanh {
             get {
-                object obj = ResourceManager.GetObject("logo-removebg-preview", resourceCulture);
+                object obj = ResourceManager.GetObject("logo_bachhoaxanh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

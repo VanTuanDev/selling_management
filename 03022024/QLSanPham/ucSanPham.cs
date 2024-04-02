@@ -3,7 +3,6 @@ using System.Data;
 using System.Windows.Forms;
 using System.Drawing;
 using BLL;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Collections.Generic;
 
 namespace _03022024.QLSanPham
@@ -31,6 +30,14 @@ namespace _03022024.QLSanPham
             dgSanPham.AllowUserToResizeRows = false;
             dgSanPham.AllowUserToResizeColumns = false;
         }
+        private void Reset()
+        {
+            txtMaSanPham.Text = "";
+            txtTenSanPham.Text = "";
+            cbbDonViTinh.Text = "";
+            cbbTenDanhMuc.Text = "";
+            txtDonGia.Text = "";
+        }
         private void HienThiDanhSachSanPham()
         {
             string error = string.Empty;
@@ -48,8 +55,10 @@ namespace _03022024.QLSanPham
         {
             HienThiDanhSachSanPham();
             List<string> categoryNames = manager.LayTenDanhMuc();
+            List<string> unitNames = manager.LayTenDVT();
 
             cbbTenDanhMuc.Items.AddRange(categoryNames.ToArray());
+            cbbDonViTinh.Items.AddRange(unitNames.ToArray());
         }
 
         private void dgSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -66,7 +75,7 @@ namespace _03022024.QLSanPham
 
                 txtMaSanPham.Text = column1Value;
                 txtTenSanPham.Text = column2Value;
-                txtDonViTinh.Text = column3Value;
+                cbbDonViTinh.Text = column3Value;
                 cbbTenDanhMuc.Text = column4Value;
                 txtDonGia.Text = column5Value.ToString("#,##0.##");
             }
@@ -128,7 +137,7 @@ namespace _03022024.QLSanPham
         {
             string maSanPham = txtMaSanPham.Text;
             string tenSanPham = txtTenSanPham.Text;
-            string tenDVT = txtDonViTinh.Text;
+            string tenDVT = cbbDonViTinh.Text;
             string tenDanhMuc = cbbTenDanhMuc.Text;
             decimal donGia = decimal.Parse(txtDonGia.Text);
 
@@ -137,6 +146,7 @@ namespace _03022024.QLSanPham
                 manager.SuaSanPham(maSanPham, tenSanPham, tenDVT, tenDanhMuc, donGia);
                 MessageBox.Show("Sản phẩm đã được cập nhật thành công.");
                 HienThiDanhSachSanPham();
+                Reset();
             }
             catch (Exception ex)
             {
@@ -158,11 +168,7 @@ namespace _03022024.QLSanPham
             try
             {
                 manager.XoaSanPham(maSanPham);
-                txtMaSanPham.Text = "";
-                txtTenSanPham.Text = "";
-                txtDonViTinh.Text = "";
-                cbbTenDanhMuc.Text = "";
-                txtDonGia.Text = "";
+                Reset();
                 MessageBox.Show("Sản phẩm đã được xóa thành công.");
                 HienThiDanhSachSanPham();
             }

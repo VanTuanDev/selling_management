@@ -2,7 +2,6 @@
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
-using _03022024.QLKhachHang;
 using BLL;
 
 namespace _03022024.QLDanhMuc
@@ -28,6 +27,11 @@ namespace _03022024.QLDanhMuc
             dgDanhMuc.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dgDanhMuc.AllowUserToResizeColumns = false;
             dgDanhMuc.AllowUserToResizeRows = false;
+        }
+        private void Reset()
+        {
+            txtMaDanhMuc.Text = "";
+            txtTenDanhMuc.Text = "";
         }
         private void HienThiDanhSachDanhMuc()
         {
@@ -100,6 +104,7 @@ namespace _03022024.QLDanhMuc
                 manager.CapNhatDanhMuc(maDanhMuc, tenDanhMuc);
                 MessageBox.Show("Đã cập nhật thông tin khách hàng thành công.");
                 HienThiDanhSachDanhMuc();
+                Reset();
             }
             catch (Exception ex)
             {
@@ -116,28 +121,18 @@ namespace _03022024.QLDanhMuc
         }
         private void Xoa()
         {
-            if (dgDanhMuc.SelectedRows.Count > 0)
+            string maDanhMuc = txtMaDanhMuc.Text;
+
+            try
             {
-                DataGridViewRow row = dgDanhMuc.SelectedRows[0];
-
-                string danhmuc = row.Cells["cl1"].Value.ToString();
-
-                string error = string.Empty;
-                if (manager.XoaDanhMuc(danhmuc))
-                {
-                    txtMaDanhMuc.Text = "";
-                    txtTenDanhMuc.Text = "";
-                    MessageBox.Show("Đã xóa danh mục thành công.");
-                    HienThiDanhSachDanhMuc();
-                }
-                else
-                {
-                    MessageBox.Show(error);
-                }
+                manager.XoaDanhMuc(maDanhMuc);
+                MessageBox.Show("Danh mục đã được xóa thành công.");
+                HienThiDanhSachDanhMuc();
+                Reset();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng chọn một hàng để xóa.");
+                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
             }
         }
         private void btnXoa_Click(object sender, System.EventArgs e)
