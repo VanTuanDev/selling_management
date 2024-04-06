@@ -42,9 +42,11 @@ namespace _03022024
             string matKhauXacNhan = txtXacNhanMatKhau.Text;
 
             string result = manager.ThayDoiMatKhau(tenDangNhap, matKhauCu, matKhauMoi, matKhauXacNhan);
-
-            MessageBox.Show(result);
-            this.Close();
+            MessageBox.Show(result + " Mời bạn đăng nhập lại!");
+            if (result == "Bạn đã cập nhật mật khẩu thành công.")
+            {
+                Application.Restart();
+            }
         }
 
         private void btnXacNhan_Click(object sender, EventArgs e)
@@ -124,6 +126,19 @@ namespace _03022024
         private void txtXacNhanMatKhau_KeyPress(object sender, KeyPressEventArgs e)
         {
             KiemTraKyTu(e);
+        }
+
+        private void FormDoiMatKhau_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+        }
+
+        private void FormDoiMatKhau_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ptbXacNhan_Click(sender, e);
+            }
         }
     }
 }

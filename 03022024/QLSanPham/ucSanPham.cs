@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using BLL;
 using System.Collections.Generic;
+using _03022024.QLTaiKhoan;
 
 namespace _03022024.QLSanPham
 {
@@ -163,18 +164,30 @@ namespace _03022024.QLSanPham
         }
         private void Xoa()
         {
-            string maSanPham = txtMaSanPham.Text;
+            if (!string.IsNullOrEmpty(txtTenSanPham.Text) && !string.IsNullOrEmpty(txtMaSanPham.Text) && !string.IsNullOrEmpty(txtDonGia.Text))
+            {
+                if (dgSanPham.SelectedRows.Count > 0)
+                {
+                    DataGridViewRow row = dgSanPham.SelectedRows[0];
 
-            try
-            {
-                manager.XoaSanPham(maSanPham);
-                Reset();
-                MessageBox.Show("Sản phẩm đã được xóa thành công.");
-                HienThiDanhSachSanPham();
+                    string sanpham = row.Cells["cl1"].Value.ToString();
+
+                    string error = string.Empty;
+                    if (manager.XoaSanPham(sanpham))
+                    {
+                        MessageBox.Show("Đã xóa sản phẩm thành công.");
+                        HienThiDanhSachSanPham();
+                        Reset();
+                    }
+                    else
+                    {
+                        MessageBox.Show(error);
+                    }
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
+                MessageBox.Show("Vui lòng chọn một hàng để xóa.");
             }
         }
         private void btnXoa_Click(object sender, EventArgs e)

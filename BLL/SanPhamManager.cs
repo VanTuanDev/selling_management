@@ -27,9 +27,9 @@ namespace BLL
         {
             Process.SuaSanPham(maSanPham, tenSanPham, tenDVT, tenDanhMuc, donGia);
         }
-        public void XoaSanPham(string maSanPham)
+        public bool XoaSanPham(string maSanPham)
         {
-            Process.XoaSanPham(maSanPham);
+            return Process.XoaSanPham(maSanPham);
         }
         public DataTable LayDanhMuc()
         {

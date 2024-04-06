@@ -30,7 +30,6 @@ namespace BLL
             {
                 throw new Exception("Vui lòng nhập đầy đủ thông tin.");
             }
-
             try
             {
                 Process.CapNhatDanhMuc(maDanhMuc, tenDanhMuc);
@@ -40,9 +39,9 @@ namespace BLL
                 throw ex;
             }
         }
-        public void XoaDanhMuc(string maDanhMuc)
+        public bool XoaDanhMuc(string maDanhMuc)
         {
-            Process.XoaDanhMuc(maDanhMuc);
+            return Process.XoaDanhMuc(maDanhMuc);
         }
     }
 }

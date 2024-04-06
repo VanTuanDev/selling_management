@@ -106,7 +106,7 @@
             this.lblHeader.Location = new System.Drawing.Point(97, 27);
             this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(496, 57);
+            this.lblHeader.Size = new System.Drawing.Size(398, 46);
             this.lblHeader.TabIndex = 27;
             this.lblHeader.Text = "THÊM KHÁCH HÀNG";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -116,7 +116,7 @@
             this.txtTenKhachHang.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTenKhachHang.Location = new System.Drawing.Point(280, 170);
             this.txtTenKhachHang.Name = "txtTenKhachHang";
-            this.txtTenKhachHang.Size = new System.Drawing.Size(310, 35);
+            this.txtTenKhachHang.Size = new System.Drawing.Size(310, 30);
             this.txtTenKhachHang.TabIndex = 33;
             this.txtTenKhachHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenKhachHang_KeyPress);
             // 
@@ -125,7 +125,7 @@
             this.txtMaKhachHang.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtMaKhachHang.Location = new System.Drawing.Point(280, 115);
             this.txtMaKhachHang.Name = "txtMaKhachHang";
-            this.txtMaKhachHang.Size = new System.Drawing.Size(310, 35);
+            this.txtMaKhachHang.Size = new System.Drawing.Size(310, 30);
             this.txtMaKhachHang.TabIndex = 32;
             this.txtMaKhachHang.Tag = "";
             this.txtMaKhachHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaKhachHang_KeyPress);
@@ -136,7 +136,7 @@
             this.lblTenKhachHang.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblTenKhachHang.Location = new System.Drawing.Point(25, 170);
             this.lblTenKhachHang.Name = "lblTenKhachHang";
-            this.lblTenKhachHang.Size = new System.Drawing.Size(197, 28);
+            this.lblTenKhachHang.Size = new System.Drawing.Size(160, 23);
             this.lblTenKhachHang.TabIndex = 35;
             this.lblTenKhachHang.Text = "Tên khách hàng";
             // 
@@ -146,16 +146,16 @@
             this.lblMaKhachHang.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblMaKhachHang.Location = new System.Drawing.Point(25, 115);
             this.lblMaKhachHang.Name = "lblMaKhachHang";
-            this.lblMaKhachHang.Size = new System.Drawing.Size(189, 28);
+            this.lblMaKhachHang.Size = new System.Drawing.Size(153, 23);
             this.lblMaKhachHang.TabIndex = 34;
             this.lblMaKhachHang.Text = "Mã khách hàng";
             // 
             // FormThemKhachHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LimeGreen;
-            this.ClientSize = new System.Drawing.Size(682, 312);
+            this.ClientSize = new System.Drawing.Size(692, 328);
             this.Controls.Add(this.txtTenKhachHang);
             this.Controls.Add(this.txtMaKhachHang);
             this.Controls.Add(this.lblTenKhachHang);
@@ -174,6 +174,8 @@
             this.Name = "FormThemKhachHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm khách hàng";
+            this.Load += new System.EventHandler(this.FormThemKhachHang_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormThemKhachHang_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.ptbThoat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbXacNhan)).EndInit();
             this.ResumeLayout(false);

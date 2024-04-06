@@ -171,7 +171,7 @@ namespace _03022024.QLBanHang
         }
         private void ThanhToan()
         {
-            string tinhTrang = "N";
+            string tinhTrang = "Chưa thanh toán";
             string tenKhachHang = lblTenKHNoiDung.Text; 
             try
             {

@@ -65,7 +65,7 @@ namespace _03022024.QLHoaDon
             {
                 try
                 {
-                    HDmanager.CapNhatTrangThaiHoaDon(maHoaDonDuocChon, "Y");
+                    HDmanager.CapNhatTrangThaiHoaDon(maHoaDonDuocChon, "Đã thanh toán");
                     MessageBox.Show("Cập nhật trạng thái hóa đơn thành công");
                     HienThiDSHoaDon();
                 }

@@ -22,6 +22,8 @@ namespace _03022024
             cbbMaQuyen.DataSource = dtQuyen;
             cbbMaQuyen.DisplayMember = "TenQuyen";
             cbbMaQuyen.ValueMember = "MaQuyen";
+
+            this.KeyPreview = true;
         }
         private void ptbMatKhau_Click(object sender, EventArgs e)
         {
@@ -120,6 +122,12 @@ namespace _03022024
             Thoat();
         }
 
-        
+        private void FormThemTaiKhoan_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnXacNhan_Click(sender, e);
+            }
+        }     
     }
 }

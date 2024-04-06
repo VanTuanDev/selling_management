@@ -2,6 +2,7 @@
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using _03022024.QLTaiKhoan;
 using BLL;
 
 namespace _03022024.QLDanhMuc
@@ -121,18 +122,30 @@ namespace _03022024.QLDanhMuc
         }
         private void Xoa()
         {
-            string maDanhMuc = txtMaDanhMuc.Text;
+            if (!string.IsNullOrEmpty(txtMaDanhMuc.Text) && !string.IsNullOrEmpty(txtTenDanhMuc.Text))
+            {
+                if (dgDanhMuc.SelectedRows.Count > 0)
+                {
+                    DataGridViewRow row = dgDanhMuc.SelectedRows[0];
 
-            try
-            {
-                manager.XoaDanhMuc(maDanhMuc);
-                MessageBox.Show("Danh mục đã được xóa thành công.");
-                HienThiDanhSachDanhMuc();
-                Reset();
+                    string danhmuc = row.Cells["cl1"].Value.ToString();
+
+                    string error = string.Empty;
+                    if (manager.XoaDanhMuc(danhmuc))
+                    {
+                        MessageBox.Show("Đã xóa danh mục thành công.");
+                        HienThiDanhSachDanhMuc();
+                        Reset();
+                    }
+                    else
+                    {
+                        MessageBox.Show(error);
+                    }
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
+                MessageBox.Show("Vui lòng chọn một hàng để xóa.");
             }
         }
         private void btnXoa_Click(object sender, System.EventArgs e)

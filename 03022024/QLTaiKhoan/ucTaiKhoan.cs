@@ -133,22 +133,25 @@ namespace _03022024.QLTaiKhoan
         }
         private void Xoa ()
         {
-            if (dgTaiKhoan.SelectedRows.Count > 0)
+            if (!string.IsNullOrEmpty(txtTenDangNhap.Text) && !string.IsNullOrEmpty(txtTenDayDu.Text))
             {
-                DataGridViewRow row = dgTaiKhoan.SelectedRows[0];
-
-                string taikhoan = row.Cells["cl2"].Value.ToString();
-
-                string error = string.Empty;
-                if (manager.XoaTaiKhoan(taikhoan))
-                {        
-                    MessageBox.Show("Đã xóa tài khoản thành công.");
-                    HienThiDanhSachTaiKhoan();
-                    Reset();
-                }
-                else
+                if (dgTaiKhoan.SelectedRows.Count > 0)
                 {
-                    MessageBox.Show(error);
+                    DataGridViewRow row = dgTaiKhoan.SelectedRows[0];
+
+                    string taikhoan = row.Cells["cl2"].Value.ToString();
+
+                    string error = string.Empty;
+                    if (manager.XoaTaiKhoan(taikhoan))
+                    {
+                        MessageBox.Show("Đã xóa tài khoản thành công.");
+                        HienThiDanhSachTaiKhoan();
+                        Reset();
+                    }
+                    else
+                    {
+                        MessageBox.Show(error);
+                    }
                 }
             }
             else

@@ -39,10 +39,6 @@ namespace BLL
         }
         public bool XoaKhachHang(string makhachhang)
         {
-            if (string.IsNullOrEmpty(makhachhang) == true)
-            {
-                return false;
-            }
             return Process.XoaKhachHang(makhachhang);
         }
         public string[] LayTenKhachHang()

@@ -41,11 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reponsitories\DanhMucReponsitory.cs" />
-    <Compile Include="Reponsitories\HoaDonReponsitory.cs" />
-    <Compile Include="Reponsitories\KhachHangReponsitory.cs" />
-    <Compile Include="Reponsitories\SanPhamReponsitory.cs" />
-    <Compile Include="Reponsitories\TaiKhoanReponsitory.cs" />
+    <Compile Include="Repositories\DanhMucReponsitory.cs" />
+    <Compile Include="Repositories\Database.cs" />
+    <Compile Include="Repositories\HoaDonReponsitory.cs" />
+    <Compile Include="Repositories\KhachHangReponsitory.cs" />
+    <Compile Include="Repositories\SanPhamReponsitory.cs" />
+    <Compile Include="Repositories\TaiKhoanReponsitory.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

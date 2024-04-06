@@ -79,5 +79,15 @@ namespace _03022024
         {
             Thoat();
         }
+
+        private void FormThemDanhMuc_KeyDown(object sender, KeyEventArgs e)
+        {
+            btnXacNhan_Click(sender, e);
+        }
+
+        private void FormThemDanhMuc_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+        }
     }
 }

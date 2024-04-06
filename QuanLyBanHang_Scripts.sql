@@ -117,13 +117,13 @@ GO
 
 -- DELETE ACCOUNT --
 CREATE PROCEDURE sp_XoaTaiKhoan
-    @TenDangNhap NVARCHAR(50)
+    @TenDangNhap NVARCHAR(50),
+    @RowsAffected INT OUTPUT
 AS
 BEGIN
     SET NOCOUNT ON; 
 
     UPDATE TaiKhoan SET TrangThai = N'Ngưng sử dụng' WHERE TenDangNhap = @TenDangNhap;
-    DECLARE @RowsAffected INT;
     SET @RowsAffected = @@ROWCOUNT;
     SELECT @RowsAffected AS RowsAffected; 
 END
@@ -164,16 +164,14 @@ GO
 
 -- DELETE CUSTOMER -- 
 CREATE PROCEDURE sp_XoaKhachHang
-    @MaKhachHang NVARCHAR(50)
+    @MaKhachHang NVARCHAR(50),
+    @RowsAffected INT OUTPUT
 AS
 BEGIN
     SET NOCOUNT ON; 
 
     UPDATE KhachHang SET TrangThai = N'Ngưng sử dụng' WHERE MaKhachHang = @MaKhachHang;
-    
-    DECLARE @RowsAffected INT;
     SET @RowsAffected = @@ROWCOUNT;
- 
     SELECT @RowsAffected AS RowsAffected; 
 END
 GO
@@ -255,20 +253,14 @@ GO
 
 -- DELETE PRODUCT --
 CREATE PROCEDURE sp_XoaSanPham
-    @MaSanPham nchar(10)
+    @MaSanPham nchar(10),
+	@RowsAffected INT OUTPUT
 AS
 BEGIN
-    SET NOCOUNT ON;
-
-    IF EXISTS (SELECT 1 FROM SanPham WHERE MaSanPham = @MaSanPham)
-    BEGIN
-        UPDATE SanPham SET TrangThai = N'Ngưng sử dụng' WHERE MaSanPham = @MaSanPham;
-        PRINT N'Xóa sản phẩm thành công.';
-    END
-    ELSE
-    BEGIN
-        PRINT N'Không tìm thấy sản phẩm có mã ' + @MaSanPham;
-    END
+    SET NOCOUNT ON; 
+    UPDATE SanPham SET TrangThai = N'Ngưng sử dụng' WHERE MaSanPham = @MaSanPham;
+	SET @RowsAffected = @@ROWCOUNT;
+	SELECT @RowsAffected AS RowsAffected; 
 END
 GO
 
@@ -307,20 +299,14 @@ GO
 
 -- DELETE CATEGORY --
 CREATE PROCEDURE sp_XoaDanhMuc
-    @MaDanhMuc NVARCHAR(50)
+    @MaDanhMuc NVARCHAR(50),
+	@RowsAffected INT OUTPUT
 AS
 BEGIN
     SET NOCOUNT ON; 
-
-    IF EXISTS (SELECT * FROM SanPham WHERE MaDanhMuc = @MaDanhMuc)
-    BEGIN
-        UPDATE DanhMucSanPham SET TrangThai = N'Ngưng sử dụng' WHERE MaDanhMuc = @MaDanhMuc;
-        PRINT N'Xóa danh mục thành công.';
-    END
-    ELSE
-    BEGIN
-        PRINT N'Không tìm thấy danh mục có mã ' + @MaDanhMuc;
-    END
+    UPDATE DanhMucSanPham SET TrangThai = N'Ngưng sử dụng' WHERE MaDanhMuc = @MaDanhMuc;
+	SET @RowsAffected = @@ROWCOUNT;
+	SELECT @RowsAffected AS RowsAffected; 
 END
 GO
 
@@ -353,7 +339,7 @@ GO
 -- CREATE BILL --
 CREATE PROCEDURE sp_TaoHoaDon
     @MaKhachHang nchar(10),
-    @TinhTrang nchar(1)
+    @TinhTrang nvarchar(50)
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -389,7 +375,7 @@ GO
 -- UPDATE STATUS BILL --
 CREATE PROCEDURE sp_CapNhatTrangThaiHoaDon
     @MaHoaDon INT,
-    @TinhTrang nchar(1)
+    @TinhTrang nvarchar(50)
 AS
 BEGIN
     SET NOCOUNT ON;

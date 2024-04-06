@@ -27,6 +27,8 @@ namespace _03022024
             cbbDonViTinh.DisplayMember = "TenDVT";
             cbbDonViTinh.ValueMember = "MaDVT";
             cbbDonViTinh.DataSource = units;
+
+            this.KeyPreview = true;
         }
 
         private void txtTenSanPham_KeyPress(object sender, KeyPressEventArgs e)
@@ -118,6 +120,14 @@ namespace _03022024
         private void ptbThoat_Click(object sender, System.EventArgs e)
         {
             Thoat();
+        }
+
+        private void FormThemSanPham_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnXacNhan_Click(sender, e);
+            }
         }
     }
 }

@@ -101,5 +101,17 @@ namespace _03022024
                 ptbTatMoKyTu.Image = Properties.Resources.on;
             }
         }
+        private void FormDangNhap_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin_Click(sender, e);
+            }
+        }
+
+        private void FormDangNhap_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+        }
     }
 }

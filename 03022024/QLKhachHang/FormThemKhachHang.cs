@@ -70,5 +70,18 @@ namespace _03022024
         {
             Thoat();
         }
+
+        private void FormThemKhachHang_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnXacNhan_Click(sender, e);
+            }
+        }
+
+        private void FormThemKhachHang_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL.Repositories;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -8,100 +9,47 @@ namespace DAL.Reponsitories
     public class TaiKhoanReponsitory
     {
         private string connectionString = "Data Source=.;Initial Catalog=QuanLyBanHang;Integrated Security=True";
+        private Database database = new Database();
         public DataTable HienThiDanhSachTaiKhoan()
         {
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-                    SqlCommand command = new SqlCommand("sp_LayDanhSachTaiKhoan", connection);
-                    command.CommandType = CommandType.StoredProcedure;
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        DataTable data = new DataTable();
-                        data.Load(reader);
-                        return data;
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                return null;
-            }
+            SqlParameter[] parameters = null;
+            return database.ExecuteQuery("sp_LayDanhSachTaiKhoan", parameters);
         }
         public void ThemTaiKhoan(string tenDangNhap, string tenDayDu, string matKhau, string maQuyen)
         {
-            try
+            SqlParameter[] parameters = new SqlParameter[]
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-                    SqlCommand command = new SqlCommand("sp_ThemTaiKhoan", connection);
-                    command.CommandType = CommandType.StoredProcedure;
-
-                    command.Parameters.AddWithValue("@TenDangNhap", tenDangNhap);
-                    command.Parameters.AddWithValue("@TenDayDu", tenDayDu);
-                    command.Parameters.AddWithValue("@MatKhau", matKhau);
-                    command.Parameters.AddWithValue("@MaQuyen", maQuyen);
-
-                    command.ExecuteNonQuery();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+                new SqlParameter("@TenDangNhap", tenDangNhap),
+                new SqlParameter("@TenDayDu", tenDayDu),
+                new SqlParameter("@MatKhau", matKhau),
+                new SqlParameter("@MaQuyen", maQuyen)
+            };
+            database.ExecuteNonQuery("sp_ThemTaiKhoan", parameters);
         }
+
         public void CapNhatTaiKhoan(string tenDangNhap, string tenDayDu, string tenQuyen)
         {
-            try
+            SqlParameter[] parameters = new SqlParameter[]
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-
-                    SqlCommand command = new SqlCommand("sp_SuaTaiKhoan", connection);
-                    command.CommandType = System.Data.CommandType.StoredProcedure;
-
-                    command.Parameters.AddWithValue("@TenDangNhap", tenDangNhap);
-                    command.Parameters.AddWithValue("@TenDayDu", tenDayDu);
-                    command.Parameters.AddWithValue("@TenQuyen", tenQuyen);
-
-                    command.ExecuteNonQuery();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+                new SqlParameter("@TenDangNhap", tenDangNhap),
+                new SqlParameter("@TenDayDu", tenDayDu),
+                new SqlParameter("@TenQuyen", tenQuyen)
+            };
+            database.ExecuteNonQuery("sp_SuaTaiKhoan", parameters);
         }
-        public bool XoaTaiKhoan(string tendangnhap)
-        {
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-                    SqlCommand command = new SqlCommand("sp_XoaTaiKhoan", connection);
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@TenDangNhap", tendangnhap);           
-                    int rowsAffected = int.Parse(command.ExecuteScalar().ToString());
 
-                    if (rowsAffected > 0)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-            }
-            catch (Exception)
+        public bool XoaTaiKhoan(string tenDangNhap)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
             {
-                return false;
-            }
+                new SqlParameter("@TenDangNhap", tenDangNhap),
+                new SqlParameter("@RowsAffected", SqlDbType.Int) { Direction = ParameterDirection.Output }
+            };
+
+            database.ExecuteNonQuery("sp_XoaTaiKhoan", parameters);
+
+            int rowsAffected = Convert.ToInt32(parameters[1].Value);
+            return rowsAffected > 0;
         }
         public string DangNhap(string username, string password)
         {

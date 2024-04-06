@@ -39,10 +39,6 @@ namespace BLL
 
         public bool XoaTaiKhoan(string tendangnhap)
         {
-            if (string.IsNullOrEmpty(tendangnhap) == true)
-            {
-                return false;
-            }
             return Process.XoaTaiKhoan(tendangnhap);
         }
         public string DangNhap(string username, string password)

@@ -298,6 +298,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLogin_FormClosing);
+            this.Load += new System.EventHandler(this.FormDangNhap_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormDangNhap_KeyDown);
             this.panel1.ResumeLayout(false);
             this.tlpDangNhap.ResumeLayout(false);
             this.pnlLeft.ResumeLayout(false);

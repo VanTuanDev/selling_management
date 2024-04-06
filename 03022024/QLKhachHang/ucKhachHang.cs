@@ -122,29 +122,32 @@ namespace _03022024.QLKhachHang
         }
         private void Xoa()
         {
-            if (dgKhachHang.SelectedRows.Count > 0)
+            if (!string.IsNullOrEmpty(txtMaKhachHang.Text) && !string.IsNullOrEmpty(txtTenKhachHang.Text))
             {
-                DataGridViewRow row = dgKhachHang.SelectedRows[0];
-
-                string khachhang = row.Cells["cl1"].Value.ToString();
-
-                string error = string.Empty;
-                if (manager.XoaKhachHang(khachhang))
+                if (dgKhachHang.SelectedRows.Count > 0)
                 {
+                    DataGridViewRow row = dgKhachHang.SelectedRows[0];
+
+                    string khachhang = row.Cells["cl1"].Value.ToString();
+
+                    string error = string.Empty;
+                    if (manager.XoaKhachHang(khachhang))
+                    {
                     
-                    MessageBox.Show("Đã xóa khách hàng thành công.");
-                    HienThiDanhSachKhachHang();
-                    Reset();
-                }
-                else
-                {
-                    MessageBox.Show(error);
+                        MessageBox.Show("Đã xóa khách hàng thành công.");
+                        Reset();
+                        HienThiDanhSachKhachHang();
+                    }
+                    else
+                    {
+                        MessageBox.Show(error);
+                    }
                 }
             }
             else
             {
                 MessageBox.Show("Vui lòng chọn một hàng để xóa.");
-            }
+            }    
         }
         private void btnXoa_Click(object sender, EventArgs e)
         {

@@ -60,7 +60,7 @@
             this.lblHeader.Location = new System.Drawing.Point(105, 11);
             this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(492, 72);
+            this.lblHeader.Size = new System.Drawing.Size(393, 58);
             this.lblHeader.TabIndex = 9;
             this.lblHeader.Text = "ĐỔI MẬT KHẨU";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -71,7 +71,7 @@
             this.lblTenDangNhap.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblTenDangNhap.Location = new System.Drawing.Point(25, 100);
             this.lblTenDangNhap.Name = "lblTenDangNhap";
-            this.lblTenDangNhap.Size = new System.Drawing.Size(184, 28);
+            this.lblTenDangNhap.Size = new System.Drawing.Size(151, 23);
             this.lblTenDangNhap.TabIndex = 10;
             this.lblTenDangNhap.Text = "Tên đăng nhập";
             // 
@@ -81,7 +81,7 @@
             this.lblMatKhauCu.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblMatKhauCu.Location = new System.Drawing.Point(25, 155);
             this.lblMatKhauCu.Name = "lblMatKhauCu";
-            this.lblMatKhauCu.Size = new System.Drawing.Size(156, 28);
+            this.lblMatKhauCu.Size = new System.Drawing.Size(126, 23);
             this.lblMatKhauCu.TabIndex = 11;
             this.lblMatKhauCu.Text = "Mật khẩu cũ";
             // 
@@ -91,7 +91,7 @@
             this.lblMatKhauMoi.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblMatKhauMoi.Location = new System.Drawing.Point(25, 210);
             this.lblMatKhauMoi.Name = "lblMatKhauMoi";
-            this.lblMatKhauMoi.Size = new System.Drawing.Size(172, 28);
+            this.lblMatKhauMoi.Size = new System.Drawing.Size(140, 23);
             this.lblMatKhauMoi.TabIndex = 12;
             this.lblMatKhauMoi.Text = "Mật khẩu mới";
             // 
@@ -101,7 +101,7 @@
             this.lblXacNhanMatKhau.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblXacNhanMatKhau.Location = new System.Drawing.Point(25, 265);
             this.lblXacNhanMatKhau.Name = "lblXacNhanMatKhau";
-            this.lblXacNhanMatKhau.Size = new System.Drawing.Size(238, 28);
+            this.lblXacNhanMatKhau.Size = new System.Drawing.Size(192, 23);
             this.lblXacNhanMatKhau.TabIndex = 13;
             this.lblXacNhanMatKhau.Text = "Xác nhận mật khẩu";
             // 
@@ -110,7 +110,7 @@
             this.txtTenDangNhap.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTenDangNhap.Location = new System.Drawing.Point(280, 100);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
-            this.txtTenDangNhap.Size = new System.Drawing.Size(354, 35);
+            this.txtTenDangNhap.Size = new System.Drawing.Size(354, 30);
             this.txtTenDangNhap.TabIndex = 1;
             this.txtTenDangNhap.Tag = "";
             this.txtTenDangNhap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenDangNhap_KeyPress);
@@ -121,7 +121,7 @@
             this.txtMatKhauCu.Location = new System.Drawing.Point(280, 155);
             this.txtMatKhauCu.Name = "txtMatKhauCu";
             this.txtMatKhauCu.PasswordChar = '*';
-            this.txtMatKhauCu.Size = new System.Drawing.Size(354, 35);
+            this.txtMatKhauCu.Size = new System.Drawing.Size(354, 30);
             this.txtMatKhauCu.TabIndex = 2;
             this.txtMatKhauCu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMatKhauCu_KeyPress);
             // 
@@ -131,7 +131,7 @@
             this.txtMatKhauMoi.Location = new System.Drawing.Point(280, 210);
             this.txtMatKhauMoi.Name = "txtMatKhauMoi";
             this.txtMatKhauMoi.PasswordChar = '*';
-            this.txtMatKhauMoi.Size = new System.Drawing.Size(354, 35);
+            this.txtMatKhauMoi.Size = new System.Drawing.Size(354, 30);
             this.txtMatKhauMoi.TabIndex = 3;
             this.txtMatKhauMoi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMatKhauMoi_KeyPress);
             // 
@@ -141,7 +141,7 @@
             this.txtXacNhanMatKhau.Location = new System.Drawing.Point(280, 265);
             this.txtXacNhanMatKhau.Name = "txtXacNhanMatKhau";
             this.txtXacNhanMatKhau.PasswordChar = '*';
-            this.txtXacNhanMatKhau.Size = new System.Drawing.Size(354, 35);
+            this.txtXacNhanMatKhau.Size = new System.Drawing.Size(354, 30);
             this.txtXacNhanMatKhau.TabIndex = 4;
             this.txtXacNhanMatKhau.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtXacNhanMatKhau_KeyPress);
             // 
@@ -240,10 +240,10 @@
             // 
             // FormDoiMatKhau
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LimeGreen;
-            this.ClientSize = new System.Drawing.Size(682, 412);
+            this.ClientSize = new System.Drawing.Size(692, 428);
             this.Controls.Add(this.ptbThoat);
             this.Controls.Add(this.ptbXacNhan);
             this.Controls.Add(this.ptbMKXN);
@@ -270,6 +270,8 @@
             this.Name = "FormDoiMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đổi mật khẩu";
+            this.Load += new System.EventHandler(this.FormDoiMatKhau_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormDoiMatKhau_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.ptbMKC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMKM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMKXN)).EndInit();

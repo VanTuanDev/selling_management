@@ -9,8 +9,8 @@ E:\02032024\BLL\bin\Debug\BLL.dll
 E:\02032024\BLL\bin\Debug\BLL.pdb
 E:\02032024\BLL\bin\Debug\DAL.dll
 E:\02032024\BLL\bin\Debug\DAL.pdb
+E:\02032024\BLL\obj\Debug\BLL.dll
+E:\02032024\BLL\obj\Debug\BLL.pdb
 E:\02032024\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
 E:\02032024\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 E:\02032024\BLL\obj\Debug\BLL.csproj.CopyComplete
-E:\02032024\BLL\obj\Debug\BLL.dll
-E:\02032024\BLL\obj\Debug\BLL.pdb
