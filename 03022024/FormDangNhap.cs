@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Windows.Forms;
 using BLL;
+using DAL.Entity;
 
 namespace _03022024
 {
     public partial class FormDangNhap : Form
     {
         private TaiKhoanManager manager = null;
+        TaiKhoanEntity taiKhoan = new TaiKhoanEntity();
+
         public FormDangNhap()
         {
             InitializeComponent();
@@ -14,16 +17,16 @@ namespace _03022024
         }
         private void DangNhap()
         {
-            string name = txtTenDangNhap.Text;
-            string pwd = txtMatKhau.Text;
+            taiKhoan.TenDangNhap = txtTenDangNhap.Text;
+            taiKhoan.MatKhau = txtMatKhau.Text;
 
-            if (String.IsNullOrEmpty(name) || String.IsNullOrEmpty(pwd))
+            if (String.IsNullOrEmpty(txtTenDangNhap.Text) || String.IsNullOrEmpty(txtMatKhau.Text))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
                 return;
             }
 
-            string role = manager.DangNhap(name, pwd);
+            string role = manager.DangNhap(taiKhoan);
 
             if (role != null)
             {

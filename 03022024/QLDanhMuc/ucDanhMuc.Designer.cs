@@ -124,7 +124,7 @@
             this.txtTenDanhMuc.Location = new System.Drawing.Point(237, 150);
             this.txtTenDanhMuc.Name = "txtTenDanhMuc";
             this.txtTenDanhMuc.Size = new System.Drawing.Size(489, 32);
-            this.txtTenDanhMuc.TabIndex = 11;
+            this.txtTenDanhMuc.TabIndex = 2;
             this.txtTenDanhMuc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenDanhMuc_KeyPress);
             // 
             // txtMaDanhMuc
@@ -134,7 +134,7 @@
             this.txtMaDanhMuc.Name = "txtMaDanhMuc";
             this.txtMaDanhMuc.ReadOnly = true;
             this.txtMaDanhMuc.Size = new System.Drawing.Size(489, 32);
-            this.txtMaDanhMuc.TabIndex = 10;
+            this.txtMaDanhMuc.TabIndex = 1;
             this.txtMaDanhMuc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaDanhMuc_KeyPress);
             // 
             // lblTieuDe
@@ -213,7 +213,7 @@
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(184, 37);
-            this.btnXoa.TabIndex = 9;
+            this.btnXoa.TabIndex = 5;
             this.btnXoa.Text = "   Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -229,7 +229,7 @@
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(184, 37);
-            this.btnSua.TabIndex = 8;
+            this.btnSua.TabIndex = 4;
             this.btnSua.Text = "   Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -245,7 +245,7 @@
             this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(184, 37);
-            this.btnThem.TabIndex = 7;
+            this.btnThem.TabIndex = 3;
             this.btnThem.Text = "   Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);

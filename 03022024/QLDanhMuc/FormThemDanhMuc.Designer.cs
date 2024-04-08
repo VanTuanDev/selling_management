@@ -50,7 +50,7 @@
             this.lblHeader.Location = new System.Drawing.Point(97, 27);
             this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(351, 46);
+            this.lblHeader.Size = new System.Drawing.Size(437, 57);
             this.lblHeader.TabIndex = 28;
             this.lblHeader.Text = "THÊM DANH MỤC";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -60,8 +60,8 @@
             this.txtTenDanhMuc.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTenDanhMuc.Location = new System.Drawing.Point(280, 170);
             this.txtTenDanhMuc.Name = "txtTenDanhMuc";
-            this.txtTenDanhMuc.Size = new System.Drawing.Size(354, 30);
-            this.txtTenDanhMuc.TabIndex = 37;
+            this.txtTenDanhMuc.Size = new System.Drawing.Size(354, 35);
+            this.txtTenDanhMuc.TabIndex = 2;
             this.txtTenDanhMuc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenDanhMuc_KeyPress);
             // 
             // txtMaDanhMuc
@@ -69,8 +69,8 @@
             this.txtMaDanhMuc.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtMaDanhMuc.Location = new System.Drawing.Point(280, 115);
             this.txtMaDanhMuc.Name = "txtMaDanhMuc";
-            this.txtMaDanhMuc.Size = new System.Drawing.Size(354, 30);
-            this.txtMaDanhMuc.TabIndex = 36;
+            this.txtMaDanhMuc.Size = new System.Drawing.Size(354, 35);
+            this.txtMaDanhMuc.TabIndex = 1;
             this.txtMaDanhMuc.Tag = "";
             this.txtMaDanhMuc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaDanhMuc_KeyPress);
             // 
@@ -80,7 +80,7 @@
             this.lblTenDanhMuc.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblTenDanhMuc.Location = new System.Drawing.Point(25, 170);
             this.lblTenDanhMuc.Name = "lblTenDanhMuc";
-            this.lblTenDanhMuc.Size = new System.Drawing.Size(144, 23);
+            this.lblTenDanhMuc.Size = new System.Drawing.Size(176, 28);
             this.lblTenDanhMuc.TabIndex = 39;
             this.lblTenDanhMuc.Text = "Tên danh mục";
             // 
@@ -90,7 +90,7 @@
             this.lblMaDanhMuc.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblMaDanhMuc.Location = new System.Drawing.Point(25, 115);
             this.lblMaDanhMuc.Name = "lblMaDanhMuc";
-            this.lblMaDanhMuc.Size = new System.Drawing.Size(137, 23);
+            this.lblMaDanhMuc.Size = new System.Drawing.Size(168, 28);
             this.lblMaDanhMuc.TabIndex = 38;
             this.lblMaDanhMuc.Text = "Mã danh mục";
             // 
@@ -130,7 +130,7 @@
             this.btnThoat.Location = new System.Drawing.Point(392, 241);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(161, 42);
-            this.btnThoat.TabIndex = 41;
+            this.btnThoat.TabIndex = 4;
             this.btnThoat.Text = "   Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -145,17 +145,17 @@
             this.btnXacNhan.Location = new System.Drawing.Point(119, 241);
             this.btnXacNhan.Name = "btnXacNhan";
             this.btnXacNhan.Size = new System.Drawing.Size(198, 42);
-            this.btnXacNhan.TabIndex = 40;
+            this.btnXacNhan.TabIndex = 3;
             this.btnXacNhan.Text = "    Xác nhận";
             this.btnXacNhan.UseVisualStyleBackColor = false;
             this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
             // FormThemDanhMuc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LimeGreen;
-            this.ClientSize = new System.Drawing.Size(692, 328);
+            this.ClientSize = new System.Drawing.Size(682, 312);
             this.Controls.Add(this.ptbThoat);
             this.Controls.Add(this.ptbXacNhan);
             this.Controls.Add(this.btnThoat);
@@ -174,8 +174,6 @@
             this.Name = "FormThemDanhMuc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm danh mục";
-            this.Load += new System.EventHandler(this.FormThemDanhMuc_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormThemDanhMuc_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.ptbThoat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbXacNhan)).EndInit();
             this.ResumeLayout(false);

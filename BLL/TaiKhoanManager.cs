@@ -1,6 +1,7 @@
 ﻿using DAL.Reponsitories;
 using System.Data;
 using System;
+using DAL.Entity;
 
 namespace BLL
 {
@@ -16,54 +17,26 @@ namespace BLL
         {
             return Process.HienThiDanhSachTaiKhoan();
         }
-        public void ThemTaiKhoan(string tenDangNhap, string tenDayDu, string matKhau, string maQuyen)
+        public void ThemTaiKhoan(TaiKhoanEntity taiKhoan)
         {
-            Process.ThemTaiKhoan(tenDangNhap, tenDayDu, matKhau, maQuyen);
+            Process.ThemTaiKhoan(taiKhoan);
         }
-        public void CapNhatTaiKhoan(string tenDangNhap, string tenDayDu, string tenQuyen)
+        public void CapNhatTaiKhoan(TaiKhoanEntity taiKhoan)
         {
-            if (string.IsNullOrEmpty(tenDangNhap) || string.IsNullOrEmpty(tenDayDu) || string.IsNullOrEmpty(tenQuyen))
-            {
-                throw new Exception("Vui lòng nhập đầy đủ thông tin.");
-            }
-
-            try
-            {
-                Process.CapNhatTaiKhoan(tenDangNhap, tenDayDu, tenQuyen);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            Process.CapNhatTaiKhoan(taiKhoan);
         }
 
-        public bool XoaTaiKhoan(string tendangnhap)
+        public bool XoaTaiKhoan(TaiKhoanEntity taiKhoan)
         {
-            return Process.XoaTaiKhoan(tendangnhap);
+            return Process.XoaTaiKhoan(taiKhoan);
         }
-        public string DangNhap(string username, string password)
+        public string DangNhap(TaiKhoanEntity taiKhoan)
         {
-            return Process.DangNhap(username, password);
+            return Process.DangNhap(taiKhoan);
         }
-        public string ThayDoiMatKhau(string tenDangNhap, string matKhauCu, string matKhauMoi, string matKhauXacNhan)
+        public string ThayDoiMatKhau(TaiKhoanEntity taiKhoan)
         {
-
-            if (String.IsNullOrEmpty(tenDangNhap) || String.IsNullOrEmpty(matKhauCu) || String.IsNullOrEmpty(matKhauMoi) || String.IsNullOrEmpty(matKhauXacNhan))
-            {
-                return "Vui lòng nhập đầy đủ thông tin!";
-            }
-
-            if (matKhauCu == matKhauMoi)
-            {
-                return "Vui lòng nhập mật khẩu mới khác mật khẩu cũ!";
-            }
-
-            if (matKhauMoi != matKhauXacNhan)
-            {
-                return "Mật khẩu mới và mật khẩu xác nhận khác nhau. Vui lòng kiểm tra lại!";
-            }
-
-            int result = Process.ThayDoiMatKhau(tenDangNhap, matKhauCu, matKhauMoi);
+            int result = Process.ThayDoiMatKhau(taiKhoan);
 
             if (result != 0)
             {

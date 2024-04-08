@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using DAL.Entity;
 
 namespace _03022024
 {
     public partial class FormThemDanhMuc : Form
     {
         private DanhMucManager manager = null;
+        DanhMucEntity danhMuc = new DanhMucEntity();
+
         public FormThemDanhMuc()
         {
             InitializeComponent();
@@ -37,12 +33,12 @@ namespace _03022024
         }
         private void XacNhan()
         {
-            string maDanhMuc = txtMaDanhMuc.Text;
-            string tenDanhMuc = txtTenDanhMuc.Text;
+            danhMuc.MaDanhMuc = txtMaDanhMuc.Text;
+            danhMuc.TenDanhMuc = txtTenDanhMuc.Text;
 
-            if (!string.IsNullOrEmpty(maDanhMuc) && !string.IsNullOrEmpty(tenDanhMuc))
+            if (!string.IsNullOrEmpty(txtMaDanhMuc.Text) && !string.IsNullOrEmpty(txtTenDanhMuc.Text))
             {
-                manager.ThemDanhMuc(maDanhMuc, tenDanhMuc);
+                manager.ThemDanhMuc(danhMuc);
                 MessageBox.Show("Thêm danh mục thành công!");
                 this.Close();
             }
@@ -78,16 +74,6 @@ namespace _03022024
         private void ptbThoat_Click(object sender, EventArgs e)
         {
             Thoat();
-        }
-
-        private void FormThemDanhMuc_KeyDown(object sender, KeyEventArgs e)
-        {
-            btnXacNhan_Click(sender, e);
-        }
-
-        private void FormThemDanhMuc_Load(object sender, EventArgs e)
-        {
-            this.KeyPreview = true;
         }
     }
 }

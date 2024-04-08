@@ -2,8 +2,8 @@
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
-using _03022024.QLTaiKhoan;
 using BLL;
+using DAL.Entity;
 
 namespace _03022024.QLDanhMuc
 {
@@ -11,6 +11,8 @@ namespace _03022024.QLDanhMuc
     {
         private DataTable dataDSDanhMuc = null;
         private DanhMucManager manager = null;
+        DanhMucEntity danhMuc = new DanhMucEntity();
+
         public ucDanhMuc()
         {
             InitializeComponent();
@@ -97,13 +99,13 @@ namespace _03022024.QLDanhMuc
         }
         private void Sua()
         {
-            string maDanhMuc = txtMaDanhMuc.Text;
-            string tenDanhMuc = txtTenDanhMuc.Text;
+            danhMuc.MaDanhMuc = txtMaDanhMuc.Text;
+            danhMuc.TenDanhMuc = txtTenDanhMuc.Text;
 
             try
             {
-                manager.CapNhatDanhMuc(maDanhMuc, tenDanhMuc);
-                MessageBox.Show("Đã cập nhật thông tin khách hàng thành công.");
+                manager.CapNhatDanhMuc(danhMuc);
+                MessageBox.Show("Đã cập nhật thông tin danh mục thành công.");
                 HienThiDanhSachDanhMuc();
                 Reset();
             }
@@ -128,10 +130,10 @@ namespace _03022024.QLDanhMuc
                 {
                     DataGridViewRow row = dgDanhMuc.SelectedRows[0];
 
-                    string danhmuc = row.Cells["cl1"].Value.ToString();
+                    danhMuc.MaDanhMuc = row.Cells["cl1"].Value.ToString();
 
                     string error = string.Empty;
-                    if (manager.XoaDanhMuc(danhmuc))
+                    if (manager.XoaDanhMuc(danhMuc))
                     {
                         MessageBox.Show("Đã xóa danh mục thành công.");
                         HienThiDanhSachDanhMuc();

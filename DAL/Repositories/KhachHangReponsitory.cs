@@ -2,12 +2,13 @@
 using System.Data;
 using System;
 using DAL.Repositories;
+using DAL.Entity;
+using System.Collections.Generic;
 
 namespace DAL.Reponsitories
 {
     public class KhachHangReponsitory
     {
-        private string connectionString = "Data Source=.;Initial Catalog=QuanLyBanHang;Integrated Security=True";
         private Database database = new Database();
 
         public DataTable HienThiDanhSachKhachHang()
@@ -15,29 +16,29 @@ namespace DAL.Reponsitories
             SqlParameter[] parameters = null;
             return database.ExecuteQuery("sp_LayDanhSachKhachHang", parameters);
         }
-        public void ThemKhachHang(string maKhachHang, string tenKhachHang)
+        public void ThemKhachHang(KhachHangEntity khachHang)
         {
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("@MaKhachHang", maKhachHang),
-                new SqlParameter("@TenKhachHang", tenKhachHang)
+                new SqlParameter("@MaKhachHang", khachHang.MaKhachHang),
+                new SqlParameter("@TenKhachHang", khachHang.TenKhachHang)
             };
             database.ExecuteNonQuery("sp_ThemKhachHang", parameters);    
         }
-        public void CapNhatKhachHang(string makhachhang, string tenkhachhang)
+        public void CapNhatKhachHang(KhachHangEntity khachHang)
         {
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("@MaKhachHang", makhachhang),
-                new SqlParameter("@TenKhachHang", tenkhachhang)
+                new SqlParameter("@MaKhachHang", khachHang.MaKhachHang),
+                new SqlParameter("@TenKhachHang", khachHang.TenKhachHang)
             };
             database.ExecuteNonQuery("sp_SuaKhachHang", parameters);
         }
-        public bool XoaKhachHang(string makhachhang)
+        public bool XoaKhachHang(KhachHangEntity khachHang)
         {
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("@MaKhachHang", makhachhang),
+                new SqlParameter("@MaKhachHang", khachHang.MaKhachHang),
                 new SqlParameter("@RowsAffected", SqlDbType.Int) { Direction = ParameterDirection.Output }
             };
 
@@ -46,45 +47,12 @@ namespace DAL.Reponsitories
             int rowsAffected = Convert.ToInt32(parameters[1].Value);
             return rowsAffected > 0;
         }
-        public string[] LayTenKhachHang(string columnName, string tableName)
+        public List<string> LayTenKhachHang()
         {
-            SqlConnection connection = new SqlConnection(connectionString);
-            string[] values = null;
+            string query = "SELECT TenKhachHang FROM KhachHang";
+            List<string> customerNames = database.ExecuteReader(query, "TenKhachHang");
 
-            try
-            {
-                connection.Open();
-                string query = $"SELECT {columnName} FROM {tableName}"; 
-                SqlCommand command = new SqlCommand(query, connection);
-                SqlDataReader reader = command.ExecuteReader();
-
-                int rowCount = 0;
-                while (reader.Read())
-                {
-                    rowCount++;
-                }
-
-                values = new string[rowCount];
-                reader.Close();
-
-                reader = command.ExecuteReader();
-                int index = 0;
-                while (reader.Read())
-                {
-                    values[index] = reader[columnName].ToString();
-                    index++;
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-
-            return values;
+            return customerNames;
         }
     }
 }

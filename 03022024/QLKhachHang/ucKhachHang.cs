@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Data;
 using System.Windows.Forms;
 using BLL;
+using DAL.Entity;
 
 namespace _03022024.QLKhachHang
 {
@@ -10,6 +11,8 @@ namespace _03022024.QLKhachHang
     {
         private DataTable dataDSKhachHang = null;
         private KhachHangManager manager = null;
+        KhachHangEntity khachHang = new KhachHangEntity();
+
         public ucKhachHang()
         {
             InitializeComponent();
@@ -96,12 +99,12 @@ namespace _03022024.QLKhachHang
         }
         private void Sua()
         {
-            string makhachhang = txtMaKhachHang.Text;
-            string tenkhachhang = txtTenKhachHang.Text;
+            khachHang.MaKhachHang = txtMaKhachHang.Text;
+            khachHang.TenKhachHang = txtTenKhachHang.Text;
 
             try
             {
-                manager.CapNhatKhachHang(makhachhang, tenkhachhang);
+                manager.CapNhatKhachHang(khachHang);
                 MessageBox.Show("Đã cập nhật thông tin khách hàng thành công.");
                 HienThiDanhSachKhachHang();
                 Reset();
@@ -128,10 +131,10 @@ namespace _03022024.QLKhachHang
                 {
                     DataGridViewRow row = dgKhachHang.SelectedRows[0];
 
-                    string khachhang = row.Cells["cl1"].Value.ToString();
+                    khachHang.MaKhachHang = row.Cells["cl1"].Value.ToString();
 
                     string error = string.Empty;
-                    if (manager.XoaKhachHang(khachhang))
+                    if (manager.XoaKhachHang(khachHang))
                     {
                     
                         MessageBox.Show("Đã xóa khách hàng thành công.");

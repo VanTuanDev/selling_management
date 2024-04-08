@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
+using DAL.Entity;
 using DAL.Reponsitories;
 
 namespace BLL
@@ -20,28 +16,17 @@ namespace BLL
         {
             return Process.HienThiDanhSachDanhMuc();
         }
-        public void ThemDanhMuc(string maDanhMuc, string tenDanhMuc)
+        public void ThemDanhMuc(DanhMucEntity danhMuc)
         {
-            Process.ThemDanhMuc(maDanhMuc, tenDanhMuc);
+            Process.ThemDanhMuc(danhMuc);
         }
-        public void CapNhatDanhMuc(string maDanhMuc, string tenDanhMuc)
+        public void CapNhatDanhMuc(DanhMucEntity danhMuc)
         {
-            if (string.IsNullOrEmpty(maDanhMuc) || string.IsNullOrEmpty(tenDanhMuc))
-            {
-                throw new Exception("Vui lòng nhập đầy đủ thông tin.");
-            }
-            try
-            {
-                Process.CapNhatDanhMuc(maDanhMuc, tenDanhMuc);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            Process.CapNhatDanhMuc(danhMuc);
         }
-        public bool XoaDanhMuc(string maDanhMuc)
+        public bool XoaDanhMuc(DanhMucEntity danhMuc)
         {
-            return Process.XoaDanhMuc(maDanhMuc);
+            return Process.XoaDanhMuc(danhMuc);
         }
     }
 }

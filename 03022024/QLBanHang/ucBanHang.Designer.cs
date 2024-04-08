@@ -36,8 +36,16 @@
             this.labelThanhTien = new System.Windows.Forms.Label();
             this.pnlTopRight = new System.Windows.Forms.Panel();
             this.dgDSSanPhamDuocChon = new System.Windows.Forms.DataGridView();
+            this.column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlBottomLeft = new System.Windows.Forms.Panel();
             this.dgDanhSachSP = new System.Windows.Forms.DataGridView();
+            this.cl1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTopLeft = new System.Windows.Forms.Panel();
             this.lblTenKHNoiDung = new System.Windows.Forms.Label();
             this.lblMaKHNoiDung = new System.Windows.Forms.Label();
@@ -56,14 +64,6 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.lblTenSP = new System.Windows.Forms.Label();
             this.pnlLeft = new System.Windows.Forms.Panel();
-            this.cl1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelRight.SuspendLayout();
             this.pnlBottomRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThanhToan)).BeginInit();
@@ -124,7 +124,7 @@
             this.btnThanhToan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(221, 75);
-            this.btnThanhToan.TabIndex = 8;
+            this.btnThanhToan.TabIndex = 4;
             this.btnThanhToan.Text = "      Thanh toán";
             this.btnThanhToan.UseVisualStyleBackColor = false;
             this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
@@ -185,6 +185,50 @@
             this.dgDSSanPhamDuocChon.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgDSSanPhamDuocChon_CellFormatting);
             this.dgDSSanPhamDuocChon.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgDSSanPhamDuocChon_RowsAdded);
             // 
+            // column1
+            // 
+            this.column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.column1.DataPropertyName = "TenSanPham";
+            this.column1.HeaderText = "Tên SP";
+            this.column1.MinimumWidth = 6;
+            this.column1.Name = "column1";
+            this.column1.ReadOnly = true;
+            this.column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // column2
+            // 
+            this.column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.column2.DataPropertyName = "SoLuongDat";
+            this.column2.HeaderText = "SL";
+            this.column2.MinimumWidth = 6;
+            this.column2.Name = "column2";
+            this.column2.ReadOnly = true;
+            this.column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // column3
+            // 
+            this.column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.column3.DataPropertyName = "DonGia";
+            this.column3.HeaderText = "Đơn giá";
+            this.column3.MinimumWidth = 6;
+            this.column3.Name = "column3";
+            this.column3.ReadOnly = true;
+            this.column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // column4
+            // 
+            this.column4.DataPropertyName = "ThanhTien";
+            this.column4.HeaderText = "Thành tiền";
+            this.column4.MinimumWidth = 6;
+            this.column4.Name = "column4";
+            this.column4.ReadOnly = true;
+            this.column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.column4.Width = 120;
+            // 
             // pnlBottomLeft
             // 
             this.pnlBottomLeft.Controls.Add(this.dgDanhSachSP);
@@ -217,6 +261,50 @@
             this.dgDanhSachSP.TabIndex = 0;
             this.dgDanhSachSP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDanhSachSP_CellClick);
             this.dgDanhSachSP.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgDanhSachSP_CellFormatting);
+            // 
+            // cl1
+            // 
+            this.cl1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cl1.DataPropertyName = "TenSanPham";
+            this.cl1.HeaderText = "Tên SP";
+            this.cl1.MinimumWidth = 6;
+            this.cl1.Name = "cl1";
+            this.cl1.ReadOnly = true;
+            this.cl1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cl1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // cl2
+            // 
+            this.cl2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cl2.DataPropertyName = "TenDanhMuc";
+            this.cl2.HeaderText = "Tên DM";
+            this.cl2.MinimumWidth = 6;
+            this.cl2.Name = "cl2";
+            this.cl2.ReadOnly = true;
+            this.cl2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cl2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // cl3
+            // 
+            this.cl3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cl3.DataPropertyName = "TenDVT";
+            this.cl3.HeaderText = "ĐVT";
+            this.cl3.MinimumWidth = 6;
+            this.cl3.Name = "cl3";
+            this.cl3.ReadOnly = true;
+            this.cl3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cl3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // cl4
+            // 
+            this.cl4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cl4.DataPropertyName = "DonGia";
+            this.cl4.HeaderText = "Đơn giá";
+            this.cl4.MinimumWidth = 6;
+            this.cl4.Name = "cl4";
+            this.cl4.ReadOnly = true;
+            this.cl4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cl4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // pnlTopLeft
             // 
@@ -269,7 +357,7 @@
             this.btnLuaChonKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuaChonKhachHang.Name = "btnLuaChonKhachHang";
             this.btnLuaChonKhachHang.Size = new System.Drawing.Size(57, 28);
-            this.btnLuaChonKhachHang.TabIndex = 13;
+            this.btnLuaChonKhachHang.TabIndex = 1;
             this.btnLuaChonKhachHang.Text = "---";
             this.btnLuaChonKhachHang.UseVisualStyleBackColor = false;
             this.btnLuaChonKhachHang.Click += new System.EventHandler(this.btnLuaChonKhachHang_Click);
@@ -433,94 +521,6 @@
             this.pnlLeft.Name = "pnlLeft";
             this.pnlLeft.Size = new System.Drawing.Size(581, 626);
             this.pnlLeft.TabIndex = 0;
-            // 
-            // cl1
-            // 
-            this.cl1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cl1.DataPropertyName = "TenSanPham";
-            this.cl1.HeaderText = "Tên SP";
-            this.cl1.MinimumWidth = 6;
-            this.cl1.Name = "cl1";
-            this.cl1.ReadOnly = true;
-            this.cl1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cl1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // cl2
-            // 
-            this.cl2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cl2.DataPropertyName = "TenDanhMuc";
-            this.cl2.HeaderText = "Tên DM";
-            this.cl2.MinimumWidth = 6;
-            this.cl2.Name = "cl2";
-            this.cl2.ReadOnly = true;
-            this.cl2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cl2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // cl3
-            // 
-            this.cl3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cl3.DataPropertyName = "TenDVT";
-            this.cl3.HeaderText = "ĐVT";
-            this.cl3.MinimumWidth = 6;
-            this.cl3.Name = "cl3";
-            this.cl3.ReadOnly = true;
-            this.cl3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cl3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // cl4
-            // 
-            this.cl4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cl4.DataPropertyName = "DonGia";
-            this.cl4.HeaderText = "Đơn giá";
-            this.cl4.MinimumWidth = 6;
-            this.cl4.Name = "cl4";
-            this.cl4.ReadOnly = true;
-            this.cl4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cl4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // column1
-            // 
-            this.column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.column1.DataPropertyName = "TenSanPham";
-            this.column1.HeaderText = "Tên SP";
-            this.column1.MinimumWidth = 6;
-            this.column1.Name = "column1";
-            this.column1.ReadOnly = true;
-            this.column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // column2
-            // 
-            this.column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.column2.DataPropertyName = "SoLuongDat";
-            this.column2.HeaderText = "SL";
-            this.column2.MinimumWidth = 6;
-            this.column2.Name = "column2";
-            this.column2.ReadOnly = true;
-            this.column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // column3
-            // 
-            this.column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.column3.DataPropertyName = "DonGia";
-            this.column3.HeaderText = "Đơn giá";
-            this.column3.MinimumWidth = 6;
-            this.column3.Name = "column3";
-            this.column3.ReadOnly = true;
-            this.column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // column4
-            // 
-            this.column4.DataPropertyName = "ThanhTien";
-            this.column4.HeaderText = "Thành tiền";
-            this.column4.MinimumWidth = 6;
-            this.column4.Name = "column4";
-            this.column4.ReadOnly = true;
-            this.column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.column4.Width = 120;
             // 
             // ucBanHang
             // 

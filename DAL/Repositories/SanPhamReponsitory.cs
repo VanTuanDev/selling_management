@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Collections.Generic;
 using DAL.Repositories;
+using DAL.Entity;
 
 namespace DAL.Reponsitories
 {
@@ -22,39 +23,39 @@ namespace DAL.Reponsitories
             return database.ExecuteQuery("sp_LayDanhSachSanPhamBanHang", parameters);
         }
 
-        public void ThemSanPham(string maSanPham, string tenSanPham, string maDonViTinh, string maDanhMuc, string donGia)
+        public void ThemSanPham(SanPhamEntity sanPham)
         {
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("@MaSanPham", maSanPham),
-                new SqlParameter("@TenSanPham", tenSanPham),
-                new SqlParameter("@MaDVT", maDonViTinh),
-                new SqlParameter("@MaDanhMuc", maDanhMuc),
-                new SqlParameter("@DonGia", donGia)
+                new SqlParameter("@MaSanPham", sanPham.MaSanPham),
+                new SqlParameter("@TenSanPham", sanPham.TenSanPham),
+                new SqlParameter("@MaDVT", sanPham.MaDVT),
+                new SqlParameter("@MaDanhMuc", sanPham.MaDanhMuc),
+                new SqlParameter("@DonGia", sanPham.DonGia)
             };
 
             database.ExecuteNonQuery("sp_ThemSanPham", parameters);
         }
 
-        public void SuaSanPham(string maSanPham, string tenSanPham, string tenDVT, string tenDanhMuc, decimal donGia)
+        public void SuaSanPham(SanPhamEntity sanPham)
         {
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("@MaSanPham", maSanPham),
-                new SqlParameter("@TenSanPham", tenSanPham),
-                new SqlParameter("@TenDVT", tenDVT),
-                new SqlParameter("@TenDanhMuc", tenDanhMuc),
-                new SqlParameter("@DonGia", donGia)
+                new SqlParameter("@MaSanPham", sanPham.MaSanPham),
+                new SqlParameter("@TenSanPham", sanPham.TenSanPham),
+                new SqlParameter("@TenDVT", sanPham.MaDVT),
+                new SqlParameter("@TenDanhMuc", sanPham.MaDanhMuc),
+                new SqlParameter("@DonGia", sanPham.DonGia)
             };
 
             database.ExecuteNonQuery("sp_SuaSanPham", parameters);
         }
 
-        public bool XoaSanPham(string maSanPham)
+        public bool XoaSanPham(SanPhamEntity sanPham)
         {
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("@MaSanPham", maSanPham),
+                new SqlParameter("@MaSanPham", sanPham.MaSanPham),
                 new SqlParameter("@RowsAffected", SqlDbType.Int) { Direction = ParameterDirection.Output }
             };
 
@@ -67,63 +68,27 @@ namespace DAL.Reponsitories
         public DataTable LayDanhMuc()
         {
             SqlParameter[] parameters = null;
-            return database.ExecuteQuery("SELECT * FROM DanhMucSanPham", parameters);
+            return database.ExecuteQuery("sp_LayDanhMuc", parameters);
         }
 
         public DataTable LayDVT()
         {
             SqlParameter[] parameters = null;
-            return database.ExecuteQuery("SELECT * FROM DonViTinh", parameters);
+            return database.ExecuteQuery("sp_LayDVT", parameters);
         }
 
         public List<string> LayTenDanhMuc()
         {
-            List<string> categoryNames = new List<string>();
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                string query = "SELECT TenDanhMuc FROM DanhMucSanPham";
-
-                SqlCommand command = new SqlCommand(query, connection);
-
-                connection.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    string categoryName = reader["TenDanhMuc"].ToString();
-                    categoryNames.Add(categoryName);
-                }
-
-                reader.Close();
-            }
+            string query = "SELECT TenDanhMuc FROM DanhMucSanPham";
+            List<string> categoryNames = database.ExecuteReader(query, "TenDanhMuc");
 
             return categoryNames;
         }
 
         public List<string> LayTenDVT()
         {
-            List<string> unitNames = new List<string>();
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                string query = "SELECT TenDVT FROM DonViTinh";
-
-                SqlCommand command = new SqlCommand(query, connection);
-
-                connection.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    string categoryName = reader["TenDVT"].ToString();
-                    unitNames.Add(categoryName);
-                }
-
-                reader.Close();
-            }
+            string query = "SELECT TenDVT FROM DonViTinh";
+            List<string> unitNames = database.ExecuteReader(query, "TenDVT");
 
             return unitNames;
         }

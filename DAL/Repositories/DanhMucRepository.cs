@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using System.Data;
 using DAL.Repositories;
+using DAL.Entity;
 
 namespace DAL.Reponsitories
 {
@@ -13,29 +14,29 @@ namespace DAL.Reponsitories
             SqlParameter[] parameters = null;
             return database.ExecuteQuery("sp_LayDanhSachDanhMuc", parameters);
         }
-        public void ThemDanhMuc(string maDanhMuc, string tenDanhMuc)
+        public void ThemDanhMuc(DanhMucEntity danhMuc)
         {
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("@MaDanhMuc", maDanhMuc),
-                new SqlParameter("@TenDanhMuc", tenDanhMuc)
+                new SqlParameter("@MaDanhMuc", danhMuc.MaDanhMuc),
+                new SqlParameter("@TenDanhMuc", danhMuc.TenDanhMuc)
             };
             database.ExecuteNonQuery("sp_ThemDanhMuc", parameters);
         }
-        public void CapNhatDanhMuc(string maDanhMuc, string tenDanhMuc)
+        public void CapNhatDanhMuc(DanhMucEntity danhMuc)
         {
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("@MaDanhMuc", maDanhMuc),
-                new SqlParameter("@TenDanhMuc", tenDanhMuc)
+                new SqlParameter("@MaDanhMuc", danhMuc.MaDanhMuc),
+                new SqlParameter("@TenDanhMuc", danhMuc.TenDanhMuc)
             };
             database.ExecuteNonQuery("sp_SuaDanhMuc", parameters);
         }
-        public bool XoaDanhMuc(string maDanhMuc)
+        public bool XoaDanhMuc(DanhMucEntity danhMuc)
         {
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("@MaDanhMuc", maDanhMuc),
+                new SqlParameter("@MaDanhMuc", danhMuc.MaDanhMuc),
                 new SqlParameter("@RowsAffected", SqlDbType.Int) { Direction = ParameterDirection.Output }
             };
 

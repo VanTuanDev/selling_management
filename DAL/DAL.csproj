@@ -40,8 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\DanhMucEntity.cs" />
+    <Compile Include="Entity\KhachHangEntity.cs" />
+    <Compile Include="Entity\SanPhamEntity.cs" />
+    <Compile Include="Entity\TaiKhoanEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\DanhMucReponsitory.cs" />
+    <Compile Include="Repositories\DanhMucRepository.cs" />
     <Compile Include="Repositories\Database.cs" />
     <Compile Include="Repositories\HoaDonReponsitory.cs" />
     <Compile Include="Repositories\KhachHangReponsitory.cs" />

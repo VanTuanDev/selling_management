@@ -78,7 +78,7 @@
             this.btnThoat.Location = new System.Drawing.Point(392, 241);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(161, 42);
-            this.btnThoat.TabIndex = 29;
+            this.btnThoat.TabIndex = 4;
             this.btnThoat.Text = "   Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -93,7 +93,7 @@
             this.btnXacNhan.Location = new System.Drawing.Point(119, 241);
             this.btnXacNhan.Name = "btnXacNhan";
             this.btnXacNhan.Size = new System.Drawing.Size(198, 42);
-            this.btnXacNhan.TabIndex = 28;
+            this.btnXacNhan.TabIndex = 3;
             this.btnXacNhan.Text = "    Xác nhận";
             this.btnXacNhan.UseVisualStyleBackColor = false;
             this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
@@ -106,7 +106,7 @@
             this.lblHeader.Location = new System.Drawing.Point(97, 27);
             this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(398, 46);
+            this.lblHeader.Size = new System.Drawing.Size(496, 57);
             this.lblHeader.TabIndex = 27;
             this.lblHeader.Text = "THÊM KHÁCH HÀNG";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -116,8 +116,8 @@
             this.txtTenKhachHang.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTenKhachHang.Location = new System.Drawing.Point(280, 170);
             this.txtTenKhachHang.Name = "txtTenKhachHang";
-            this.txtTenKhachHang.Size = new System.Drawing.Size(310, 30);
-            this.txtTenKhachHang.TabIndex = 33;
+            this.txtTenKhachHang.Size = new System.Drawing.Size(310, 35);
+            this.txtTenKhachHang.TabIndex = 2;
             this.txtTenKhachHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenKhachHang_KeyPress);
             // 
             // txtMaKhachHang
@@ -125,8 +125,8 @@
             this.txtMaKhachHang.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtMaKhachHang.Location = new System.Drawing.Point(280, 115);
             this.txtMaKhachHang.Name = "txtMaKhachHang";
-            this.txtMaKhachHang.Size = new System.Drawing.Size(310, 30);
-            this.txtMaKhachHang.TabIndex = 32;
+            this.txtMaKhachHang.Size = new System.Drawing.Size(310, 35);
+            this.txtMaKhachHang.TabIndex = 1;
             this.txtMaKhachHang.Tag = "";
             this.txtMaKhachHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaKhachHang_KeyPress);
             // 
@@ -136,7 +136,7 @@
             this.lblTenKhachHang.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblTenKhachHang.Location = new System.Drawing.Point(25, 170);
             this.lblTenKhachHang.Name = "lblTenKhachHang";
-            this.lblTenKhachHang.Size = new System.Drawing.Size(160, 23);
+            this.lblTenKhachHang.Size = new System.Drawing.Size(197, 28);
             this.lblTenKhachHang.TabIndex = 35;
             this.lblTenKhachHang.Text = "Tên khách hàng";
             // 
@@ -146,16 +146,16 @@
             this.lblMaKhachHang.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblMaKhachHang.Location = new System.Drawing.Point(25, 115);
             this.lblMaKhachHang.Name = "lblMaKhachHang";
-            this.lblMaKhachHang.Size = new System.Drawing.Size(153, 23);
+            this.lblMaKhachHang.Size = new System.Drawing.Size(189, 28);
             this.lblMaKhachHang.TabIndex = 34;
             this.lblMaKhachHang.Text = "Mã khách hàng";
             // 
             // FormThemKhachHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LimeGreen;
-            this.ClientSize = new System.Drawing.Size(692, 328);
+            this.ClientSize = new System.Drawing.Size(682, 312);
             this.Controls.Add(this.txtTenKhachHang);
             this.Controls.Add(this.txtMaKhachHang);
             this.Controls.Add(this.lblTenKhachHang);

@@ -1,6 +1,8 @@
 ﻿using DAL.Reponsitories;
 using System;
 using System.Data;
+using DAL.Entity;
+using System.Collections.Generic;
 
 namespace BLL
 {
@@ -17,34 +19,22 @@ namespace BLL
         {
             return Process.HienThiDanhSachKhachHang();
         }
-        public void ThemKhachHang(string maKhachHang, string tenKhachHang)
+        public void ThemKhachHang(KhachHangEntity khachHang)
         {
-            Process.ThemKhachHang(maKhachHang, tenKhachHang);
+            Process.ThemKhachHang(khachHang);
         }
-        public void CapNhatKhachHang(string makhachhang, string tenkhachhang)
+        public void CapNhatKhachHang(KhachHangEntity khachHang)
         {
-            if (string.IsNullOrEmpty(makhachhang) || string.IsNullOrEmpty(tenkhachhang))
-            {
-                throw new Exception("Vui lòng nhập đầy đủ thông tin.");
-            }
+            Process.CapNhatKhachHang(khachHang);
 
-            try
-            {
-                Process.CapNhatKhachHang(makhachhang, tenkhachhang);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
         }
-        public bool XoaKhachHang(string makhachhang)
+        public bool XoaKhachHang(KhachHangEntity khachHang)
         {
-            return Process.XoaKhachHang(makhachhang);
+            return Process.XoaKhachHang(khachHang);
         }
-        public string[] LayTenKhachHang()
+        public List<string> LayTenKhachHang()
         {
-            return Process.LayTenKhachHang("TenKhachHang", "KhachHang");
+            return Process.LayTenKhachHang();
         }
-
     }
 }

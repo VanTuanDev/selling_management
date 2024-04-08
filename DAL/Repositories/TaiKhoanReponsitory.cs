@@ -3,6 +3,7 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using DAL.Entity;
 
 namespace DAL.Reponsitories
 {
@@ -15,34 +16,34 @@ namespace DAL.Reponsitories
             SqlParameter[] parameters = null;
             return database.ExecuteQuery("sp_LayDanhSachTaiKhoan", parameters);
         }
-        public void ThemTaiKhoan(string tenDangNhap, string tenDayDu, string matKhau, string maQuyen)
+        public void ThemTaiKhoan(TaiKhoanEntity taiKhoan)
         {
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("@TenDangNhap", tenDangNhap),
-                new SqlParameter("@TenDayDu", tenDayDu),
-                new SqlParameter("@MatKhau", matKhau),
-                new SqlParameter("@MaQuyen", maQuyen)
+                new SqlParameter("@TenDangNhap", taiKhoan.TenDangNhap),
+                new SqlParameter("@TenDayDu", taiKhoan.TenDayDu),
+                new SqlParameter("@MatKhau", taiKhoan.MatKhau),
+                new SqlParameter("@MaQuyen", taiKhoan.MaQuyen)
             };
             database.ExecuteNonQuery("sp_ThemTaiKhoan", parameters);
         }
 
-        public void CapNhatTaiKhoan(string tenDangNhap, string tenDayDu, string tenQuyen)
+        public void CapNhatTaiKhoan(TaiKhoanEntity taiKhoan)
         {
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("@TenDangNhap", tenDangNhap),
-                new SqlParameter("@TenDayDu", tenDayDu),
-                new SqlParameter("@TenQuyen", tenQuyen)
+                new SqlParameter("@TenDangNhap", taiKhoan.TenDangNhap),
+                new SqlParameter("@TenDayDu", taiKhoan.TenDayDu),
+                new SqlParameter("@TenQuyen", taiKhoan.MaQuyen)
             };
             database.ExecuteNonQuery("sp_SuaTaiKhoan", parameters);
         }
 
-        public bool XoaTaiKhoan(string tenDangNhap)
+        public bool XoaTaiKhoan(TaiKhoanEntity taiKhoan)
         {
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("@TenDangNhap", tenDangNhap),
+                new SqlParameter("@TenDangNhap", taiKhoan.TenDangNhap),
                 new SqlParameter("@RowsAffected", SqlDbType.Int) { Direction = ParameterDirection.Output }
             };
 
@@ -51,32 +52,24 @@ namespace DAL.Reponsitories
             int rowsAffected = Convert.ToInt32(parameters[1].Value);
             return rowsAffected > 0;
         }
-        public string DangNhap(string username, string password)
+        public string DangNhap(TaiKhoanEntity taiKhoan)
         {
             string role = null;
 
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                SqlParameter[] parameters = new SqlParameter[]
                 {
-                    connection.Open();
+                    new SqlParameter("@username", taiKhoan.TenDangNhap),
+                    new SqlParameter("@password", taiKhoan.MatKhau)
+                };
 
-                    SqlCommand sqlCommand = new SqlCommand();
-                    sqlCommand.CommandType = CommandType.StoredProcedure;
-                    sqlCommand.CommandText = "sp_DangNhap";
-                    sqlCommand.Connection = connection;
-
-                    sqlCommand.Parameters.AddWithValue("@username", username);
-                    sqlCommand.Parameters.AddWithValue("@password", password);
-
-                    using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                using (SqlDataReader reader = database.ExecuteReader(connectionString, "sp_DangNhap", parameters))
+                {
+                    if (reader != null && reader.Read())
                     {
-                        if (reader.Read())
-                        {
-                            role = reader["TenQuyen"].ToString();
-                        }
+                        role = reader["TenQuyen"].ToString();
                     }
-                    connection.Close();
                 }
             }
             catch (Exception ex)
@@ -86,45 +79,36 @@ namespace DAL.Reponsitories
 
             return role;
         }
-        public int ThayDoiMatKhau(string tenDangNhap, string matKhauCu, string matKhauMoi)
+        public int ThayDoiMatKhau(TaiKhoanEntity taiKhoan)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                connection.Open();
+                SqlParameter[] parameters = new SqlParameter[]
+                {
+                    new SqlParameter("@TenDangNhap", taiKhoan.TenDangNhap),
+                    new SqlParameter("@MatKhauCu", taiKhoan.MatKhau),
+                    new SqlParameter("@MatKhauMoi", taiKhoan.MatKhauMoi)
+                };
 
-                SqlCommand sqlCommand = new SqlCommand();
-                sqlCommand.CommandType = CommandType.StoredProcedure;
-                sqlCommand.CommandText = "sp_ThayDoiMatKhau";
-                sqlCommand.Connection = connection;
+                object data = database.ExecuteScalar("sp_ThayDoiMatKhau", parameters);
 
-                sqlCommand.Parameters.AddWithValue("@TenDangNhap", tenDangNhap);
-                sqlCommand.Parameters.AddWithValue("@MatKhauCu", matKhauCu);
-                sqlCommand.Parameters.AddWithValue("@MatKhauMoi", matKhauMoi);
-
-                object data = sqlCommand.ExecuteScalar();
-                connection.Close();
-
-                return Convert.ToInt32(data);
+                if (data != null)
+                {
+                    return Convert.ToInt32(data);
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+
+            return 0;
         }
 
         public DataTable LayDuLieuNguoiDung()
         {
-            string query = "SELECT MaQuyen, TenQuyen FROM QuyenDangNhap";
-            DataTable dataTable = new DataTable();
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-                    {
-                        adapter.Fill(dataTable);
-                    }
-                }
-                return dataTable;
-            }
+            SqlParameter[] parameters = null;
+            return database.ExecuteQuery("sp_LayDuLieuNguoiDung", parameters);
         }
     }
 }

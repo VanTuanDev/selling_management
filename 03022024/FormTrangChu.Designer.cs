@@ -217,7 +217,7 @@
             this.btnDoiMatKhau.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
             this.btnDoiMatKhau.Size = new System.Drawing.Size(257, 50);
-            this.btnDoiMatKhau.TabIndex = 10;
+            this.btnDoiMatKhau.TabIndex = 7;
             this.btnDoiMatKhau.Text = "     Đổi mật khẩu";
             this.btnDoiMatKhau.UseVisualStyleBackColor = false;
             this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
@@ -248,7 +248,7 @@
             this.btnDangXuat.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.Size = new System.Drawing.Size(257, 50);
-            this.btnDangXuat.TabIndex = 1;
+            this.btnDangXuat.TabIndex = 8;
             this.btnDangXuat.Text = "Đăng xuất";
             this.btnDangXuat.UseVisualStyleBackColor = false;
             this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
@@ -264,7 +264,7 @@
             this.btnHoaDon.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnHoaDon.Name = "btnHoaDon";
             this.btnHoaDon.Size = new System.Drawing.Size(241, 52);
-            this.btnHoaDon.TabIndex = 9;
+            this.btnHoaDon.TabIndex = 6;
             this.btnHoaDon.Text = "         Hóa đơn";
             this.btnHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHoaDon.UseVisualStyleBackColor = false;
@@ -281,7 +281,7 @@
             this.btnBanHang.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnBanHang.Name = "btnBanHang";
             this.btnBanHang.Size = new System.Drawing.Size(241, 52);
-            this.btnBanHang.TabIndex = 7;
+            this.btnBanHang.TabIndex = 5;
             this.btnBanHang.Text = "         Bán hàng";
             this.btnBanHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBanHang.UseVisualStyleBackColor = false;
@@ -298,7 +298,7 @@
             this.btnDanhMuc.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnDanhMuc.Name = "btnDanhMuc";
             this.btnDanhMuc.Size = new System.Drawing.Size(241, 52);
-            this.btnDanhMuc.TabIndex = 5;
+            this.btnDanhMuc.TabIndex = 3;
             this.btnDanhMuc.Text = "         Danh mục";
             this.btnDanhMuc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDanhMuc.UseVisualStyleBackColor = false;
@@ -332,7 +332,7 @@
             this.btnKhachHang.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnKhachHang.Name = "btnKhachHang";
             this.btnKhachHang.Size = new System.Drawing.Size(241, 52);
-            this.btnKhachHang.TabIndex = 3;
+            this.btnKhachHang.TabIndex = 2;
             this.btnKhachHang.Text = "         Khách hàng";
             this.btnKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKhachHang.UseVisualStyleBackColor = false;
@@ -349,7 +349,7 @@
             this.btnTaiKhoan.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnTaiKhoan.Name = "btnTaiKhoan";
             this.btnTaiKhoan.Size = new System.Drawing.Size(241, 52);
-            this.btnTaiKhoan.TabIndex = 2;
+            this.btnTaiKhoan.TabIndex = 1;
             this.btnTaiKhoan.Text = "         Tài khoản";
             this.btnTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTaiKhoan.UseVisualStyleBackColor = false;

@@ -1,14 +1,15 @@
 ﻿using System;
-using System.Data;
-using System.Data.SqlClient;
 using System.Windows.Forms;
 using BLL;
+using DAL.Entity;
 
 namespace _03022024
 {
     public partial class FormDoiMatKhau : Form
     {
         private TaiKhoanManager manager = null;
+        TaiKhoanEntity taiKhoan = new TaiKhoanEntity();
+
         public FormDoiMatKhau()
         {
             InitializeComponent();
@@ -36,16 +37,18 @@ namespace _03022024
 
         private void XacNhan()
         {
-            string tenDangNhap = txtTenDangNhap.Text;
-            string matKhauCu = txtMatKhauCu.Text;
-            string matKhauMoi = txtMatKhauMoi.Text;
-            string matKhauXacNhan = txtXacNhanMatKhau.Text;
-
-            string result = manager.ThayDoiMatKhau(tenDangNhap, matKhauCu, matKhauMoi, matKhauXacNhan);
-            MessageBox.Show(result + " Mời bạn đăng nhập lại!");
-            if (result == "Bạn đã cập nhật mật khẩu thành công.")
+            taiKhoan.TenDangNhap = txtTenDangNhap.Text;
+            taiKhoan.MatKhau = txtMatKhauCu.Text;
+            taiKhoan.MatKhauMoi = txtMatKhauMoi.Text;
+            taiKhoan.MatKhauXacNhan = txtXacNhanMatKhau.Text;
+            if (!string.IsNullOrEmpty(txtTenDangNhap.Text) || !string.IsNullOrEmpty(txtMatKhauCu.Text) || !string.IsNullOrEmpty(txtMatKhauMoi.Text) || !string.IsNullOrEmpty(txtXacNhanMatKhau.Text))
             {
-                Application.Restart();
+                string result = manager.ThayDoiMatKhau(taiKhoan);
+                MessageBox.Show(result);
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin");
             }
         }
 

@@ -2,12 +2,14 @@
 using System;
 using System.Windows.Forms;
 using System.Data;
+using DAL.Entity;
 
 namespace _03022024
 {
     public partial class FormThemTaiKhoan : Form
     {
         private TaiKhoanManager manager = null;
+        TaiKhoanEntity taiKhoan = new TaiKhoanEntity();
         private DataTable data = null;
         public FormThemTaiKhoan()
         {
@@ -70,13 +72,13 @@ namespace _03022024
 
         private void XacNhan()
         {
-            string tenDangNhap = txtTenDangNhap.Text;
-            string tenDayDu = txtTenDayDu.Text;
-            string matKhau = txtMatKhau.Text;
+            taiKhoan.TenDangNhap = txtTenDangNhap.Text;
+            taiKhoan.TenDayDu = txtTenDayDu.Text;
+            taiKhoan.MatKhau = txtMatKhau.Text;
 
-            string maQuyen = cbbMaQuyen.SelectedValue.ToString();
+            taiKhoan.MaQuyen = cbbMaQuyen.SelectedValue.ToString();
 
-            if (string.IsNullOrEmpty(tenDangNhap) || string.IsNullOrEmpty(tenDayDu) || string.IsNullOrEmpty(matKhau) || string.IsNullOrEmpty(maQuyen))
+            if (string.IsNullOrEmpty(txtTenDangNhap.Text) || string.IsNullOrEmpty(txtTenDayDu.Text) || string.IsNullOrEmpty(txtMatKhau.Text) || string.IsNullOrEmpty(cbbMaQuyen.Text))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
                 return;
@@ -84,7 +86,7 @@ namespace _03022024
 
             try
             {
-                manager.ThemTaiKhoan(tenDangNhap, tenDayDu, matKhau, maQuyen);
+                manager.ThemTaiKhoan(taiKhoan);
                 MessageBox.Show("Thêm tài khoản thành công!");
                 this.Close();
             }

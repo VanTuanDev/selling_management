@@ -419,3 +419,24 @@ BEGIN
 	ON hd.MaKhachHang = kh.MaKhachHang;
 END
 GO
+
+CREATE PROCEDURE sp_LayDanhMuc
+AS
+BEGIN
+	SELECT * FROM DanhMucSanPham WHERE TrangThai = N'Còn sử dụng';
+END
+GO
+
+CREATE PROCEDURE sp_LayDVT
+AS
+BEGIN
+	SELECT * FROM DonViTinh
+END
+GO
+
+CREATE PROCEDURE sp_LayDuLieuNguoiDung
+AS
+BEGIN
+	SELECT MaQuyen, TenQuyen FROM QuyenDangNhap
+END
+GO

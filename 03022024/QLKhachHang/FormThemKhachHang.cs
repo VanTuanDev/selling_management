@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Windows.Forms;
 using BLL;
+using DAL.Entity;
 
 namespace _03022024
 {
     public partial class FormThemKhachHang : Form
     {
         private KhachHangManager manager = null;
+        KhachHangEntity khachHang = new KhachHangEntity();
+
         public FormThemKhachHang()
         {
             InitializeComponent();
@@ -29,12 +32,12 @@ namespace _03022024
         }
         private void XacNhan()
         {
-            string maKhachHang = txtMaKhachHang.Text;
-            string tenKhachHang = txtTenKhachHang.Text;
+            khachHang.MaKhachHang = txtMaKhachHang.Text;
+            khachHang.TenKhachHang = txtTenKhachHang.Text;
 
-            if (!string.IsNullOrEmpty(maKhachHang) && !string.IsNullOrEmpty(tenKhachHang))
+            if (!string.IsNullOrEmpty(txtMaKhachHang.Text) && !string.IsNullOrEmpty(txtTenKhachHang.Text))
             {
-                manager.ThemKhachHang(maKhachHang, tenKhachHang);
+                manager.ThemKhachHang(khachHang);
                 MessageBox.Show("Thêm khách hàng thành công!");
                 this.Close();
             }

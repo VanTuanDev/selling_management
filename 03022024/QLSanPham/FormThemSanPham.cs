@@ -1,8 +1,8 @@
 ﻿using BLL;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
+using DAL.Entity;
 //using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace _03022024
@@ -10,6 +10,8 @@ namespace _03022024
     public partial class FormThemSanPham : Form
     {
         private SanPhamManager manager = null;
+        SanPhamEntity sanPham = new SanPhamEntity();
+
         public FormThemSanPham()
         {
             InitializeComponent();
@@ -70,13 +72,13 @@ namespace _03022024
         }
         private void XacNhan()
         {
-            string maSanPham = txtMaSanPham.Text;
-            string tenSanPham = txtTenSanPham.Text;
-            string maDonViTinh = cbbDonViTinh.SelectedValue.ToString();
-            string maDanhMuc = cbbDanhMuc.SelectedValue.ToString();
-            string donGia = txtDonGia.Text;
+            sanPham.MaSanPham = txtMaSanPham.Text;
+            sanPham.TenSanPham = txtTenSanPham.Text;
+            sanPham.MaDVT = cbbDonViTinh.SelectedValue.ToString();
+            sanPham.MaDanhMuc = cbbDanhMuc.SelectedValue.ToString();
+            sanPham.DonGia = decimal.Parse(txtDonGia.Text);
 
-            if (string.IsNullOrEmpty(maSanPham) || string.IsNullOrEmpty(tenSanPham) || string.IsNullOrEmpty(maDonViTinh) || string.IsNullOrEmpty(maDanhMuc) || string.IsNullOrEmpty(donGia))
+            if (string.IsNullOrEmpty(txtMaSanPham.Text) || string.IsNullOrEmpty(txtTenSanPham.Text) || string.IsNullOrEmpty(cbbDonViTinh.Text) || string.IsNullOrEmpty(cbbDanhMuc.Text) || string.IsNullOrEmpty(txtDonGia.Text))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
                 return;
@@ -84,7 +86,7 @@ namespace _03022024
 
             try
             {
-                manager.ThemSanPham(maSanPham, tenSanPham, maDonViTinh, maDanhMuc, donGia);
+                manager.ThemSanPham(sanPham);
                 MessageBox.Show("Thêm sản phẩm thành công!");
                 this.Close();
             }

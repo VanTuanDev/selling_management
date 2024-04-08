@@ -1,6 +1,7 @@
 ﻿using DAL.Reponsitories;
 using System.Collections.Generic;
 using System.Data;
+using DAL.Entity;
 
 namespace BLL
 {
@@ -19,17 +20,17 @@ namespace BLL
         {
             return Process.HienThiDanhSachSanPhamBanHang();
         }
-        public void ThemSanPham(string tenDangNhap, string tenDayDu, string matKhau, string maQuyen, string donGia)
+        public void ThemSanPham(SanPhamEntity sanPham)
         {
-            Process.ThemSanPham(tenDangNhap, tenDayDu, matKhau, maQuyen, donGia);
+            Process.ThemSanPham(sanPham);
         }
-        public void SuaSanPham(string maSanPham, string tenSanPham, string tenDVT, string tenDanhMuc, decimal donGia)
+        public void SuaSanPham(SanPhamEntity sanPham)
         {
-            Process.SuaSanPham(maSanPham, tenSanPham, tenDVT, tenDanhMuc, donGia);
+            Process.SuaSanPham(sanPham);
         }
-        public bool XoaSanPham(string maSanPham)
+        public bool XoaSanPham(SanPhamEntity sanPham)
         {
-            return Process.XoaSanPham(maSanPham);
+            return Process.XoaSanPham(sanPham);
         }
         public DataTable LayDanhMuc()
         {

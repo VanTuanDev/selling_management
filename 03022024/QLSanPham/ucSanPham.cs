@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using BLL;
 using System.Collections.Generic;
-using _03022024.QLTaiKhoan;
+using DAL.Entity;
 
 namespace _03022024.QLSanPham
 {
@@ -12,6 +12,8 @@ namespace _03022024.QLSanPham
     {
         private DataTable dataDSSanPham = null;
         private SanPhamManager manager = null;
+        SanPhamEntity sanPham = new SanPhamEntity();
+
         public ucSanPham()
         {
             manager = new SanPhamManager();
@@ -136,15 +138,15 @@ namespace _03022024.QLSanPham
         }
         private void Sua()
         {
-            string maSanPham = txtMaSanPham.Text;
-            string tenSanPham = txtTenSanPham.Text;
-            string tenDVT = cbbDonViTinh.Text;
-            string tenDanhMuc = cbbTenDanhMuc.Text;
-            decimal donGia = decimal.Parse(txtDonGia.Text);
+            sanPham.MaSanPham = txtMaSanPham.Text;
+            sanPham.TenSanPham = txtTenSanPham.Text;
+            sanPham.MaDVT = cbbDonViTinh.Text;
+            sanPham.MaDanhMuc = cbbTenDanhMuc.Text;
+            sanPham.DonGia = decimal.Parse(txtDonGia.Text);
 
             try
             {
-                manager.SuaSanPham(maSanPham, tenSanPham, tenDVT, tenDanhMuc, donGia);
+                manager.SuaSanPham(sanPham);
                 MessageBox.Show("Sản phẩm đã được cập nhật thành công.");
                 HienThiDanhSachSanPham();
                 Reset();
@@ -170,10 +172,10 @@ namespace _03022024.QLSanPham
                 {
                     DataGridViewRow row = dgSanPham.SelectedRows[0];
 
-                    string sanpham = row.Cells["cl1"].Value.ToString();
+                    sanPham.MaSanPham = row.Cells["cl1"].Value.ToString();
 
                     string error = string.Empty;
-                    if (manager.XoaSanPham(sanpham))
+                    if (manager.XoaSanPham(sanPham))
                     {
                         MessageBox.Show("Đã xóa sản phẩm thành công.");
                         HienThiDanhSachSanPham();

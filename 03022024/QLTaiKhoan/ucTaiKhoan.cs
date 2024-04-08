@@ -3,6 +3,7 @@ using System.Data;
 using System.Windows.Forms;
 using System.Drawing;
 using BLL;
+using DAL.Entity;
 
 namespace _03022024.QLTaiKhoan
 {
@@ -10,7 +11,9 @@ namespace _03022024.QLTaiKhoan
     {
         private DataTable dataDSTaiKhoan = null;
         private DataTable data = null;
-        private TaiKhoanManager manager = null;             
+        private TaiKhoanManager manager = null;
+        TaiKhoanEntity taiKhoan = new TaiKhoanEntity();
+
         public ucTaiKhoan()
         {
             InitializeComponent();
@@ -107,13 +110,13 @@ namespace _03022024.QLTaiKhoan
         }
         private void Sua()
         {
-            string tenDangNhap = txtTenDangNhap.Text;
-            string tenDayDu = txtTenDayDu.Text;
-            string tenQuyen = cbbQuyen.Text;
+            taiKhoan.TenDangNhap = txtTenDangNhap.Text;
+            taiKhoan.TenDayDu = txtTenDayDu.Text;
+            taiKhoan.MaQuyen = cbbQuyen.Text;
 
             try
             {
-                manager.CapNhatTaiKhoan(tenDangNhap, tenDayDu, tenQuyen);
+                manager.CapNhatTaiKhoan(taiKhoan);
                 MessageBox.Show("Đã cập nhật thông tin tài khoản thành công.");
                 HienThiDanhSachTaiKhoan();
                 Reset();
@@ -139,10 +142,10 @@ namespace _03022024.QLTaiKhoan
                 {
                     DataGridViewRow row = dgTaiKhoan.SelectedRows[0];
 
-                    string taikhoan = row.Cells["cl2"].Value.ToString();
+                    taiKhoan.TenDangNhap = row.Cells["cl2"].Value.ToString();
 
                     string error = string.Empty;
-                    if (manager.XoaTaiKhoan(taikhoan))
+                    if (manager.XoaTaiKhoan(taiKhoan))
                     {
                         MessageBox.Show("Đã xóa tài khoản thành công.");
                         HienThiDanhSachTaiKhoan();
