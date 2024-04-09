@@ -204,6 +204,7 @@
             // 
             // cbbDanhMuc
             // 
+            this.cbbDanhMuc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbDanhMuc.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cbbDanhMuc.FormattingEnabled = true;
             this.cbbDanhMuc.Location = new System.Drawing.Point(292, 272);
@@ -214,6 +215,7 @@
             // 
             // cbbDonViTinh
             // 
+            this.cbbDonViTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbDonViTinh.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cbbDonViTinh.FormattingEnabled = true;
             this.cbbDonViTinh.Location = new System.Drawing.Point(292, 217);

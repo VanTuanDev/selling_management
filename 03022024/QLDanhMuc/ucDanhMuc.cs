@@ -2,6 +2,7 @@
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using _03022024.QLSanPham;
 using BLL;
 using DAL.Entity;
 
@@ -101,18 +102,24 @@ namespace _03022024.QLDanhMuc
         {
             danhMuc.MaDanhMuc = txtMaDanhMuc.Text;
             danhMuc.TenDanhMuc = txtTenDanhMuc.Text;
-
-            try
+            if (!string.IsNullOrEmpty(txtMaDanhMuc.Text) || !string.IsNullOrEmpty(txtTenDanhMuc.Text))
             {
-                manager.CapNhatDanhMuc(danhMuc);
-                MessageBox.Show("Đã cập nhật thông tin danh mục thành công.");
-                HienThiDanhSachDanhMuc();
-                Reset();
+                try
+                {
+                    manager.CapNhatDanhMuc(danhMuc);
+                    MessageBox.Show("Đã cập nhật thông tin danh mục thành công.");
+                    HienThiDanhSachDanhMuc();
+                    Reset();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
-            }
+                MessageBox.Show("Vui lòng chọn dòng cần sửa.");
+            }           
         }
         private void btnSua_Click(object sender, System.EventArgs e)
         {

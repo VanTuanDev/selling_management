@@ -60,7 +60,7 @@ namespace _03022024.QLTaiKhoan
             cbbQuyen.DataSource = dtQuyen;
             cbbQuyen.DisplayMember = "TenQuyen";
             cbbQuyen.ValueMember = "MaQuyen";
-            cbbQuyen.Text = string.Empty;
+            cbbQuyen.SelectedIndex = -1;
         }
 
         private void dgTaiKhoan_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -113,18 +113,24 @@ namespace _03022024.QLTaiKhoan
             taiKhoan.TenDangNhap = txtTenDangNhap.Text;
             taiKhoan.TenDayDu = txtTenDayDu.Text;
             taiKhoan.MaQuyen = cbbQuyen.Text;
-
-            try
+            if (!string.IsNullOrEmpty(txtTenDangNhap.Text) || !string.IsNullOrEmpty(txtTenDayDu.Text))
             {
-                manager.CapNhatTaiKhoan(taiKhoan);
-                MessageBox.Show("Đã cập nhật thông tin tài khoản thành công.");
-                HienThiDanhSachTaiKhoan();
-                Reset();
+                try
+                {
+                    manager.CapNhatTaiKhoan(taiKhoan);
+                    MessageBox.Show("Đã cập nhật thông tin tài khoản thành công.");
+                    HienThiDanhSachTaiKhoan();
+                    Reset();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
-            }
+                MessageBox.Show("Vui lòng chọn dòng cần sửa.");
+            }       
         }
         private void btnSua_Click(object sender, EventArgs e)
         {

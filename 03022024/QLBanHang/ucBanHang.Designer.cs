@@ -30,7 +30,6 @@
         {
             this.panelRight = new System.Windows.Forms.Panel();
             this.pnlBottomRight = new System.Windows.Forms.Panel();
-            this.ptbThanhToan = new System.Windows.Forms.PictureBox();
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.lblThanhTienNoiDung = new System.Windows.Forms.Label();
             this.labelThanhTien = new System.Windows.Forms.Label();
@@ -53,8 +52,6 @@
             this.lblDuongKe = new System.Windows.Forms.Label();
             this.lblMaKhachHang = new System.Windows.Forms.Label();
             this.lblSoLuong = new System.Windows.Forms.Label();
-            this.ptbXoa = new System.Windows.Forms.PictureBox();
-            this.ptbThem = new System.Windows.Forms.PictureBox();
             this.lblTenKhachHang = new System.Windows.Forms.Label();
             this.lblDonGiaNoiDung = new System.Windows.Forms.Label();
             this.lblDonGia = new System.Windows.Forms.Label();
@@ -64,17 +61,20 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.lblTenSP = new System.Windows.Forms.Label();
             this.pnlLeft = new System.Windows.Forms.Panel();
+            this.ptbThanhToan = new System.Windows.Forms.PictureBox();
+            this.ptbXoa = new System.Windows.Forms.PictureBox();
+            this.ptbThem = new System.Windows.Forms.PictureBox();
             this.panelRight.SuspendLayout();
             this.pnlBottomRight.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbThanhToan)).BeginInit();
             this.pnlTopRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDSSanPhamDuocChon)).BeginInit();
             this.pnlBottomLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDanhSachSP)).BeginInit();
             this.pnlTopLeft.SuspendLayout();
+            this.pnlLeft.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbThanhToan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThem)).BeginInit();
-            this.pnlLeft.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelRight
@@ -99,20 +99,6 @@
             this.pnlBottomRight.Name = "pnlBottomRight";
             this.pnlBottomRight.Size = new System.Drawing.Size(455, 148);
             this.pnlBottomRight.TabIndex = 2;
-            // 
-            // ptbThanhToan
-            // 
-            this.ptbThanhToan.BackColor = System.Drawing.Color.DarkGreen;
-            this.ptbThanhToan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbThanhToan.Image = global::_03022024.Properties.Resources.pay;
-            this.ptbThanhToan.Location = new System.Drawing.Point(237, 70);
-            this.ptbThanhToan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ptbThanhToan.Name = "ptbThanhToan";
-            this.ptbThanhToan.Size = new System.Drawing.Size(40, 39);
-            this.ptbThanhToan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbThanhToan.TabIndex = 9;
-            this.ptbThanhToan.TabStop = false;
-            this.ptbThanhToan.Click += new System.EventHandler(this.ptbThanhToan_Click);
             // 
             // btnThanhToan
             // 
@@ -393,34 +379,6 @@
             this.lblSoLuong.TabIndex = 10;
             this.lblSoLuong.Text = "Số lượng :";
             // 
-            // ptbXoa
-            // 
-            this.ptbXoa.BackColor = System.Drawing.Color.DarkGreen;
-            this.ptbXoa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbXoa.Image = global::_03022024.Properties.Resources.delete;
-            this.ptbXoa.Location = new System.Drawing.Point(447, 202);
-            this.ptbXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ptbXoa.Name = "ptbXoa";
-            this.ptbXoa.Size = new System.Drawing.Size(29, 30);
-            this.ptbXoa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbXoa.TabIndex = 9;
-            this.ptbXoa.TabStop = false;
-            this.ptbXoa.Click += new System.EventHandler(this.ptbXoa_Click);
-            // 
-            // ptbThem
-            // 
-            this.ptbThem.BackColor = System.Drawing.Color.DarkGreen;
-            this.ptbThem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbThem.Image = global::_03022024.Properties.Resources.add;
-            this.ptbThem.Location = new System.Drawing.Point(287, 202);
-            this.ptbThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ptbThem.Name = "ptbThem";
-            this.ptbThem.Size = new System.Drawing.Size(29, 30);
-            this.ptbThem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbThem.TabIndex = 8;
-            this.ptbThem.TabStop = false;
-            this.ptbThem.Click += new System.EventHandler(this.ptbThem_Click);
-            // 
             // lblTenKhachHang
             // 
             this.lblTenKhachHang.AutoSize = true;
@@ -522,6 +480,48 @@
             this.pnlLeft.Size = new System.Drawing.Size(581, 626);
             this.pnlLeft.TabIndex = 0;
             // 
+            // ptbThanhToan
+            // 
+            this.ptbThanhToan.BackColor = System.Drawing.Color.DarkGreen;
+            this.ptbThanhToan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbThanhToan.Image = global::_03022024.Properties.Resources.selling;
+            this.ptbThanhToan.Location = new System.Drawing.Point(237, 70);
+            this.ptbThanhToan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ptbThanhToan.Name = "ptbThanhToan";
+            this.ptbThanhToan.Size = new System.Drawing.Size(40, 39);
+            this.ptbThanhToan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbThanhToan.TabIndex = 9;
+            this.ptbThanhToan.TabStop = false;
+            this.ptbThanhToan.Click += new System.EventHandler(this.ptbThanhToan_Click);
+            // 
+            // ptbXoa
+            // 
+            this.ptbXoa.BackColor = System.Drawing.Color.DarkGreen;
+            this.ptbXoa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbXoa.Image = global::_03022024.Properties.Resources.delete;
+            this.ptbXoa.Location = new System.Drawing.Point(447, 202);
+            this.ptbXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ptbXoa.Name = "ptbXoa";
+            this.ptbXoa.Size = new System.Drawing.Size(29, 30);
+            this.ptbXoa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbXoa.TabIndex = 9;
+            this.ptbXoa.TabStop = false;
+            this.ptbXoa.Click += new System.EventHandler(this.ptbXoa_Click);
+            // 
+            // ptbThem
+            // 
+            this.ptbThem.BackColor = System.Drawing.Color.DarkGreen;
+            this.ptbThem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbThem.Image = global::_03022024.Properties.Resources.add;
+            this.ptbThem.Location = new System.Drawing.Point(287, 202);
+            this.ptbThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ptbThem.Name = "ptbThem";
+            this.ptbThem.Size = new System.Drawing.Size(29, 30);
+            this.ptbThem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbThem.TabIndex = 8;
+            this.ptbThem.TabStop = false;
+            this.ptbThem.Click += new System.EventHandler(this.ptbThem_Click);
+            // 
             // ucBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -538,16 +538,16 @@
             this.panelRight.ResumeLayout(false);
             this.pnlBottomRight.ResumeLayout(false);
             this.pnlBottomRight.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbThanhToan)).EndInit();
             this.pnlTopRight.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgDSSanPhamDuocChon)).EndInit();
             this.pnlBottomLeft.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgDanhSachSP)).EndInit();
             this.pnlTopLeft.ResumeLayout(false);
             this.pnlTopLeft.PerformLayout();
+            this.pnlLeft.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ptbThanhToan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbXoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThem)).EndInit();
-            this.pnlLeft.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

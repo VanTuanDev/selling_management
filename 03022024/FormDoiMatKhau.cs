@@ -67,12 +67,10 @@ namespace _03022024
             if (txtMatKhauCu.PasswordChar == '*')
             {
                 txtMatKhauCu.PasswordChar = '\0';
-                ptbMKC.Image = Properties.Resources.off;
             }
             else
             {
                 txtMatKhauCu.PasswordChar = '*';
-                ptbMKC.Image = Properties.Resources.on;
             }
         }
 
@@ -81,12 +79,10 @@ namespace _03022024
             if (txtMatKhauMoi.PasswordChar == '*')
             {
                 txtMatKhauMoi.PasswordChar = '\0';
-                ptbMKM.Image = Properties.Resources.off;
             }
             else
             {
                 txtMatKhauMoi.PasswordChar = '*';
-                ptbMKM.Image = Properties.Resources.on;
             }
         }
 
@@ -95,12 +91,10 @@ namespace _03022024
             if (txtXacNhanMatKhau.PasswordChar == '*')
             {
                 txtMatKhauMoi.PasswordChar = '\0';
-                ptbMKXN.Image = Properties.Resources.off;
             }
             else
             {
                 txtXacNhanMatKhau.PasswordChar = '*';
-                ptbMKXN.Image = Properties.Resources.on;
             }
         }
 

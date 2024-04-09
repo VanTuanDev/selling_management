@@ -1,5 +1,6 @@
 ﻿using DAL.Reponsitories;
 using System.Data;
+using DAL.Entity;
 
 namespace BLL
 {
@@ -14,33 +15,35 @@ namespace BLL
         {
             return Process.HienThiDSHoaDon();
         }
-        public int TaoHoaDon(string maKhachHang, string tinhTrang)
+        public int TaoHoaDon(HoaDonEntity hoaDon)
         {
-            return Process.TaoHoaDon(maKhachHang, tinhTrang);
+            return Process.TaoHoaDon(hoaDon);
         }
-        public void TaoChiTietHoaDon(int maHoaDon, string maSanPham, int soLuongDat, decimal thanhTien)
+        public void TaoChiTietHoaDon(CTHDEntity chiTietHoaDon)
         {
-            Process.TaoChiTietHoaDon(maHoaDon, maSanPham, soLuongDat, thanhTien);
+            Process.TaoChiTietHoaDon(chiTietHoaDon);
         }
-        public string LayMaKhachHangTuTen(string tenKhachHang)
+        public string LayMaSanPhamTuTen(SanPhamEntity sanPham)
         {
-            return Process.LayMaKhachHangTuTen(tenKhachHang);
+            return Process.LayMaSanPhamTuTen(sanPham);
         }
-        public string LayMaSanPhamTuTen(string tenSanPham)
+        public void CapNhatTrangThaiHoaDon(int maHoaDon, string tinhTrang)
         {
-            return Process.LayMaSanPhamTuTen(tenSanPham);
+            HoaDonEntity hoaDon = new HoaDonEntity
+            {
+                MaHoaDon = maHoaDon,
+                TinhTrang = tinhTrang
+            };
+
+            Process.CapNhatTrangThaiHoaDon(hoaDon);
         }
-        public void CapNhatTrangThaiHoaDon(int maHoaDon, string tinhTrangMoi)
+        public DataTable LayThongTinHoaDon(HoaDonEntity hoaDon)
         {
-            Process.CapNhatTrangThaiHoaDon(maHoaDon, tinhTrangMoi);
+            return Process.LayThongTinHoaDon(hoaDon);
         }
-        public DataTable LayThongTinHoaDon(int maHoaDon)
+        public DataTable LayChiTietHoaDon(CTHDEntity chiTietHoaDon)
         {
-            return Process.LayThongTinHoaDon(maHoaDon);
-        }
-        public DataTable LayChiTietHoaDon(int maHoaDon)
-        {
-            return Process.LayChiTietHoaDon(maHoaDon);
+            return Process.LayChiTietHoaDon(chiTietHoaDon);
         }
     }
 }

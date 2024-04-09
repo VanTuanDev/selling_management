@@ -172,9 +172,8 @@
             // 
             // cl1
             // 
-            this.cl1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.cl1.DataPropertyName = "MaHoaDon";
-            this.cl1.HeaderText = "Mã hóa đơn";
+            this.cl1.HeaderText = "Mã HD";
             this.cl1.MinimumWidth = 6;
             this.cl1.Name = "cl1";
             this.cl1.ReadOnly = true;
@@ -191,11 +190,10 @@
             this.cl2.ReadOnly = true;
             this.cl2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.cl2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cl2.Width = 180;
+            this.cl2.Width = 220;
             // 
             // cl3
             // 
-            this.cl3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.cl3.DataPropertyName = "DonGia";
             this.cl3.HeaderText = "Đơn giá";
             this.cl3.MinimumWidth = 6;
@@ -203,6 +201,7 @@
             this.cl3.ReadOnly = true;
             this.cl3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.cl3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cl3.Width = 90;
             // 
             // cl4
             // 
@@ -214,7 +213,6 @@
             this.cl4.ReadOnly = true;
             this.cl4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.cl4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cl4.Width = 80;
             // 
             // cl5
             // 

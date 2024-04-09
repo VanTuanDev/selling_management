@@ -36,9 +36,6 @@
             this.txtMaDanhMuc = new System.Windows.Forms.TextBox();
             this.lblTieuDe = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ptbXoa = new System.Windows.Forms.PictureBox();
-            this.ptbSua = new System.Windows.Forms.PictureBox();
-            this.ptbThem = new System.Windows.Forms.PictureBox();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -47,16 +44,19 @@
             this.cl1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ptbXoa = new System.Windows.Forms.PictureBox();
+            this.ptbSua = new System.Windows.Forms.PictureBox();
+            this.ptbThem = new System.Windows.Forms.PictureBox();
             lblTenDanhMuc = new System.Windows.Forms.Label();
             lblMaDanhMuc = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgDanhMuc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbSua)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThem)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgDanhMuc)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTenDanhMuc
@@ -165,42 +165,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1061, 54);
             this.panel2.TabIndex = 1;
-            // 
-            // ptbXoa
-            // 
-            this.ptbXoa.BackColor = System.Drawing.Color.DarkGreen;
-            this.ptbXoa.Image = global::_03022024.Properties.Resources.delete;
-            this.ptbXoa.Location = new System.Drawing.Point(418, 12);
-            this.ptbXoa.Name = "ptbXoa";
-            this.ptbXoa.Size = new System.Drawing.Size(27, 27);
-            this.ptbXoa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbXoa.TabIndex = 12;
-            this.ptbXoa.TabStop = false;
-            this.ptbXoa.Click += new System.EventHandler(this.ptbXoa_Click);
-            // 
-            // ptbSua
-            // 
-            this.ptbSua.BackColor = System.Drawing.Color.DarkGreen;
-            this.ptbSua.Image = global::_03022024.Properties.Resources.edit;
-            this.ptbSua.Location = new System.Drawing.Point(221, 12);
-            this.ptbSua.Name = "ptbSua";
-            this.ptbSua.Size = new System.Drawing.Size(27, 27);
-            this.ptbSua.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbSua.TabIndex = 11;
-            this.ptbSua.TabStop = false;
-            this.ptbSua.Click += new System.EventHandler(this.ptbSua_Click);
-            // 
-            // ptbThem
-            // 
-            this.ptbThem.BackColor = System.Drawing.Color.DarkGreen;
-            this.ptbThem.Image = global::_03022024.Properties.Resources.add;
-            this.ptbThem.Location = new System.Drawing.Point(19, 12);
-            this.ptbThem.Name = "ptbThem";
-            this.ptbThem.Size = new System.Drawing.Size(27, 27);
-            this.ptbThem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbThem.TabIndex = 10;
-            this.ptbThem.TabStop = false;
-            this.ptbThem.Click += new System.EventHandler(this.ptbThem_Click);
             // 
             // btnXoa
             // 
@@ -317,6 +281,42 @@
             this.cl3.Visible = false;
             this.cl3.Width = 280;
             // 
+            // ptbXoa
+            // 
+            this.ptbXoa.BackColor = System.Drawing.Color.DarkGreen;
+            this.ptbXoa.Image = global::_03022024.Properties.Resources.delete;
+            this.ptbXoa.Location = new System.Drawing.Point(418, 12);
+            this.ptbXoa.Name = "ptbXoa";
+            this.ptbXoa.Size = new System.Drawing.Size(27, 27);
+            this.ptbXoa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbXoa.TabIndex = 12;
+            this.ptbXoa.TabStop = false;
+            this.ptbXoa.Click += new System.EventHandler(this.ptbXoa_Click);
+            // 
+            // ptbSua
+            // 
+            this.ptbSua.BackColor = System.Drawing.Color.DarkGreen;
+            this.ptbSua.Image = global::_03022024.Properties.Resources.edit;
+            this.ptbSua.Location = new System.Drawing.Point(221, 12);
+            this.ptbSua.Name = "ptbSua";
+            this.ptbSua.Size = new System.Drawing.Size(27, 27);
+            this.ptbSua.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbSua.TabIndex = 11;
+            this.ptbSua.TabStop = false;
+            this.ptbSua.Click += new System.EventHandler(this.ptbSua_Click);
+            // 
+            // ptbThem
+            // 
+            this.ptbThem.BackColor = System.Drawing.Color.DarkGreen;
+            this.ptbThem.Image = global::_03022024.Properties.Resources.add;
+            this.ptbThem.Location = new System.Drawing.Point(19, 12);
+            this.ptbThem.Name = "ptbThem";
+            this.ptbThem.Size = new System.Drawing.Size(27, 27);
+            this.ptbThem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbThem.TabIndex = 10;
+            this.ptbThem.TabStop = false;
+            this.ptbThem.Click += new System.EventHandler(this.ptbThem_Click);
+            // 
             // ucDanhMuc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -333,11 +333,11 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgDanhMuc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbXoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbSua)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThem)).EndInit();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgDanhMuc)).EndInit();
             this.ResumeLayout(false);
 
         }

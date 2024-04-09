@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using BLL;
+using DAL.Entity;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace _03022024.QLBanHang
 {
@@ -11,14 +12,16 @@ namespace _03022024.QLBanHang
     {
         private DataTable dataDSSanPham = null;
         private SanPhamManager manager = null;
-        private KhachHangManager KHmanager = null;
         private HoaDonManager HDmanager = null;
+        SanPhamEntity sanPham = new SanPhamEntity();
+        HoaDonEntity hoaDon = new HoaDonEntity();
+        KhachHangEntity khachHang = new KhachHangEntity();
+        CTHDEntity chiTietHoaDon = new CTHDEntity();
 
         public ucBanHang()
         {
             dataDSSanPham = new DataTable();
             manager = new SanPhamManager();
-            KHmanager = new KhachHangManager();
             HDmanager = new HoaDonManager();
 
             InitializeComponent();
@@ -80,30 +83,73 @@ namespace _03022024.QLBanHang
                 lblDonGiaNoiDung.Text = column4Value.ToString("#,##0.##"); 
             }
         }
+        private bool IsNumeric(string input)
+        {
+            return double.TryParse(input, out _);
+        }
         private void Them()
         {
-            string tenSanPham = lblTenSPNoiDung.Text;
-            int soLuong = int.Parse(txtSoLuong.Text);
-            decimal donGia = decimal.Parse(lblDonGiaNoiDung.Text);
-            decimal thanhTien = soLuong * donGia;
+            string SoLuong = txtSoLuong.Text;
+            if (IsNumeric(SoLuong))
+            {
+                if (!string.IsNullOrEmpty(lblTenSPNoiDung.Text))
+                {
+                    string tenSanPham = lblTenSPNoiDung.Text;
+                    int soLuong = int.Parse(txtSoLuong.Text);
+                    decimal donGia = decimal.Parse(lblDonGiaNoiDung.Text);
+                    decimal thanhTien = soLuong * donGia;
 
-            DataGridViewRow row = new DataGridViewRow();
+                    bool daTonTai = false;
+                    foreach (DataGridViewRow existingRow in dgDSSanPhamDuocChon.Rows)
+                    {
+                        string tenSanPhamHienTai = existingRow.Cells[0].Value.ToString();
+                        int soLuongHienTai = int.Parse(existingRow.Cells[1].Value.ToString());
+                        decimal donGiaHienTai = decimal.Parse(existingRow.Cells[2].Value.ToString());
 
-            row.CreateCells(dgDSSanPhamDuocChon);
-            row.Cells[0].Value = tenSanPham;
-            row.Cells[1].Value = soLuong;
-            row.Cells[2].Value = donGia;
-            row.Cells[3].Value = thanhTien;
+                        if (tenSanPham == tenSanPhamHienTai)
+                        {
+                            soLuongHienTai += soLuong;
+                            decimal thanhTienHienTai = soLuongHienTai * donGiaHienTai;
+                            existingRow.Cells[1].Value = soLuongHienTai;
+                            existingRow.Cells[3].Value = thanhTienHienTai;
 
-            dgDSSanPhamDuocChon.Rows.Add(row);
+                            daTonTai = true;
+                            break;
+                        }
+                    }
+
+                    if (!daTonTai)
+                    {
+                        DataGridViewRow row = new DataGridViewRow();
+                        row.CreateCells(dgDSSanPhamDuocChon);
+                        row.Cells[0].Value = tenSanPham;
+                        row.Cells[1].Value = soLuong;
+                        row.Cells[2].Value = donGia;
+                        row.Cells[3].Value = thanhTien;
+
+                        dgDSSanPhamDuocChon.Rows.Add(row);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Bạn chưa chọn sản phẩm muốn mua.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Số lượng chỉ cho phép nhập số.");
+            }
+                
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
             Them();
+            CapNhatTongTien();
         }
         private void ptbThem_Click(object sender, EventArgs e)
         {
             Them();
+            CapNhatTongTien();
         }
         private void Xoa()
         {
@@ -171,42 +217,51 @@ namespace _03022024.QLBanHang
         }
         private void ThanhToan()
         {
-            string tinhTrang = "Chưa thanh toán";
-            string tenKhachHang = lblTenKHNoiDung.Text; 
-            try
+            if(!string.IsNullOrEmpty(lblTenKHNoiDung.Text))
             {
-                string maKhachHang = HDmanager.LayMaKhachHangTuTen(tenKhachHang);
-                int maHoaDon = HDmanager.TaoHoaDon(maKhachHang, tinhTrang);
+                hoaDon.TinhTrang = "Chưa thanh toán";
+                khachHang.TenKhachHang = lblTenKHNoiDung.Text;
 
-                if (maHoaDon != -1)
+                hoaDon.MaKhachHang = lblMaKHNoiDung.Text;
+                chiTietHoaDon.MaHoaDon = HDmanager.TaoHoaDon(hoaDon);
+                MessageBox.Show(chiTietHoaDon.MaHoaDon.ToString()); //
+                try
                 {
-                    foreach (DataGridViewRow row in dgDSSanPhamDuocChon.Rows)
+                    if (chiTietHoaDon.MaHoaDon != -1)
                     {
-                        string tenSanPham = row.Cells["column1"].Value.ToString();
-                        int soLuongDat = Convert.ToInt32(row.Cells["column2"].Value);
-                        decimal thanhTien = Convert.ToDecimal(row.Cells["column4"].Value);
+                        foreach (DataGridViewRow row in dgDSSanPhamDuocChon.Rows)
+                        {
+                            sanPham.TenSanPham = row.Cells["column1"].Value.ToString();
+                            chiTietHoaDon.SoLuongDat = Convert.ToInt32(row.Cells["column2"].Value);
+                            chiTietHoaDon.ThanhTien = Convert.ToDecimal(row.Cells["column4"].Value);
 
-                        string maSanPham = HDmanager.LayMaSanPhamTuTen(tenSanPham);
-                        HDmanager.TaoChiTietHoaDon(maHoaDon, maSanPham, soLuongDat, thanhTien);
+                            chiTietHoaDon.MaSanPham = HDmanager.LayMaSanPhamTuTen(sanPham);
+                            MessageBox.Show(chiTietHoaDon.MaSanPham.ToString()); //
+                            HDmanager.TaoChiTietHoaDon(chiTietHoaDon);
+                        }
+                        MessageBox.Show("Giao dịch của bạn đang được xử lý.");
                     }
-                    MessageBox.Show("Giao dịch của bạn đang được xử lý.");
+                    else
+                    {
+                        MessageBox.Show("Tạo hóa đơn thất bại");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Tạo hóa đơn thất bại");
+                    MessageBox.Show("lỗi khi thực hiện giao dịch: " + ex.Message);
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi thực hiện giao dịch: " + ex.Message);
-            }
-            lblMaKHNoiDung.Text = string.Empty;
-            lblTenKHNoiDung.Text = string.Empty;
-            lblTenSPNoiDung.Text = string.Empty;
-            lblDonGiaNoiDung.Text = string.Empty;
-            txtSoLuong.Text = string.Empty;
+                lblMaKHNoiDung.Text = string.Empty;
+                lblTenKHNoiDung.Text = string.Empty;
+                lblTenSPNoiDung.Text = string.Empty;
+                lblDonGiaNoiDung.Text = string.Empty;
+                txtSoLuong.Text = string.Empty;
 
-            dgDSSanPhamDuocChon.Rows.Clear();
+                dgDSSanPhamDuocChon.Rows.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Chưa có khách hàng.");
+            }          
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)

@@ -25,6 +25,8 @@ namespace _03022024
             cbbMaQuyen.DisplayMember = "TenQuyen";
             cbbMaQuyen.ValueMember = "MaQuyen";
 
+            cbbMaQuyen.SelectedValue = -1;
+
             this.KeyPreview = true;
         }
         private void ptbMatKhau_Click(object sender, EventArgs e)
@@ -32,12 +34,10 @@ namespace _03022024
             if (txtMatKhau.PasswordChar == '*')
             {
                 txtMatKhau.PasswordChar = '\0';
-                ptbMatKhau.Image = Properties.Resources.off;
             }
             else
             {
                 txtMatKhau.PasswordChar = '*';
-                ptbMatKhau.Image = Properties.Resources.on;
             }
         }
         private void KiemTraKyTu(KeyPressEventArgs e)

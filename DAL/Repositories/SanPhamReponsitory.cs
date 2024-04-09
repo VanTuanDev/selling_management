@@ -9,7 +9,6 @@ namespace DAL.Reponsitories
 {
     public class SanPhamReponsitory
     {
-        private string connectionString = "Data Source=.;Initial Catalog=QuanLyBanHang;Integrated Security=True";
         private Database database = new Database();
         public DataTable HienThiDanhSachSanPham()
         {
@@ -79,7 +78,7 @@ namespace DAL.Reponsitories
 
         public List<string> LayTenDanhMuc()
         {
-            string query = "SELECT TenDanhMuc FROM DanhMucSanPham";
+            string query = "SELECT TenDanhMuc FROM DanhMucSanPham WHERE TrangThai = N'Còn sử dụng'";
             List<string> categoryNames = database.ExecuteReader(query, "TenDanhMuc");
 
             return categoryNames;

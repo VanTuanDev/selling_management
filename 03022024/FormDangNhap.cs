@@ -96,12 +96,10 @@ namespace _03022024
             if (txtMatKhau.PasswordChar == '*')
             {
                 txtMatKhau.PasswordChar = '\0';
-                ptbTatMoKyTu.Image = Properties.Resources.off;
             }
             else
             {
                 txtMatKhau.PasswordChar = '*';
-                ptbTatMoKyTu.Image = Properties.Resources.on;
             }
         }
         private void FormDangNhap_KeyDown(object sender, KeyEventArgs e)

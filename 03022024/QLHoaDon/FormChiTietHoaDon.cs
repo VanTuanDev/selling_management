@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DAL.Entity;
 using System;
 using System.Data;
 using System.Drawing;
@@ -33,7 +34,10 @@ namespace _03022024.QLHoaDon
 
         private void HienThiDanhSachChiTietHoaDon()
         {
-            DataTable dt = HDmanager.LayChiTietHoaDon(MaHoaDon);
+            CTHDEntity chiTietHoaDon = new CTHDEntity();
+            chiTietHoaDon.MaHoaDon = MaHoaDon;
+
+            DataTable dt = HDmanager.LayChiTietHoaDon(chiTietHoaDon);
             if (dt != null)
             {
                 dgChiTietHoaDon.DataSource = dt;
@@ -43,11 +47,15 @@ namespace _03022024.QLHoaDon
                 MessageBox.Show("Không tìm thấy chi tiết hóa đơn");
             }
         }
-        private void FormChiTietHoaDon_Load(object sender, System.EventArgs e)
+
+        private void FormChiTietHoaDon_Load(object sender, EventArgs e)
         {
             int maHoaDon = MaHoaDon;
 
-            DataTable dt = HDmanager.LayThongTinHoaDon(maHoaDon);
+            HoaDonEntity hoaDon = new HoaDonEntity();
+            hoaDon.MaHoaDon = maHoaDon;
+
+            DataTable dt = HDmanager.LayThongTinHoaDon(hoaDon);
 
             if (dt.Rows.Count > 0)
             {

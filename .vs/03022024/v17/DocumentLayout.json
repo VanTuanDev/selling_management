@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Code\\C#\\02032024\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{18A00B97-8A5F-4FA1-89C7-60AC3C0582F3}|DAL\\DAL.csproj|e:\\code\\c#\\02032024\\dal\\repositories\\hoadonreponsitory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18A00B97-8A5F-4FA1-89C7-60AC3C0582F3}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\hoadonreponsitory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{821F4239-FD96-40B7-AEAA-D0F192553D55}|03022024\\03022024.csproj|e:\\code\\c#\\02032024\\03022024\\qlbanhang\\ucbanhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{821F4239-FD96-40B7-AEAA-D0F192553D55}|03022024\\03022024.csproj|solutionrelative:03022024\\qlbanhang\\ucbanhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{821F4239-FD96-40B7-AEAA-D0F192553D55}|03022024\\03022024.csproj|e:\\code\\c#\\02032024\\03022024\\qlhoadon\\uchoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{821F4239-FD96-40B7-AEAA-D0F192553D55}|03022024\\03022024.csproj|solutionrelative:03022024\\qlhoadon\\uchoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{821F4239-FD96-40B7-AEAA-D0F192553D55}|03022024\\03022024.csproj|e:\\code\\c#\\02032024\\03022024\\qlhoadon\\formchitiethoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{821F4239-FD96-40B7-AEAA-D0F192553D55}|03022024\\03022024.csproj|solutionrelative:03022024\\qlhoadon\\formchitiethoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ucHoaDon.cs",
+              "DocumentMoniker": "E:\\Code\\C#\\02032024\\03022024\\QLHoaDon\\ucHoaDon.cs",
+              "RelativeDocumentMoniker": "03022024\\QLHoaDon\\ucHoaDon.cs",
+              "ToolTip": "E:\\Code\\C#\\02032024\\03022024\\QLHoaDon\\ucHoaDon.cs",
+              "RelativeToolTip": "03022024\\QLHoaDon\\ucHoaDon.cs",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAmwEgAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-09T03:48:48.719Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormChiTietHoaDon.cs",
+              "DocumentMoniker": "E:\\Code\\C#\\02032024\\03022024\\QLHoaDon\\FormChiTietHoaDon.cs",
+              "RelativeDocumentMoniker": "03022024\\QLHoaDon\\FormChiTietHoaDon.cs",
+              "ToolTip": "E:\\Code\\C#\\02032024\\03022024\\QLHoaDon\\FormChiTietHoaDon.cs",
+              "RelativeToolTip": "03022024\\QLHoaDon\\FormChiTietHoaDon.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAwwD4AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-09T03:42:00.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ucBanHang.cs",
+              "DocumentMoniker": "E:\\Code\\C#\\02032024\\03022024\\QLBanHang\\ucBanHang.cs",
+              "RelativeDocumentMoniker": "03022024\\QLBanHang\\ucBanHang.cs",
+              "ToolTip": "E:\\Code\\C#\\02032024\\03022024\\QLBanHang\\ucBanHang.cs",
+              "RelativeToolTip": "03022024\\QLBanHang\\ucBanHang.cs",
+              "ViewState": "AQIAANYAAAAAAAAAAAAhwOgAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-09T03:24:02.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HoaDonReponsitory.cs",
+              "DocumentMoniker": "E:\\Code\\C#\\02032024\\DAL\\Repositories\\HoaDonReponsitory.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\HoaDonReponsitory.cs",
+              "ToolTip": "E:\\Code\\C#\\02032024\\DAL\\Repositories\\HoaDonReponsitory.cs",
+              "RelativeToolTip": "DAL\\Repositories\\HoaDonReponsitory.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAvwDcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-09T01:16:15.146Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

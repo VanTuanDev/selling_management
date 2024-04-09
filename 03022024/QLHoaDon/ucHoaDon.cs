@@ -3,7 +3,6 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using BLL;
-using _03022024.QLBanHang;
 
 namespace _03022024.QLHoaDon
 {
@@ -43,7 +42,10 @@ namespace _03022024.QLHoaDon
                 MessageBox.Show(error);
             }
         }
-
+        public void Reset()
+        {
+            maHoaDonDuocChon = -1;
+        }
         private void ucHoaDon_Load(object sender, System.EventArgs e)
         {
             HienThiDSHoaDon();
@@ -68,6 +70,7 @@ namespace _03022024.QLHoaDon
                     HDmanager.CapNhatTrangThaiHoaDon(maHoaDonDuocChon, "Đã thanh toán");
                     MessageBox.Show("Cập nhật trạng thái hóa đơn thành công");
                     HienThiDSHoaDon();
+                    Reset();
                 }
                 catch (Exception ex)
                 {

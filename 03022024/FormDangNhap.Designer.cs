@@ -39,22 +39,18 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tlpDangNhap = new System.Windows.Forms.TableLayoutPanel();
             this.pnlLeft = new System.Windows.Forms.Panel();
-            this.ptbMatKhau = new System.Windows.Forms.PictureBox();
+            this.pnlRight = new System.Windows.Forms.Panel();
             this.ptbThoat = new System.Windows.Forms.PictureBox();
-            this.ptbTenDangNhap = new System.Windows.Forms.PictureBox();
             this.ptbTatMoKyTu = new System.Windows.Forms.PictureBox();
             this.ptbDangNhap = new System.Windows.Forms.PictureBox();
-            this.pnlRight = new System.Windows.Forms.Panel();
             this.ptbLogoBHX = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.tlpDangNhap.SuspendLayout();
             this.pnlLeft.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbMatKhau)).BeginInit();
+            this.pnlRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThoat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbTenDangNhap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbTatMoKyTu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbDangNhap)).BeginInit();
-            this.pnlRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbLogoBHX)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +77,7 @@
             this.txtMatKhau.PasswordChar = '*';
             this.txtMatKhau.Size = new System.Drawing.Size(246, 40);
             this.txtMatKhau.TabIndex = 2;
+            this.txtMatKhau.Text = "1";
             this.txtMatKhau.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // lblPassword
@@ -105,6 +102,7 @@
             this.txtTenDangNhap.Name = "txtTenDangNhap";
             this.txtTenDangNhap.Size = new System.Drawing.Size(246, 40);
             this.txtTenDangNhap.TabIndex = 1;
+            this.txtTenDangNhap.Text = "levantuan";
             this.txtTenDangNhap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsername_KeyPress);
             // 
             // btnDangNhap
@@ -183,9 +181,7 @@
             // 
             this.pnlLeft.BackColor = System.Drawing.Color.LimeGreen;
             this.pnlLeft.Controls.Add(this.lblHeader);
-            this.pnlLeft.Controls.Add(this.ptbMatKhau);
             this.pnlLeft.Controls.Add(this.ptbThoat);
-            this.pnlLeft.Controls.Add(this.ptbTenDangNhap);
             this.pnlLeft.Controls.Add(this.btnThoat);
             this.pnlLeft.Controls.Add(this.ptbTatMoKyTu);
             this.pnlLeft.Controls.Add(this.ptbDangNhap);
@@ -200,15 +196,14 @@
             this.pnlLeft.Size = new System.Drawing.Size(614, 447);
             this.pnlLeft.TabIndex = 0;
             // 
-            // ptbMatKhau
+            // pnlRight
             // 
-            this.ptbMatKhau.Image = global::_03022024.Properties.Resources.password_login;
-            this.ptbMatKhau.Location = new System.Drawing.Point(18, 263);
-            this.ptbMatKhau.Name = "ptbMatKhau";
-            this.ptbMatKhau.Size = new System.Drawing.Size(51, 50);
-            this.ptbMatKhau.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbMatKhau.TabIndex = 17;
-            this.ptbMatKhau.TabStop = false;
+            this.pnlRight.Controls.Add(this.ptbLogoBHX);
+            this.pnlRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlRight.Location = new System.Drawing.Point(623, 3);
+            this.pnlRight.Name = "pnlRight";
+            this.pnlRight.Size = new System.Drawing.Size(408, 447);
+            this.pnlRight.TabIndex = 1;
             // 
             // ptbThoat
             // 
@@ -223,21 +218,11 @@
             this.ptbThoat.TabStop = false;
             this.ptbThoat.Click += new System.EventHandler(this.ptbThoat_Click);
             // 
-            // ptbTenDangNhap
-            // 
-            this.ptbTenDangNhap.Image = global::_03022024.Properties.Resources.username_login;
-            this.ptbTenDangNhap.Location = new System.Drawing.Point(18, 176);
-            this.ptbTenDangNhap.Name = "ptbTenDangNhap";
-            this.ptbTenDangNhap.Size = new System.Drawing.Size(51, 50);
-            this.ptbTenDangNhap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbTenDangNhap.TabIndex = 16;
-            this.ptbTenDangNhap.TabStop = false;
-            // 
             // ptbTatMoKyTu
             // 
             this.ptbTatMoKyTu.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ptbTatMoKyTu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbTatMoKyTu.Image = global::_03022024.Properties.Resources.on;
+            this.ptbTatMoKyTu.Image = global::_03022024.Properties.Resources.off;
             this.ptbTatMoKyTu.Location = new System.Drawing.Point(539, 280);
             this.ptbTatMoKyTu.Name = "ptbTatMoKyTu";
             this.ptbTatMoKyTu.Size = new System.Drawing.Size(29, 29);
@@ -258,15 +243,6 @@
             this.ptbDangNhap.TabIndex = 18;
             this.ptbDangNhap.TabStop = false;
             this.ptbDangNhap.Click += new System.EventHandler(this.ptbDangNhap_Click);
-            // 
-            // pnlRight
-            // 
-            this.pnlRight.Controls.Add(this.ptbLogoBHX);
-            this.pnlRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlRight.Location = new System.Drawing.Point(623, 3);
-            this.pnlRight.Name = "pnlRight";
-            this.pnlRight.Size = new System.Drawing.Size(408, 447);
-            this.pnlRight.TabIndex = 1;
             // 
             // ptbLogoBHX
             // 
@@ -305,12 +281,10 @@
             this.tlpDangNhap.ResumeLayout(false);
             this.pnlLeft.ResumeLayout(false);
             this.pnlLeft.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbMatKhau)).EndInit();
+            this.pnlRight.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbThoat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbTenDangNhap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbTatMoKyTu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbDangNhap)).EndInit();
-            this.pnlRight.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbLogoBHX)).EndInit();
             this.ResumeLayout(false);
 
@@ -327,8 +301,6 @@
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox ptbTatMoKyTu;
-        private System.Windows.Forms.PictureBox ptbTenDangNhap;
-        private System.Windows.Forms.PictureBox ptbMatKhau;
         private System.Windows.Forms.PictureBox ptbDangNhap;
         private System.Windows.Forms.PictureBox ptbThoat;
         private System.Windows.Forms.TableLayoutPanel tlpDangNhap;

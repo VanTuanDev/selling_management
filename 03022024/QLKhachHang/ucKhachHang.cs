@@ -101,18 +101,25 @@ namespace _03022024.QLKhachHang
         {
             khachHang.MaKhachHang = txtMaKhachHang.Text;
             khachHang.TenKhachHang = txtTenKhachHang.Text;
-
-            try
+            if(!string.IsNullOrEmpty(txtMaKhachHang.Text) || !string.IsNullOrEmpty(txtTenKhachHang.Text))
             {
-                manager.CapNhatKhachHang(khachHang);
-                MessageBox.Show("Đã cập nhật thông tin khách hàng thành công.");
-                HienThiDanhSachKhachHang();
-                Reset();
+                try
+                {
+                    manager.CapNhatKhachHang(khachHang);
+                    MessageBox.Show("Đã cập nhật thông tin khách hàng thành công.");
+                    HienThiDanhSachKhachHang();
+                    Reset();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
+                MessageBox.Show("Vui lòng chọn dòng cần sửa.");
             }
+            
         }
         private void btnSua_Click(object sender, EventArgs e)
         {

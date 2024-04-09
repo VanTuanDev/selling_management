@@ -137,24 +137,31 @@ namespace _03022024.QLSanPham
             Them();
         }
         private void Sua()
-        {
-            sanPham.MaSanPham = txtMaSanPham.Text;
-            sanPham.TenSanPham = txtTenSanPham.Text;
-            sanPham.MaDVT = cbbDonViTinh.Text;
-            sanPham.MaDanhMuc = cbbTenDanhMuc.Text;
-            sanPham.DonGia = decimal.Parse(txtDonGia.Text);
-
-            try
+        {         
+            if (!string.IsNullOrEmpty(txtMaSanPham.Text) || !string.IsNullOrEmpty(txtTenSanPham.Text) || !string.IsNullOrEmpty(cbbDonViTinh.Text) || !string.IsNullOrEmpty(cbbTenDanhMuc.Text) || !string.IsNullOrEmpty(txtDonGia.Text))
             {
-                manager.SuaSanPham(sanPham);
-                MessageBox.Show("Sản phẩm đã được cập nhật thành công.");
-                HienThiDanhSachSanPham();
-                Reset();
+                sanPham.MaSanPham = txtMaSanPham.Text;
+                sanPham.TenSanPham = txtTenSanPham.Text;
+                sanPham.MaDVT = cbbDonViTinh.Text;
+                sanPham.MaDanhMuc = cbbTenDanhMuc.Text;
+                sanPham.DonGia = decimal.Parse(txtDonGia.Text);
+                try
+                {
+                    manager.SuaSanPham(sanPham);
+                    MessageBox.Show("Sản phẩm đã được cập nhật thành công.");
+                    HienThiDanhSachSanPham();
+                    Reset();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
+                MessageBox.Show("Vui lòng chọn dòng cần sửa.");
             }
+            
         }
         private void btnSua_Click(object sender, EventArgs e)
         {

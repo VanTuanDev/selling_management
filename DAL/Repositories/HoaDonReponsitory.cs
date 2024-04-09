@@ -2,160 +2,98 @@
 using System.Data.SqlClient;
 using System.Data;
 using DAL.Repositories;
+using DAL.Entity;
 
 namespace DAL.Reponsitories
 {
     public class HoaDonReponsitory
     {
-        private string connectionString = "Data Source=.;Initial Catalog=QuanLyBanHang;Integrated Security=True";
         private Database database = new Database();
         public DataTable HienThiDSHoaDon()
         {
             SqlParameter[] parameters = null;
             return database.ExecuteQuery("sp_LayDanhSachHoaDon", parameters);
         }
-        public int TaoHoaDon(string maKhachHang, string tinhTrang)
+        public int TaoHoaDon(HoaDonEntity hoaDon)
         {
-            //int maHoaDon = -1;
-
-            //using (SqlConnection connection = new SqlConnection(connectionString))
-            //{
-            //    try
-            //    {
-            //        connection.Open();
-
-            //        SqlCommand command = new SqlCommand("sp_TaoHoaDon", connection);
-            //        command.CommandType = CommandType.StoredProcedure;
-
-            //        command.Parameters.AddWithValue("@MaKhachHang", maKhachHang);
-            //        command.Parameters.AddWithValue("@TinhTrang", tinhTrang);
-
-            //        maHoaDon = Convert.ToInt32(command.ExecuteScalar());
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        Console.WriteLine("Lỗi khi tạo hóa đơn: " + ex.Message);
-            //    }
-            //}
-
-            //return maHoaDon;
-            SqlParameter[] parameters = new SqlParameter[]
+            SqlParameter[] parameters = new SqlParameter[3]
             {
-                new SqlParameter("@MaKhachHang", maKhachHang),
-                new SqlParameter("@TinhTrang", tinhTrang)
+                new SqlParameter("@MaKhachHang", hoaDon.MaKhachHang),
+                new SqlParameter("@TinhTrang", hoaDon.TinhTrang),
+                new SqlParameter("@MaHoaDon", SqlDbType.Int) { Direction = ParameterDirection.Output }
             };
 
-            return Convert.ToInt32(database.ExecuteScalar("sp_TaoHoaDon", parameters));
+            database.ExecuteNonQuery("sp_TaoHoaDon", parameters);
+
+            int maHoaDon = Convert.ToInt32(parameters[2].Value);
+            return maHoaDon;
         }
 
-        public void TaoChiTietHoaDon(int maHoaDon, string maSanPham, int soLuongDat, decimal thanhTien)
+        public void TaoChiTietHoaDon(CTHDEntity chiTietHoaDon)
         {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@MaHoaDon", chiTietHoaDon.MaHoaDon),
+                new SqlParameter("@MaSanPham", chiTietHoaDon.MaSanPham),
+                new SqlParameter("@SoLuongDat", chiTietHoaDon.SoLuongDat),
+                new SqlParameter("@ThanhTien", chiTietHoaDon.ThanhTien)
+            };
+
+            database.ExecuteNonQuery("sp_TaoChiTietHoaDon", parameters);
+        }
+        public string LayMaSanPhamTuTen(SanPhamEntity sanPham)
+        {
+            string maSanPham = null;
+            string connectionString = "Data Source=.;Initial Catalog=QuanLyBanHang;Integrated Security=True"; 
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlParameter[] parameters = new SqlParameter[]
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("sp_LayMaSanPham", connection))
                 {
-                    new SqlParameter("@MaHoaDon", maHoaDon),
-                    new SqlParameter("@MaSanPham", maSanPham),
-                    new SqlParameter("@SoLuongDat", soLuongDat),
-                    new SqlParameter("@ThanhTien", thanhTien)
-                };
+                    command.CommandType = CommandType.StoredProcedure;
 
-                database.ExecuteNonQuery("sp_TaoChiTietHoaDon", parameters);
+                    command.Parameters.AddWithValue("@TenSanPham", sanPham.TenSanPham);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            maSanPham = reader["MaSanPham"].ToString();
+                        }
+                    }
+                }
             }
+
+            return maSanPham;
         }
-        public string LayMaKhachHangTuTen(string tenKhachHang)
-        {
-            //string maKhachHang = "";
-
-            //string query = "SELECT MaKhachHang FROM KhachHang WHERE TenKhachHang = @TenKhachHang";
-
-            //using (SqlConnection connection = new SqlConnection(connectionString))
-            //{
-            //    SqlCommand command = new SqlCommand(query, connection);
-            //    command.Parameters.AddWithValue("@TenKhachHang", tenKhachHang);
-
-            //    try
-            //    {
-            //        connection.Open();
-            //        maKhachHang = (string)command.ExecuteScalar();
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        throw ex;
-            //    }
-            //}
-
-            //return maKhachHang;
-            SqlParameter[] parameters = new SqlParameter[]
-            {
-                new SqlParameter("@TenKhachHang", tenKhachHang)
-            };
-
-            return database.ExecuteScalar("SELECT MaKhachHang FROM KhachHang WHERE TenKhachHang = @TenKhachHang", parameters).ToString();
-        }
-        public string LayMaSanPhamTuTen(string tenSanPham)
-        {
-            //string maSanPham = "";
-
-            //string query = "SELECT MaSanPham FROM SanPham WHERE TenSanPham = @TenSanPham";
-
-            //using (SqlConnection connection = new SqlConnection(connectionString))
-            //{
-            //    SqlCommand command = new SqlCommand(query, connection);
-            //    command.Parameters.AddWithValue("@TenSanPham", tenSanPham);
-
-            //    try
-            //    {
-            //        connection.Open();
-            //        maSanPham = (string)command.ExecuteScalar();
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        throw ex;
-            //    }
-            //}
-
-            //return maSanPham;
-            SqlParameter[] parameters = new SqlParameter[]
-            {
-                new SqlParameter("@TenSanPham", tenSanPham)
-            };
-
-            return database.ExecuteScalar("SELECT MaSanPham FROM SanPham WHERE TenSanPham = @TenSanPham", parameters).ToString();
-        }
-        public void CapNhatTrangThaiHoaDon(int maHoaDon, string tinhTrangMoi)
+        public void CapNhatTrangThaiHoaDon(HoaDonEntity hoaDon)
         {
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("@MaHoaDon", maHoaDon),
-                new SqlParameter("@TinhTrang", tinhTrangMoi)
+                new SqlParameter("@MaHoaDon", hoaDon.MaHoaDon),
+                new SqlParameter("@TinhTrang", hoaDon.TinhTrang)
             };
 
             database.ExecuteNonQuery("sp_CapNhatTrangThaiHoaDon", parameters);
         }
-        public DataTable LayThongTinHoaDon(int maHoaDon)
-        {
-            DataTable dt = new DataTable();
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                SqlCommand command = new SqlCommand("sp_LayTenKhachHang", connection);
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@MaHoaDon", maHoaDon);
-
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                dt.Load(reader);
-            }
-            return dt;
-        }
-        public DataTable LayChiTietHoaDon(int maHoaDon)
+        public DataTable LayThongTinHoaDon(HoaDonEntity hoaDon)
         {
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("@MaHoaDon", maHoaDon)
+                new SqlParameter("@MaHoaDon", hoaDon.MaHoaDon)
             };
 
             return database.ExecuteQuery("sp_LayTenKhachHang", parameters);
+        }
+        public DataTable LayChiTietHoaDon(CTHDEntity chiTietHoaDon)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@MaHoaDon", chiTietHoaDon.MaHoaDon)
+            };
+
+            return database.ExecuteQuery("sp_LayChiTietHoaDon", parameters);
         }
     }
 }

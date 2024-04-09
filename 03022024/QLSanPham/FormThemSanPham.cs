@@ -25,10 +25,12 @@ namespace _03022024
             cbbDanhMuc.DisplayMember = "TenDanhMuc";
             cbbDanhMuc.ValueMember = "MaDanhMuc";
             cbbDanhMuc.DataSource = categories;
+            cbbDanhMuc.SelectedIndex = -1;
 
             cbbDonViTinh.DisplayMember = "TenDVT";
             cbbDonViTinh.ValueMember = "MaDVT";
             cbbDonViTinh.DataSource = units;
+            cbbDonViTinh.SelectedIndex = -1;
 
             this.KeyPreview = true;
         }

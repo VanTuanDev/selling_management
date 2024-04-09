@@ -336,42 +336,6 @@ BEGIN
 END
 GO
 
--- CREATE BILL --
-CREATE PROCEDURE sp_TaoHoaDon
-    @MaKhachHang nchar(10),
-    @TinhTrang nvarchar(50)
-AS
-BEGIN
-    SET NOCOUNT ON;
-
-    INSERT INTO HoaDon (MaKhachHang, TinhTrang)
-    VALUES (@MaKhachHang, @TinhTrang);
-
-    SELECT SCOPE_IDENTITY() AS MaHoaDon; 
-END
-GO
-
--- CREATE BILL DETAIL --
-CREATE PROCEDURE sp_TaoChiTietHoaDon
-    @MaHoaDon INT,
-    @MaSanPham nchar(10),
-    @SoLuongDat int,
-    @ThanhTien decimal(18, 0)
-AS
-BEGIN
-    SET NOCOUNT ON;
-
-    IF NOT EXISTS (SELECT 1 FROM HoaDon WHERE MaHoaDon = @MaHoaDon)
-    BEGIN
-        PRINT N'MaHoaDon không tồn tại';
-        RETURN;
-    END;
-
-    INSERT INTO ChiTietHoaDon (MaHoaDon, MaSanPham, SoLuongDat, ThanhTien)
-    VALUES (@MaHoaDon, @MaSanPham, @SoLuongDat, @ThanhTien);
-END
-GO
-
 -- UPDATE STATUS BILL --
 CREATE PROCEDURE sp_CapNhatTrangThaiHoaDon
     @MaHoaDon INT,
@@ -406,24 +370,10 @@ BEGIN
 END
 GO
 
--- GET CUSTOMER NAME --
-CREATE PROCEDURE sp_LayTenKhachHang
-	@MaHoaDon INT
-AS
-BEGIN
-	SET NOCOUNT ON;
-
-	SELECT kh.TenKhachHang 
-	FROM HoaDon hd 
-	INNER JOIN KhachHang kh 
-	ON hd.MaKhachHang = kh.MaKhachHang;
-END
-GO
-
 CREATE PROCEDURE sp_LayDanhMuc
 AS
 BEGIN
-	SELECT * FROM DanhMucSanPham WHERE TrangThai = N'Còn sử dụng';
+	SELECT * FROM DanhMucSanPham
 END
 GO
 
@@ -438,5 +388,60 @@ CREATE PROCEDURE sp_LayDuLieuNguoiDung
 AS
 BEGIN
 	SELECT MaQuyen, TenQuyen FROM QuyenDangNhap
+END
+GO
+
+CREATE PROCEDURE sp_LayTenKhachHang
+	@MaHoaDon nvarchar(50)
+AS
+BEGIN
+	SELECT kh.TenKhachHang FROM HoaDon hd INNER JOIN KhachHang kh ON hd.MaKhachHang = kh.MaKhachHang WHERE MaHoaDon = @MaHoaDon
+END
+GO
+
+CREATE PROCEDURE sp_LayMaSanPham
+	@TenSanPham nvarchar(50)
+AS
+BEGIN
+	SELECT MaSanPham FROM SanPham WHERE TenSanPham = @TenSanPham
+END
+GO
+
+CREATE PROCEDURE sp_TaoHoaDon
+    @MaKhachHang nchar(10),
+    @TinhTrang nvarchar(50),
+    @MaHoaDon int OUTPUT
+AS
+BEGIN
+    INSERT INTO HoaDon (MaKhachHang, TinhTrang)
+    VALUES (@MaKhachHang, @TinhTrang)
+
+    SET @MaHoaDon = SCOPE_IDENTITY()
+END
+GO
+
+CREATE PROCEDURE sp_TaoChiTietHoaDon
+    @MaHoaDon INT,
+    @MaSanPham NCHAR(10),
+    @SoLuongDat INT,
+    @ThanhTien DECIMAL(18, 0)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF NOT EXISTS (SELECT 1 FROM HoaDon WHERE MaHoaDon = @MaHoaDon)
+    BEGIN
+        PRINT N'MaHoaDon không tồn tại';
+        RETURN;
+    END;
+
+    IF NOT EXISTS (SELECT 1 FROM SanPham WHERE MaSanPham = @MaSanPham)
+    BEGIN
+        PRINT N'MaSanPham không tồn tại';
+        RETURN;
+    END;
+
+    INSERT INTO ChiTietHoaDon (MaHoaDon, MaSanPham, SoLuongDat, ThanhTien)
+    VALUES (@MaHoaDon, @MaSanPham, @SoLuongDat, @ThanhTien);
 END
 GO

@@ -105,6 +105,6 @@ E:\Code\C#\02032024\03022024\obj\Debug\_03022024.QLSanPham.ucSanPham.resources
 E:\Code\C#\02032024\03022024\obj\Debug\_03022024.QLTaiKhoan.ucTaiKhoan.resources
 E:\Code\C#\02032024\03022024\obj\Debug\03022024.csproj.GenerateResource.cache
 E:\Code\C#\02032024\03022024\obj\Debug\03022024.csproj.CoreCompileInputs.cache
-E:\Code\C#\02032024\03022024\obj\Debug\03022024.csproj.CopyComplete
 E:\Code\C#\02032024\03022024\obj\Debug\03022024.exe
 E:\Code\C#\02032024\03022024\obj\Debug\03022024.pdb
+E:\Code\C#\02032024\03022024\obj\Debug\03022024.csproj.CopyComplete

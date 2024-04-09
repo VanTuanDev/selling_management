@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\CTHDEntity.cs" />
     <Compile Include="Entity\DanhMucEntity.cs" />
+    <Compile Include="Entity\HoaDonEntity.cs" />
     <Compile Include="Entity\KhachHangEntity.cs" />
     <Compile Include="Entity\SanPhamEntity.cs" />
     <Compile Include="Entity\TaiKhoanEntity.cs" />

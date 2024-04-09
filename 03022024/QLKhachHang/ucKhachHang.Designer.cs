@@ -33,6 +33,9 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgKhachHang = new System.Windows.Forms.DataGridView();
+            this.cl1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ptbXoa = new System.Windows.Forms.PictureBox();
             this.ptbSua = new System.Windows.Forms.PictureBox();
@@ -44,9 +47,6 @@
             this.txtTenKhachHang = new System.Windows.Forms.TextBox();
             this.lblHeader = new System.Windows.Forms.Label();
             this.txtMaKhachHang = new System.Windows.Forms.TextBox();
-            this.cl1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             lblTenKhachHang = new System.Windows.Forms.Label();
             lblMaKhachHang = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
@@ -134,6 +134,39 @@
             this.dgKhachHang.Size = new System.Drawing.Size(1061, 333);
             this.dgKhachHang.TabIndex = 0;
             this.dgKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgKhachHang_CellClick);
+            // 
+            // cl1
+            // 
+            this.cl1.DataPropertyName = "MaKhachHang";
+            this.cl1.HeaderText = "Mã khách hàng";
+            this.cl1.MinimumWidth = 6;
+            this.cl1.Name = "cl1";
+            this.cl1.ReadOnly = true;
+            this.cl1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cl1.Width = 280;
+            // 
+            // cl2
+            // 
+            this.cl2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cl2.DataPropertyName = "TenKhachHang";
+            this.cl2.HeaderText = "Tên khách hàng";
+            this.cl2.MinimumWidth = 6;
+            this.cl2.Name = "cl2";
+            this.cl2.ReadOnly = true;
+            this.cl2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cl2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // cl3
+            // 
+            this.cl3.DataPropertyName = "TrangThai";
+            this.cl3.HeaderText = "Trạng thái";
+            this.cl3.MinimumWidth = 6;
+            this.cl3.Name = "cl3";
+            this.cl3.ReadOnly = true;
+            this.cl3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cl3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cl3.Visible = false;
+            this.cl3.Width = 280;
             // 
             // panel2
             // 
@@ -287,39 +320,6 @@
             this.txtMaKhachHang.Size = new System.Drawing.Size(489, 32);
             this.txtMaKhachHang.TabIndex = 1;
             this.txtMaKhachHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaKhachHang_KeyPress);
-            // 
-            // cl1
-            // 
-            this.cl1.DataPropertyName = "MaKhachHang";
-            this.cl1.HeaderText = "Mã khách hàng";
-            this.cl1.MinimumWidth = 6;
-            this.cl1.Name = "cl1";
-            this.cl1.ReadOnly = true;
-            this.cl1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cl1.Width = 280;
-            // 
-            // cl2
-            // 
-            this.cl2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cl2.DataPropertyName = "TenKhachHang";
-            this.cl2.HeaderText = "Tên khách hàng";
-            this.cl2.MinimumWidth = 6;
-            this.cl2.Name = "cl2";
-            this.cl2.ReadOnly = true;
-            this.cl2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cl2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // cl3
-            // 
-            this.cl3.DataPropertyName = "TrangThai";
-            this.cl3.HeaderText = "Trạng thái";
-            this.cl3.MinimumWidth = 6;
-            this.cl3.Name = "cl3";
-            this.cl3.ReadOnly = true;
-            this.cl3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cl3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cl3.Visible = false;
-            this.cl3.Width = 280;
             // 
             // ucKhachHang
             // 

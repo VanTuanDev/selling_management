@@ -1,22 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using _03022024.QLKhachHang;
 using BLL;
 
 namespace _03022024.QLBanHang
 {
     public partial class FormChonKhachHang : Form
     {
-        public KhachHang SelectedKhachHang { get; private set; }
+        public KhachHang SelectedKhachHang { get; set; } = null;
         private KhachHangManager manager = null;
         private DataTable dataDSKhachHang = null;
+
         public FormChonKhachHang()
         {
             dataDSKhachHang = new DataTable();

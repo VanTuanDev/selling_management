@@ -98,8 +98,8 @@
             // 
             this.ptbDoiMatKhau.BackColor = System.Drawing.Color.Green;
             this.ptbDoiMatKhau.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbDoiMatKhau.Image = global::_03022024.Properties.Resources.reset_password;
-            this.ptbDoiMatKhau.Location = new System.Drawing.Point(21, 545);
+            this.ptbDoiMatKhau.Image = global::_03022024.Properties.Resources.change_pwd;
+            this.ptbDoiMatKhau.Location = new System.Drawing.Point(21, 547);
             this.ptbDoiMatKhau.Name = "ptbDoiMatKhau";
             this.ptbDoiMatKhau.Size = new System.Drawing.Size(35, 35);
             this.ptbDoiMatKhau.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -112,7 +112,7 @@
             this.ptbDangXuat.BackColor = System.Drawing.Color.DarkRed;
             this.ptbDangXuat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptbDangXuat.Image = global::_03022024.Properties.Resources.logout;
-            this.ptbDangXuat.Location = new System.Drawing.Point(21, 596);
+            this.ptbDangXuat.Location = new System.Drawing.Point(21, 598);
             this.ptbDangXuat.Name = "ptbDangXuat";
             this.ptbDangXuat.Size = new System.Drawing.Size(35, 35);
             this.ptbDangXuat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -152,7 +152,7 @@
             // 
             this.ptbDanhMuc.BackColor = System.Drawing.Color.DarkGreen;
             this.ptbDanhMuc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbDanhMuc.Image = global::_03022024.Properties.Resources.category;
+            this.ptbDanhMuc.Image = global::_03022024.Properties.Resources.categories;
             this.ptbDanhMuc.Location = new System.Drawing.Point(13, 309);
             this.ptbDanhMuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ptbDanhMuc.Name = "ptbDanhMuc";
@@ -166,7 +166,7 @@
             // 
             this.ptbSanPham.BackColor = System.Drawing.Color.DarkGreen;
             this.ptbSanPham.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbSanPham.Image = global::_03022024.Properties.Resources.product;
+            this.ptbSanPham.Image = global::_03022024.Properties.Resources.products;
             this.ptbSanPham.Location = new System.Drawing.Point(13, 363);
             this.ptbSanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ptbSanPham.Name = "ptbSanPham";
@@ -225,7 +225,7 @@
             // ptbTrangChu
             // 
             this.ptbTrangChu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbTrangChu.Image = global::_03022024.Properties.Resources.logo;
+            this.ptbTrangChu.Image = global::_03022024.Properties.Resources.logo_trangchu;
             this.ptbTrangChu.Location = new System.Drawing.Point(35, 8);
             this.ptbTrangChu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ptbTrangChu.Name = "ptbTrangChu";
@@ -387,7 +387,7 @@
             // ptbPhai
             // 
             this.ptbPhai.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ptbPhai.Image = global::_03022024.Properties.Resources.bachhoaxanh;
+            this.ptbPhai.Image = global::_03022024.Properties.Resources.bhx_trangchu;
             this.ptbPhai.Location = new System.Drawing.Point(0, 0);
             this.ptbPhai.Name = "ptbPhai";
             this.ptbPhai.Size = new System.Drawing.Size(1060, 632);

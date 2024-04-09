@@ -190,7 +190,6 @@
             // 
             this.ptbMatKhau.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ptbMatKhau.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbMatKhau.Image = global::_03022024.Properties.Resources.on;
             this.ptbMatKhau.Location = new System.Drawing.Point(599, 211);
             this.ptbMatKhau.Name = "ptbMatKhau";
             this.ptbMatKhau.Size = new System.Drawing.Size(25, 25);
@@ -201,6 +200,7 @@
             // 
             // cbbMaQuyen
             // 
+            this.cbbMaQuyen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbMaQuyen.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cbbMaQuyen.FormattingEnabled = true;
             this.cbbMaQuyen.Location = new System.Drawing.Point(280, 265);

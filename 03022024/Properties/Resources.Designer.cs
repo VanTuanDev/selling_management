@@ -83,9 +83,9 @@ namespace _03022024.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bachhoaxanh {
+        internal static System.Drawing.Bitmap bhx_trangchu {
             get {
-                object obj = ResourceManager.GetObject("bachhoaxanh", resourceCulture);
+                object obj = ResourceManager.GetObject("bhx_trangchu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,19 +103,9 @@ namespace _03022024.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap billdetail {
+        internal static System.Drawing.Bitmap categories {
             get {
-                object obj = ResourceManager.GetObject("billdetail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap category {
-            get {
-                object obj = ResourceManager.GetObject("category", resourceCulture);
+                object obj = ResourceManager.GetObject("categories", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +163,9 @@ namespace _03022024.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logo {
+        internal static System.Drawing.Bitmap logo_bachhoaxanh {
             get {
-                object obj = ResourceManager.GetObject("logo", resourceCulture);
+                object obj = ResourceManager.GetObject("logo_bachhoaxanh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +173,9 @@ namespace _03022024.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logo_bachhoaxanh {
+        internal static System.Drawing.Bitmap logo_trangchu {
             get {
-                object obj = ResourceManager.GetObject("logo_bachhoaxanh", resourceCulture);
+                object obj = ResourceManager.GetObject("logo_trangchu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,49 +203,9 @@ namespace _03022024.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap on {
+        internal static System.Drawing.Bitmap products {
             get {
-                object obj = ResourceManager.GetObject("on", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap password_login {
-            get {
-                object obj = ResourceManager.GetObject("password_login", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pay {
-            get {
-                object obj = ResourceManager.GetObject("pay", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap product {
-            get {
-                object obj = ResourceManager.GetObject("product", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap reset_password {
-            get {
-                object obj = ResourceManager.GetObject("reset-password", resourceCulture);
+                object obj = ResourceManager.GetObject("products", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,6 +223,16 @@ namespace _03022024.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap selling1 {
+            get {
+                object obj = ResourceManager.GetObject("selling1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap submit {
             get {
                 object obj = ResourceManager.GetObject("submit", resourceCulture);
@@ -283,9 +243,9 @@ namespace _03022024.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap username_login {
+        internal static System.Drawing.Bitmap view_cthd {
             get {
-                object obj = ResourceManager.GetObject("username_login", resourceCulture);
+                object obj = ResourceManager.GetObject("view_cthd", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
