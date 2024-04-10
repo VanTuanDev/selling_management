@@ -74,27 +74,34 @@ namespace _03022024
         }
         private void XacNhan()
         {
-            sanPham.MaSanPham = txtMaSanPham.Text;
-            sanPham.TenSanPham = txtTenSanPham.Text;
-            sanPham.MaDVT = cbbDonViTinh.SelectedValue.ToString();
-            sanPham.MaDanhMuc = cbbDanhMuc.SelectedValue.ToString();
-            sanPham.DonGia = decimal.Parse(txtDonGia.Text);
+            if(!string.IsNullOrEmpty(txtMaSanPham.Text) || !string.IsNullOrEmpty(txtTenSanPham.Text) || !string.IsNullOrEmpty(cbbDonViTinh.SelectedValue.ToString()) || !string.IsNullOrEmpty(cbbDanhMuc.SelectedValue.ToString()) || !string.IsNullOrEmpty(txtDonGia.Text))
+            {
+                sanPham.MaSanPham = txtMaSanPham.Text;
+                sanPham.TenSanPham = txtTenSanPham.Text;
+                sanPham.MaDVT = cbbDonViTinh.SelectedValue.ToString();
+                sanPham.MaDanhMuc = cbbDanhMuc.SelectedValue.ToString();
+                sanPham.DonGia = decimal.Parse(txtDonGia.Text);
 
-            if (string.IsNullOrEmpty(txtMaSanPham.Text) || string.IsNullOrEmpty(txtTenSanPham.Text) || string.IsNullOrEmpty(cbbDonViTinh.Text) || string.IsNullOrEmpty(cbbDanhMuc.Text) || string.IsNullOrEmpty(txtDonGia.Text))
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
-                return;
-            }
+                if (string.IsNullOrEmpty(txtMaSanPham.Text) || string.IsNullOrEmpty(txtTenSanPham.Text) || string.IsNullOrEmpty(cbbDonViTinh.Text) || string.IsNullOrEmpty(cbbDanhMuc.Text) || string.IsNullOrEmpty(txtDonGia.Text))
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
+                    return;
+                }
 
-            try
-            {
-                manager.ThemSanPham(sanPham);
-                MessageBox.Show("Thêm sản phẩm thành công!");
-                this.Close();
+                try
+                {
+                    manager.ThemSanPham(sanPham);
+                    MessageBox.Show("Thêm sản phẩm thành công!");
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Lỗi: " + ex.Message);
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
             }
         }
         private void btnXacNhan_Click(object sender, System.EventArgs e)

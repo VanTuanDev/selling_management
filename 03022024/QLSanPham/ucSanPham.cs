@@ -37,9 +37,9 @@ namespace _03022024.QLSanPham
         {
             txtMaSanPham.Text = "";
             txtTenSanPham.Text = "";
-            cbbDonViTinh.Text = "";
-            cbbTenDanhMuc.Text = "";
             txtDonGia.Text = "";
+            cbbDonViTinh.SelectedIndex = -1;
+            cbbTenDanhMuc.SelectedIndex = -1;
         }
         private void HienThiDanhSachSanPham()
         {

@@ -44,26 +44,13 @@ namespace DAL.Reponsitories
         public string LayMaSanPhamTuTen(SanPhamEntity sanPham)
         {
             string maSanPham = null;
-            string connectionString = "Data Source=.;Initial Catalog=QuanLyBanHang;Integrated Security=True"; 
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            SqlParameter[] parameters = new SqlParameter[]
             {
-                connection.Open();
-                using (SqlCommand command = new SqlCommand("sp_LayMaSanPham", connection))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
+                new SqlParameter("@TenSanPham", sanPham.TenSanPham)
+            };
 
-                    command.Parameters.AddWithValue("@TenSanPham", sanPham.TenSanPham);
-
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            maSanPham = reader["MaSanPham"].ToString();
-                        }
-                    }
-                }
-            }
+            maSanPham = database.ExecuteScalarStoredProcedure("sp_LayMaSanPham", parameters);
 
             return maSanPham;
         }

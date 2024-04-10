@@ -72,28 +72,28 @@ namespace _03022024
 
         private void XacNhan()
         {
-            taiKhoan.TenDangNhap = txtTenDangNhap.Text;
-            taiKhoan.TenDayDu = txtTenDayDu.Text;
-            taiKhoan.MatKhau = txtMatKhau.Text;
-
-            taiKhoan.MaQuyen = cbbMaQuyen.SelectedValue.ToString();
-
-            if (string.IsNullOrEmpty(txtTenDangNhap.Text) || string.IsNullOrEmpty(txtTenDayDu.Text) || string.IsNullOrEmpty(txtMatKhau.Text) || string.IsNullOrEmpty(cbbMaQuyen.Text))
+            if (!string.IsNullOrEmpty(txtTenDangNhap.Text) || !string.IsNullOrEmpty(txtTenDayDu.Text) || !string.IsNullOrEmpty(txtMatKhau.Text) || !string.IsNullOrEmpty(cbbMaQuyen.Text))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
-                return;
-            }
+                taiKhoan.TenDangNhap = txtTenDangNhap.Text;
+                taiKhoan.TenDayDu = txtTenDayDu.Text;
+                taiKhoan.MatKhau = txtMatKhau.Text;
 
-            try
-            {
-                manager.ThemTaiKhoan(taiKhoan);
-                MessageBox.Show("Thêm tài khoản thành công!");
-                this.Close();
+                taiKhoan.MaQuyen = cbbMaQuyen.SelectedValue.ToString();
+                try
+                {
+                    manager.ThemTaiKhoan(taiKhoan);
+                    MessageBox.Show("Thêm tài khoản thành công!");
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Lỗi: " + ex.Message);
-            }
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
+            } 
         }
         private void btnXacNhan_Click(object sender, EventArgs e)
         {

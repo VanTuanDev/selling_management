@@ -135,5 +135,27 @@ namespace DAL.Repositories
                 return null;
             }
         }
+        public string ExecuteScalarStoredProcedure(string storedProcedureName, SqlParameter[] parameters)
+        {
+            string result = null;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(storedProcedureName, connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddRange(parameters);
+
+                    object scalarResult = command.ExecuteScalar();
+                    if (scalarResult != null)
+                    {
+                        result = scalarResult.ToString();
+                    }
+                }
+            }
+
+            return result;
+        }
     }
 }

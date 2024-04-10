@@ -39,6 +39,7 @@ namespace _03022024.QLTaiKhoan
             txtTenDayDu.Text = "";
             txtTenDangNhap.Text = "";
             cbbQuyen.Text = "";
+            cbbQuyen.SelectedIndex = -1;
         }
         private void HienThiDanhSachTaiKhoan()
         {

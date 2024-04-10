@@ -224,7 +224,6 @@ namespace _03022024.QLBanHang
 
                 hoaDon.MaKhachHang = lblMaKHNoiDung.Text;
                 chiTietHoaDon.MaHoaDon = HDmanager.TaoHoaDon(hoaDon);
-                MessageBox.Show(chiTietHoaDon.MaHoaDon.ToString()); //
                 try
                 {
                     if (chiTietHoaDon.MaHoaDon != -1)
@@ -236,7 +235,6 @@ namespace _03022024.QLBanHang
                             chiTietHoaDon.ThanhTien = Convert.ToDecimal(row.Cells["column4"].Value);
 
                             chiTietHoaDon.MaSanPham = HDmanager.LayMaSanPhamTuTen(sanPham);
-                            MessageBox.Show(chiTietHoaDon.MaSanPham.ToString()); //
                             HDmanager.TaoChiTietHoaDon(chiTietHoaDon);
                         }
                         MessageBox.Show("Giao dịch của bạn đang được xử lý.");
