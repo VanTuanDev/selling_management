@@ -12,8 +12,7 @@ namespace DAL.Repositories
 
         public object ExecuteScalar(string query, SqlParameter[] parameters)
         {
-            SqlConnection connection = null;
-            using (connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 using (SqlCommand command = new SqlCommand(query, connection))

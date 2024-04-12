@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Windows.Forms;
 using BLL;
 using DAL.Entity;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace _03022024.QLBanHang
 {
@@ -64,10 +63,16 @@ namespace _03022024.QLBanHang
                 MessageBox.Show(error);
             }
         }
-
+        private void Reset ()
+        {
+            lblTenSPNoiDung.Text = string.Empty;
+            lblDonGiaNoiDung.Text = string.Empty;         
+        }
         private void ucBanHang_Load(object sender, EventArgs e)
         {
             HienThiDanhSachSanPham();
+            dgDanhSachSP.ClearSelection();
+            dgDSSanPhamDuocChon.ClearSelection();
         }
 
         private void dgDanhSachSP_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -129,11 +134,13 @@ namespace _03022024.QLBanHang
 
                         dgDSSanPhamDuocChon.Rows.Add(row);
                     }
+                    CapNhatTongTien();
                 }
                 else
                 {
                     MessageBox.Show("Bạn chưa chọn sản phẩm muốn mua.");
                 }
+                Reset();
             }
             else
             {
@@ -144,12 +151,10 @@ namespace _03022024.QLBanHang
         private void btnThem_Click(object sender, EventArgs e)
         {
             Them();
-            CapNhatTongTien();
         }
         private void ptbThem_Click(object sender, EventArgs e)
         {
             Them();
-            CapNhatTongTien();
         }
         private void Xoa()
         {
@@ -157,6 +162,7 @@ namespace _03022024.QLBanHang
             {
                 DataGridViewRow selectedRow = dgDSSanPhamDuocChon.SelectedRows[0];
                 dgDSSanPhamDuocChon.Rows.Remove(selectedRow);
+                CapNhatTongTien();
             }
             else
             {
@@ -248,18 +254,23 @@ namespace _03022024.QLBanHang
                 {
                     MessageBox.Show("lỗi khi thực hiện giao dịch: " + ex.Message);
                 }
-                lblMaKHNoiDung.Text = string.Empty;
-                lblTenKHNoiDung.Text = string.Empty;
-                lblTenSPNoiDung.Text = string.Empty;
-                lblDonGiaNoiDung.Text = string.Empty;
-                txtSoLuong.Text = string.Empty;
-
-                dgDSSanPhamDuocChon.Rows.Clear();
+                ResetAll();
             }
             else
             {
                 MessageBox.Show("Chưa có khách hàng.");
             }          
+        }
+
+        private void ResetAll()
+        {
+            lblMaKHNoiDung.Text = string.Empty;
+            lblTenKHNoiDung.Text = string.Empty;
+            lblTenSPNoiDung.Text = string.Empty;
+            lblDonGiaNoiDung.Text = string.Empty;
+            lblThanhTienNoiDung.Text = string.Empty;
+            txtSoLuong.Text = "1";
+            dgDSSanPhamDuocChon.Rows.Clear();
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
