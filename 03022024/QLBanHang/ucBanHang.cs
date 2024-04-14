@@ -234,16 +234,23 @@ namespace _03022024.QLBanHang
                 {
                     if (chiTietHoaDon.MaHoaDon != -1)
                     {
-                        foreach (DataGridViewRow row in dgDSSanPhamDuocChon.Rows)
+                        if(dgDSSanPhamDuocChon.Rows.Count > 0)
                         {
-                            sanPham.TenSanPham = row.Cells["column1"].Value.ToString();
-                            chiTietHoaDon.SoLuongDat = Convert.ToInt32(row.Cells["column2"].Value);
-                            chiTietHoaDon.ThanhTien = Convert.ToDecimal(row.Cells["column4"].Value);
+                            foreach (DataGridViewRow row in dgDSSanPhamDuocChon.Rows)
+                            {
+                                sanPham.TenSanPham = row.Cells["column1"].Value.ToString();
+                                chiTietHoaDon.SoLuongDat = Convert.ToInt32(row.Cells["column2"].Value);
+                                chiTietHoaDon.ThanhTien = Convert.ToDecimal(row.Cells["column4"].Value);
 
-                            chiTietHoaDon.MaSanPham = HDmanager.LayMaSanPhamTuTen(sanPham);
-                            HDmanager.TaoChiTietHoaDon(chiTietHoaDon);
+                                chiTietHoaDon.MaSanPham = HDmanager.LayMaSanPhamTuTen(sanPham);
+                                HDmanager.TaoChiTietHoaDon(chiTietHoaDon);
+                            }
+                            MessageBox.Show("Giao dịch của bạn đang được xử lý.");
                         }
-                        MessageBox.Show("Giao dịch của bạn đang được xử lý.");
+                        else
+                        {
+                            MessageBox.Show("Giỏ hàng trống.");
+                        }            
                     }
                     else
                     {
