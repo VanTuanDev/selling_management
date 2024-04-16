@@ -57,6 +57,39 @@ namespace DAL.Repositories
             }
         }
 
+        public void ExecuteNonQuery(string storedProcedureName, SqlParameter[] parameters, out string errorMessage)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    SqlCommand command = new SqlCommand();
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = storedProcedureName;
+                    command.Connection = connection;
+
+                    if (parameters != null && parameters.Length > 0)
+                    {
+                        command.Parameters.AddRange(parameters);
+                    }
+
+                    SqlParameter errorParameter = new SqlParameter("@ErrorMessage", SqlDbType.NVarChar, -1);
+                    errorParameter.Direction = ParameterDirection.Output;
+                    command.Parameters.Add(errorParameter);
+
+                    command.ExecuteNonQuery();
+
+                    errorMessage = (string)errorParameter.Value;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public void ExecuteNonQuery(string storedProcedureName, SqlParameter[] parameters)
         {
             try

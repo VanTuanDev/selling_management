@@ -19,9 +19,9 @@ namespace BLL
         {
             return Process.HienThiDanhSachKhachHang();
         }
-        public void ThemKhachHang(KhachHangEntity khachHang)
+        public void ThemKhachHang(KhachHangEntity khachHang, out string errorMessage)
         {
-            Process.ThemKhachHang(khachHang);
+            Process.ThemKhachHang(khachHang, out errorMessage);
         }
         public void CapNhatKhachHang(KhachHangEntity khachHang)
         {

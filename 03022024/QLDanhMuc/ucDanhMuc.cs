@@ -2,7 +2,6 @@
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
-using _03022024.QLSanPham;
 using BLL;
 using DAL.Entity;
 

@@ -3,6 +3,7 @@ using System;
 using System.Data;
 using System.Windows.Forms;
 using DAL.Entity;
+using _03022024.QLTaiKhoan;
 //using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace _03022024
@@ -87,12 +88,15 @@ namespace _03022024
                     MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
                     return;
                 }
-
+                string errorMessage;
                 try
                 {
-                    manager.ThemSanPham(sanPham);
-                    MessageBox.Show("Thêm sản phẩm thành công!");
-                    this.Close();
+                    manager.ThemSanPham(sanPham, out errorMessage);
+                    MessageBox.Show(errorMessage);
+                    if (errorMessage.StartsWith("Sản phẩm đã được thêm thành công"))
+                    {
+                        this.Close();
+                    }
                 }
                 catch (Exception ex)
                 {

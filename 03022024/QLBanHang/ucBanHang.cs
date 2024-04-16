@@ -145,8 +145,7 @@ namespace _03022024.QLBanHang
             else
             {
                 MessageBox.Show("Số lượng chỉ cho phép nhập số.");
-            }
-                
+            }            
         }
         private void btnThem_Click(object sender, EventArgs e)
         {

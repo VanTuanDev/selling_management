@@ -20,9 +20,9 @@ namespace BLL
         {
             return Process.HienThiDanhSachSanPhamBanHang();
         }
-        public void ThemSanPham(SanPhamEntity sanPham)
+        public void ThemSanPham(SanPhamEntity sanPham, out string errorMessage)
         {
-            Process.ThemSanPham(sanPham);
+            Process.ThemSanPham(sanPham, out errorMessage);
         }
         public void SuaSanPham(SanPhamEntity sanPham)
         {

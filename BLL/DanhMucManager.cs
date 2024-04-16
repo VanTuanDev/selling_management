@@ -16,9 +16,9 @@ namespace BLL
         {
             return Process.HienThiDanhSachDanhMuc();
         }
-        public void ThemDanhMuc(DanhMucEntity danhMuc)
+        public void ThemDanhMuc(DanhMucEntity danhMuc, out string errorMessage)
         {
-            Process.ThemDanhMuc(danhMuc);
+            Process.ThemDanhMuc(danhMuc, out errorMessage);
         }
         public void CapNhatDanhMuc(DanhMucEntity danhMuc)
         {

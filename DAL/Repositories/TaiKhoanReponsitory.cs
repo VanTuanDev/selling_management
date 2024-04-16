@@ -16,7 +16,7 @@ namespace DAL.Reponsitories
             SqlParameter[] parameters = null;
             return database.ExecuteQuery("sp_LayDanhSachTaiKhoan", parameters);
         }
-        public void ThemTaiKhoan(TaiKhoanEntity taiKhoan)
+        public void ThemTaiKhoan(TaiKhoanEntity taiKhoan, out string errorMessage)
         {
             SqlParameter[] parameters = new SqlParameter[]
             {
@@ -25,7 +25,7 @@ namespace DAL.Reponsitories
                 new SqlParameter("@MatKhau", taiKhoan.MatKhau),
                 new SqlParameter("@MaQuyen", taiKhoan.MaQuyen)
             };
-            database.ExecuteNonQuery("sp_ThemTaiKhoan", parameters);
+            database.ExecuteNonQuery("sp_ThemTaiKhoan", parameters, out errorMessage);
         }
 
         public void CapNhatTaiKhoan(TaiKhoanEntity taiKhoan)

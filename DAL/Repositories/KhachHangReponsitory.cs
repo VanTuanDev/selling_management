@@ -16,14 +16,15 @@ namespace DAL.Reponsitories
             SqlParameter[] parameters = null;
             return database.ExecuteQuery("sp_LayDanhSachKhachHang", parameters);
         }
-        public void ThemKhachHang(KhachHangEntity khachHang)
+        
+        public void ThemKhachHang(KhachHangEntity khachHang, out string errorMessage)
         {
             SqlParameter[] parameters = new SqlParameter[]
             {
                 new SqlParameter("@MaKhachHang", khachHang.MaKhachHang),
                 new SqlParameter("@TenKhachHang", khachHang.TenKhachHang)
             };
-            database.ExecuteNonQuery("sp_ThemKhachHang", parameters);    
+            database.ExecuteNonQuery("sp_ThemKhachHang", parameters, out errorMessage);    
         }
         public void CapNhatKhachHang(KhachHangEntity khachHang)
         {

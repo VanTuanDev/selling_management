@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using _03022024.QLSanPham;
 using BLL;
 using DAL.Entity;
 
@@ -37,9 +38,20 @@ namespace _03022024
 
             if (!string.IsNullOrEmpty(txtMaKhachHang.Text) && !string.IsNullOrEmpty(txtTenKhachHang.Text))
             {
-                manager.ThemKhachHang(khachHang);
-                MessageBox.Show("Thêm khách hàng thành công!");
-                this.Close();
+                string errorMessage;
+                try
+                {
+                    manager.ThemKhachHang(khachHang, out errorMessage);
+                    MessageBox.Show(errorMessage);
+                    if (errorMessage.StartsWith("Khách hàng đã được thêm thành công"))
+                    {
+                        this.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
             }
             else
             {

@@ -22,7 +22,7 @@ namespace DAL.Reponsitories
             return database.ExecuteQuery("sp_LayDanhSachSanPhamBanHang", parameters);
         }
 
-        public void ThemSanPham(SanPhamEntity sanPham)
+        public void ThemSanPham(SanPhamEntity sanPham, out string errorMessage)
         {
             SqlParameter[] parameters = new SqlParameter[]
             {
@@ -33,7 +33,7 @@ namespace DAL.Reponsitories
                 new SqlParameter("@DonGia", sanPham.DonGia)
             };
 
-            database.ExecuteNonQuery("sp_ThemSanPham", parameters);
+            database.ExecuteNonQuery("sp_ThemSanPham", parameters, out errorMessage);
         }
 
         public void SuaSanPham(SanPhamEntity sanPham)

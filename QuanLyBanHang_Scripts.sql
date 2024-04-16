@@ -72,7 +72,8 @@ CREATE PROCEDURE sp_ThemTaiKhoan
     @TenDangNhap nvarchar(50),
     @MatKhau nvarchar(50),
     @TenDayDu nvarchar(100),
-    @MaQuyen nchar(1)
+    @MaQuyen nchar(1),
+    @ErrorMessage nvarchar(MAX) OUTPUT
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -85,11 +86,11 @@ BEGIN
         INSERT INTO TaiKhoan (TenDangNhap, MatKhau, TenDayDu, MaQuyen, TrangThai)
         VALUES (@TenDangNhap, @HashedPassword, @TenDayDu, @MaQuyen, N'Còn sử dụng');
 
-        PRINT N'Tài khoản đã được thêm thành công.';
+        SET @ErrorMessage = N'Tài khoản đã được thêm thành công.';
     END
     ELSE
     BEGIN
-        PRINT N'Tên đăng nhập đã tồn tại.';
+        SET @ErrorMessage = N'Tên đăng nhập đã tồn tại.';
     END
 END
 GO
@@ -140,11 +141,22 @@ GO
 -- CREATE CUSTOMER --
 CREATE PROCEDURE sp_ThemKhachHang
     @MaKhachHang nchar(10),
-    @TenKhachHang nvarchar(50)
+    @TenKhachHang nvarchar(50),
+    @ErrorMessage nvarchar(MAX) OUTPUT
 AS
 BEGIN
-    INSERT INTO KhachHang (MaKhachHang, TenKhachHang, TrangThai)
-    VALUES (@MaKhachHang, @TenKhachHang, N'Còn sử dụng')
+	SET NOCOUNT ON;
+
+    IF NOT EXISTS (SELECT 1 FROM KhachHang WHERE MaKhachHang = @MaKhachHang)
+	BEGIN
+		INSERT INTO KhachHang (MaKhachHang, TenKhachHang, TrangThai)
+		VALUES (@MaKhachHang, @TenKhachHang, N'Còn sử dụng')
+		SET @ErrorMessage = N'Khách hàng đã được thêm thành công.';
+	END
+	ELSE
+    BEGIN
+        SET @ErrorMessage = N'Mã khách hàng đã tồn tại.';
+    END
 END
 GO
 
@@ -196,7 +208,8 @@ CREATE PROCEDURE sp_ThemSanPham
     @TenSanPham nvarchar(50),
     @MaDVT nvarchar(2),
     @MaDanhMuc nchar(10),
-    @DonGia decimal(18, 0)
+    @DonGia decimal(18, 0),
+	@ErrorMessage nvarchar(MAX) OUTPUT
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -206,11 +219,11 @@ BEGIN
         INSERT INTO SanPham (MaSanPham, TenSanPham, MaDVT, MaDanhMuc, DonGia, TrangThai)
         VALUES (@MaSanPham, @TenSanPham, @MaDVT, @MaDanhMuc, @DonGia, N'Còn sử dụng');
 
-        PRINT N'Sản phẩm đã được thêm thành công.';
+        SET @ErrorMessage = N'Sản phẩm đã được thêm thành công.';
     END
     ELSE
     BEGIN
-        PRINT N'Sản phẩm với mã ' + @MaSanPham + N' đã tồn tại.';
+        SET @ErrorMessage = N'Mã sản phẩm đã tồn tại.';
     END
 END
 GO
@@ -275,11 +288,22 @@ GO
 -- CREATE CATEGORY --
 CREATE PROCEDURE sp_ThemDanhMuc
     @MaDanhMuc nchar(10),
-    @TenDanhMuc nvarchar(50)
+    @TenDanhMuc nvarchar(50),
+	@ErrorMessage nvarchar(MAX) OUTPUT
 AS
 BEGIN
-    INSERT INTO DanhMucSanPham(MaDanhMuc, TenDanhMuc, TrangThai)
-    VALUES (@MaDanhMuc, @TenDanhMuc, N'Còn sử dụng')
+	SET NOCOUNT ON;
+
+	IF NOT EXISTS (SELECT 1 FROM DanhMucSanPham WHERE MaDanhMuc = @MaDanhMuc)
+	BEGIN
+		INSERT INTO DanhMucSanPham(MaDanhMuc, TenDanhMuc, TrangThai)
+		VALUES (@MaDanhMuc, @TenDanhMuc, N'Còn sử dụng')
+		SET @ErrorMessage = N'Danh mục đã được thêm thành công.';
+	END
+	ELSE
+	BEGIN
+		SET @ErrorMessage = N'Mã danh mục đã tồn tại.';
+	END
 END
 GO
 

@@ -77,13 +77,17 @@ namespace _03022024
                 taiKhoan.TenDangNhap = txtTenDangNhap.Text;
                 taiKhoan.TenDayDu = txtTenDayDu.Text;
                 taiKhoan.MatKhau = txtMatKhau.Text;
-
                 taiKhoan.MaQuyen = cbbMaQuyen.SelectedValue.ToString();
+
+                string errorMessage;
                 try
                 {
-                    manager.ThemTaiKhoan(taiKhoan);
-                    MessageBox.Show("Thêm tài khoản thành công!");
-                    this.Close();
+                    manager.ThemTaiKhoan(taiKhoan, out errorMessage);
+                    MessageBox.Show(errorMessage);
+                    if (errorMessage.StartsWith("Tài khoản đã được thêm thành công"))
+                    {
+                        this.Close();
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -93,7 +97,7 @@ namespace _03022024
             else
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
-            } 
+            }
         }
         private void btnXacNhan_Click(object sender, EventArgs e)
         {

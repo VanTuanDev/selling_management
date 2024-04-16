@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using _03022024.QLBanHang;
 using BLL;
 using DAL.Entity;
 
@@ -38,9 +39,20 @@ namespace _03022024
 
             if (!string.IsNullOrEmpty(txtMaDanhMuc.Text) && !string.IsNullOrEmpty(txtTenDanhMuc.Text))
             {
-                manager.ThemDanhMuc(danhMuc);
-                MessageBox.Show("Thêm danh mục thành công!");
-                this.Close();
+                string errorMessage;
+                try
+                {
+                    manager.ThemDanhMuc(danhMuc, out errorMessage);
+                    MessageBox.Show(errorMessage);
+                    if (errorMessage.StartsWith("Danh mục đã được thêm thành công"))
+                    {
+                        this.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
             }
             else
             {

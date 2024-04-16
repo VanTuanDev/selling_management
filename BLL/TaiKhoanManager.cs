@@ -17,9 +17,9 @@ namespace BLL
         {
             return Process.HienThiDanhSachTaiKhoan();
         }
-        public void ThemTaiKhoan(TaiKhoanEntity taiKhoan)
+        public void ThemTaiKhoan(TaiKhoanEntity taiKhoan, out string errorMessage)
         {
-            Process.ThemTaiKhoan(taiKhoan);
+            Process.ThemTaiKhoan(taiKhoan, out errorMessage);
         }
         public void CapNhatTaiKhoan(TaiKhoanEntity taiKhoan)
         {
